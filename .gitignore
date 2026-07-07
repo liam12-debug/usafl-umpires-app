@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Editor/session
+.claude/
+app/standalone.html
+
+# Source spreadsheets / docs (keep private; not needed to run the app)
+*.xlsx
+*.docx
