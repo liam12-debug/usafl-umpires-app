@@ -501,5 +501,62 @@
     }
   }
 
+  // ---------- Add to Home Screen banner ----------
+  function initA2HS() {
+    const isStandalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+    if (isStandalone) return; // already installed — nothing to prompt
+    if (store.get("usafl.a2hs.dismissed", false)) return;
+
+    const ua = navigator.userAgent || "";
+    const isIOS = /iphone|ipad|ipod/i.test(ua);
+    const isAndroid = /android/i.test(ua);
+    // On desktop with no install support and not iOS, don't nag.
+    if (!isIOS && !isAndroid && !("onbeforeinstallprompt" in window)) return;
+
+    let deferredPrompt = null;
+    const bar = document.createElement("div");
+    bar.className = "a2hs glass";
+    const render = (mode) => {
+      bar.innerHTML = `
+        <img class="a2hs-icon" src="icons/icon-192.png" alt="" />
+        <div class="a2hs-txt">
+          <b>Get the app</b>
+          <span>${mode === "android"
+            ? "Install USAFL Umps for a fullscreen, offline-ready home-screen app."
+            : "Tap the Share button, then <b>“Add to Home Screen.”</b>"}</span>
+        </div>
+        ${mode === "android" ? `<button class="a2hs-go">Install</button>` : `<span class="a2hs-share">⬆︎</span>`}
+        <button class="a2hs-x" aria-label="Dismiss">✕</button>`;
+      bar.querySelector(".a2hs-x").addEventListener("click", () => {
+        store.set("usafl.a2hs.dismissed", true);
+        bar.remove();
+      });
+      const go = bar.querySelector(".a2hs-go");
+      if (go) go.addEventListener("click", async () => {
+        if (!deferredPrompt) return;
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        deferredPrompt = null;
+        if (outcome === "accepted") bar.remove();
+      });
+      document.getElementById("phone").appendChild(bar);
+    };
+
+    if (isAndroid || "onbeforeinstallprompt" in window) {
+      window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        if (!bar.isConnected) render("android");
+      });
+      // iOS-style fallback if the event never fires but we're clearly on mobile
+      if (isIOS) render("ios");
+    } else if (isIOS) {
+      render("ios");
+    }
+
+    window.addEventListener("appinstalled", () => { store.set("usafl.a2hs.dismissed", true); bar.remove(); });
+  }
+
   route();
+  initA2HS();
 })();
