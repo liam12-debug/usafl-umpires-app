@@ -21,7 +21,7 @@
   function route() {
     const h = location.hash.replace(/^#\/?/, "");
     const [page, arg] = h.split("/");
-    window.scrollTo(0, 0);
+    $app.scrollTo(0, 0); // #app is the scroll container now, not the window
     const views = { "": home, home, umpires, umpire, board, wall, jeff, resources, guide, quiz };
     (views[page] || home)(arg);
     renderTabs(page || "home");
