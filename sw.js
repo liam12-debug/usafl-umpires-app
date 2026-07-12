@@ -1,6 +1,6 @@
 // USAFL Umpires — service worker. Offline support + installability.
 // Bump CACHE when you change app files so clients pick up the new version.
-const CACHE = "usafl-umps-v2";
+const CACHE = "usafl-umps-v3";
 const SHELL = [
   "./",
   "./index.html",
