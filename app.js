@@ -47,6 +47,8 @@
     download: '<path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19.5h14"/>',
     cloudOff: '<path d="M3 3l18 18M8.5 6.5A6 6 0 0 1 17.6 10 4 4 0 0 1 20 17M17 19H7.5A4.5 4.5 0 0 1 5.6 10.4"/>',
     arrowR: '<path d="M5 12h14M13.5 6.5 19 12l-5.5 5.5"/>',
+    sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/>',
+    moon: '<path d="M20 14.2A8.2 8.2 0 0 1 9.8 4 8.2 8.2 0 1 0 20 14.2Z"/>',
   };
   const icon = (n, cls = "") => `<svg class="i ${cls}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n] || ""}</svg>`;
   const PITCH_ART = '<svg class="pitch" viewBox="0 0 300 230" fill="none" stroke="currentColor" stroke-width="3"><ellipse cx="150" cy="115" rx="140" ry="105"/><ellipse cx="150" cy="115" rx="34" ry="34"/><rect x="128" y="93" width="44" height="44"/><path d="M150 10v210"/><path d="M40 60a70 70 0 0 1 0 110M260 60a70 70 0 0 0 0 110"/></svg>';
@@ -161,6 +163,29 @@
 
   const getMe = () => byId[store.get("usafl.me", null)] || null;
 
+  // ---------- theme (index.html applies it before first paint) ----------
+  const theme = () => document.documentElement.dataset.theme || "light";
+  function applyTheme(t, animate) {
+    const root = document.documentElement;
+    if (animate) { root.classList.add("theming"); setTimeout(() => root.classList.remove("theming"), 400); }
+    root.dataset.theme = t;
+    const meta = document.getElementById("theme-color");
+    if (meta) meta.content = t === "dark" ? "#0e0d0c" : "#f6f5f3";
+  }
+  function toggleTheme(btn) {
+    const next = theme() === "dark" ? "light" : "dark";
+    store.set("usafl.theme", next);
+    applyTheme(next, true);
+    if (btn) {
+      btn.innerHTML = icon(next === "dark" ? "sun" : "moon", "sm anim");
+      btn.setAttribute("aria-label", next === "dark" ? "Switch to light mode" : "Switch to dark mode");
+    }
+  }
+  // Follow the phone's setting until the user picks one.
+  const sysDark = window.matchMedia("(prefers-color-scheme: dark)");
+  const onSys = () => { if (!store.get("usafl.theme", null)) applyTheme(sysDark.matches ? "dark" : "light", true); };
+  if (sysDark.addEventListener) sysDark.addEventListener("change", onSys); else if (sysDark.addListener) sysDark.addListener(onSys);
+
   // ---------- routing ----------
   let tick = null;
   const TABS = [
@@ -243,19 +268,51 @@
     const sh = document.createElement("div");
     sh.className = "sheet";
     sh.setAttribute("role", "dialog");
-    sh.innerHTML = `<div class="grab"></div><div class="sh-head"><h3>${esc(title)}</h3><button class="icon-btn" data-close aria-label="Close">${icon("x", "sm")}</button></div><div class="sh-body">${body}</div>`;
+    sh.innerHTML = `<div class="drag-zone"><div class="grab-hit"><div class="grab"></div></div><div class="sh-head"><h3>${esc(title)}</h3><button class="icon-btn" data-close aria-label="Close">${icon("x", "sm")}</button></div></div><div class="sh-body">${body}</div>`;
     $phone.append(scrim, sh);
     sheetEls = { scrim, sh };
     requestAnimationFrame(() => { scrim.classList.add("on"); sh.classList.add("on"); });
     scrim.addEventListener("click", () => closeSheet());
     sh.querySelector("[data-close]").addEventListener("click", () => closeSheet());
+    dragToClose(sh, scrim);
     if (onMount) onMount(sh);
+  }
+  // Pull the handle/title down to dismiss; follows the finger, closes past a threshold or on a quick flick.
+  function dragToClose(sh, scrim) {
+    const zone = sh.querySelector(".drag-zone");
+    let startY = null, dy = 0, lastY = 0, lastT = 0, vel = 0;
+    zone.addEventListener("pointerdown", (e) => {
+      if (e.target.closest("[data-close]")) return;
+      startY = lastY = e.clientY; lastT = e.timeStamp; dy = 0; vel = 0;
+      sh.style.transition = "none"; scrim.style.transition = "none";
+      zone.setPointerCapture(e.pointerId);
+    });
+    zone.addEventListener("pointermove", (e) => {
+      if (startY == null) return;
+      const raw = e.clientY - startY;
+      dy = raw > 0 ? raw : raw / 6; // resist dragging upward
+      vel = (e.clientY - lastY) / Math.max(1, e.timeStamp - lastT);
+      lastY = e.clientY; lastT = e.timeStamp;
+      sh.style.transform = `translateY(${dy}px)`;
+      scrim.style.opacity = String(Math.max(0, 1 - Math.max(0, dy) / sh.offsetHeight));
+    });
+    const end = () => {
+      if (startY == null) return;
+      startY = null;
+      sh.style.transition = ""; scrim.style.transition = "";
+      if (dy > Math.min(120, sh.offsetHeight * 0.25) || (dy > 20 && vel > 0.5)) closeSheet();
+      else { sh.style.transform = ""; scrim.style.opacity = ""; }
+    };
+    zone.addEventListener("pointerup", end);
+    zone.addEventListener("pointercancel", end);
   }
   function closeSheet(instant) {
     if (!sheetEls) return;
     const { scrim, sh } = sheetEls;
     sheetEls = null;
     if (instant) { scrim.remove(); sh.remove(); return; }
+    // clear any drag offset in the same frame so it animates from where the finger let go
+    sh.style.transform = ""; scrim.style.opacity = "";
     scrim.classList.remove("on"); sh.classList.remove("on");
     setTimeout(() => { scrim.remove(); sh.remove(); }, 450);
   }
@@ -263,12 +320,13 @@
 
   // ---------- shared bits ----------
   function avatar(u, cls = "") { return `<span class="avatar ${u.isAussie ? "oz" : ""} ${cls}">${esc(initials(u))}</span>`; }
+  const CREW_LABEL = { field: "Field", goal: "Goal", boundary: "Boundary", ts: "Timer / scorer" };
   function crewHTML(crew, meId) {
     if (!crew) return "";
-    const rows = ["field", "goal", "boundary", "ts"].filter((r) => crew[r].length).map((r) =>
-      `<div class="cr"><span class="r">${ROLE_SHORT[r]}</span><span>${crew[r].map(({ u, tentative }) =>
-        `<a href="#/u/${u.id}" class="${u.id === meId ? "me" : ""}">${esc(u.id === meId ? "You" : u.name)}${tentative ? " (TBC)" : ""}${u.isAussie ? '<i class="ozd" title="Australian umpire"></i>' : ""}</a>`).join(", ")}</span></div>`);
-    return rows.length ? `<div class="crew">${rows.join("")}</div>` : "";
+    const groups = ["field", "goal", "boundary", "ts"].filter((r) => crew[r].length).map((r) =>
+      `<div class="grp"><div class="rl">${CREW_LABEL[r]}</div><div class="ppl">${crew[r].map(({ u, tentative }) =>
+        `<a class="p ${u.id === meId ? "me" : ""}" href="#/u/${u.id}"><span class="av-xs ${u.isAussie ? "oz" : ""}">${esc(initials(u))}</span><span class="nm">${esc(u.id === meId ? "You" : u.name)}</span>${tentative ? '<span class="tbc">TBC</span>' : ""}</a>`).join("")}</div></div>`);
+    return groups.length ? `<div class="crew">${groups.join("")}</div>` : "";
   }
   function roleTag(s) {
     if (s.type === "duty") return `<span class="tag duty">${esc(s.label)}</span>`;
@@ -344,7 +402,10 @@
     render(`
       <div class="topbar">
         <div class="brand"><img src="icons/icon-192.png" alt="" /><div><div class="b1">USAFL Umpires</div><div class="b2">Nationals ${T.year} · ${esc(T.city)}</div></div></div>
-        <a class="me-btn pressable" href="#/more" aria-label="Profile">${me ? esc(initials(me)) : icon("user", "sm")}</a>
+        <div class="top-actions">
+          <button class="me-btn theme-btn pressable" id="theme" aria-label="${theme() === "dark" ? "Switch to light mode" : "Switch to dark mode"}">${icon(theme() === "dark" ? "sun" : "moon", "sm")}</button>
+          <a class="me-btn pressable" href="#/more" aria-label="Profile">${me ? esc(initials(me)) : icon("user", "sm")}</a>
+        </div>
       </div>
       <div class="greet"><div class="g1">${greet}${me ? `, ${esc(me.firstName)}` : ""}</div></div>
       ${heroHTML(me, up, n)}
@@ -369,6 +430,8 @@
       </div>` : ""}
       <p class="foot-note">Preliminary draft schedule · always confirm at the Big Sheets.<br/>Questions? <a class="link-btn" href="mailto:${esc(T.directorEmail)}">Email Jeff</a></p>
     `);
+    const tb = document.getElementById("theme");
+    tb.addEventListener("click", () => toggleTheme(tb));
     tick = setInterval(() => { if (!sheetEls && $app.scrollTop < 40) home(); }, 60000);
   }
 
@@ -650,7 +713,7 @@
       const mine = meId && ["field", "goal", "boundary", "ts"].some((r) => c[r].some((x) => x.u.id === meId));
       const has = c.field.length + c.goal.length + c.boundary.length + c.ts.length;
       return `<div class="fcard ${mine ? "mine" : ""}">
-        <div class="fn"><b>${f}</b><span>FIELD</span></div>
+        <div class="fh"><span class="fl">Field</span><b>${f}</b>${mine ? '<span class="tag brand">You</span>' : ""}</div>
         ${has ? crewHTML(c, meId) : '<div class="none">No crew assigned</div>'}
       </div>`;
     }).join("")}</div>`;
