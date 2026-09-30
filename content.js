@@ -1,4 +1,4 @@
-// Tournament content: events, procedures, knowledge base, quiz, seed shoutouts.
+// Tournament content: events, procedures, knowledge base, quiz.
 // 2026 Sarasota details marked TBD — edit here as info is confirmed.
 
 window.TOURNAMENT = {
@@ -201,12 +201,4 @@ window.QUIZ = [
   { q: "Boundary accreditation at Nationals requires…", opts: ["One game", "At least two games plus an observation", "Four games", "A written test only"], a: 1, why: "Two games minimum plus an observation — and two games can earn you a D1 grand final." },
   { q: "A free kick occurs but the offended team sweeps the ball forward in space. Best umpiring?", opts: ["Always bring it back", "Call and signal 'play on — advantage' early and decisively", "Wait and see, then decide at the next stoppage", "Ball it up"], a: 1, why: "Advantage must be immediate and clear — if it isn't real, bring it back to the mark." },
   { q: "How many ruckmen may contest a ball-up?", opts: ["As many as want to", "Two — one per team", "Three", "Two per team"], a: 1, why: "One per team; a third player in the contest concedes a free kick." },
-];
-
-// ---- Good Call! seed posts ----------------------------------------------------
-window.SEED_SHOUTOUTS = [
-  { from: "Tara M", to: "Henry Nelson", tag: "🚩", msg: "Flawless flag work on Field 2 all afternoon — didn't miss a touched ball all day.", ts: Date.now() - 1000 * 60 * 60 * 5 },
-  { from: "Anon", to: "The Tent Queens", tag: "👑", msg: "Golf cart water runs in that heat saved at least three of us from cramping. Legends.", ts: Date.now() - 1000 * 60 * 60 * 9 },
-  { from: "Brendan D", to: "Steve Arnott", tag: "🔥", msg: "Back-to-back on Fields 1 and 3 and still sprinting to the contest in the last quarter.", ts: Date.now() - 1000 * 60 * 60 * 22 },
-  { from: "Jeff P", to: "Every first-timer", tag: "🏉", msg: "Huge weekend from the new crew — Nationals debuts everywhere. See you all in 2027.", ts: Date.now() - 1000 * 60 * 60 * 30 },
 ];

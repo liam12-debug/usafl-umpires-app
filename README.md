@@ -1,12 +1,16 @@
 # USAFL Umpires — Nationals 2026 App
 
 An all-in-one mobile web app for umpires at the USAFL National Championships
-(Sarasota, FL · Oct 16–18, 2026). Search your name for your schedule, see who's
-on each field hour by hour, ask the tournament assistant, shout out fellow
-umpires, and study for the rules quiz. Installable to the home screen (PWA) and
-works offline.
+(Sarasota, FL · Oct 16–18, 2026). Pick your name once and the home screen shows
+your next game, field and crew; see who's on every field hour by hour, ask the
+tournament desk, and study for the rules quiz. Installable to the home screen
+(PWA) and works offline.
 
-Pure static HTML/CSS/JS — no build step, no dependencies.
+Pure static HTML/CSS/JS — no build step, no dependencies. Fonts (Barlow
+Condensed, SIL OFL) are bundled in `fonts/`.
+
+**Preview game day:** add `?now=2026-10-17T09:40:00-04:00` to the URL to see the
+app as if it were that moment (sticks for the browser tab's session).
 
 ## Run locally
 
@@ -31,6 +35,7 @@ icons/               ← app icons generated from the USAFLUA logo
 tools/
   parse_schedule.py  ← regenerates data.js from the assignment spreadsheet
   serve.py           ← local dev server
+fonts/               ← bundled Barlow Condensed (display face)
 vercel.json          ← minimal static hosting config
 ```
 
