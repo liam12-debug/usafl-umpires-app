@@ -50,6 +50,9 @@
     arrowR: '<path d="M5 12h14M13.5 6.5 19 12l-5.5 5.5"/>',
     sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/>',
     moon: '<path d="M20 14.2A8.2 8.2 0 0 1 9.8 4 8.2 8.2 0 1 0 20 14.2Z"/>',
+    share: '<path d="M12 14.5V3.5M8 7.5l4-4 4 4"/><path d="M8.5 10.5H7a2 2 0 0 0-2 2V19a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6.5a2 2 0 0 0-2-2h-1.5"/>',
+    plusSq: '<rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8.5v7M8.5 12h7"/>',
+    moreV: '<circle cx="12" cy="5.5" r="1.4" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="12" cy="18.5" r="1.4" fill="currentColor" stroke="none"/>',
   };
   const icon = (n, cls = "") => `<svg class="i ${cls}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n] || ""}</svg>`;
   const PITCH_ART = '<svg class="pitch" viewBox="0 0 300 230" fill="none" stroke="currentColor" stroke-width="3"><ellipse cx="150" cy="115" rx="140" ry="105"/><ellipse cx="150" cy="115" rx="34" ry="34"/><rect x="128" y="93" width="44" height="44"/><path d="M150 10v210"/><path d="M40 60a70 70 0 0 1 0 110M260 60a70 70 0 0 0 0 110"/></svg>';
@@ -182,6 +185,29 @@
       btn.setAttribute("aria-label", next === "dark" ? "Switch to light mode" : "Switch to dark mode");
     }
   }
+  // ---------- install (PWA) — shared by the welcome card and the floating banner ----------
+  const UA = navigator.userAgent || "";
+  const IS_IOS = /iphone|ipad|ipod/i.test(UA) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  const IS_ANDROID = /android/i.test(UA);
+  const isStandalone = () => window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+  let installPrompt = null;
+  window.addEventListener("beforeinstallprompt", (e) => {
+    e.preventDefault();
+    installPrompt = e;
+    document.dispatchEvent(new Event("usafl:installable"));
+  });
+  async function runInstall() {
+    if (!installPrompt) return false;
+    installPrompt.prompt();
+    const { outcome } = await installPrompt.userChoice;
+    installPrompt = null;
+    return outcome === "accepted";
+  }
+  window.addEventListener("appinstalled", () => {
+    store.set("usafl.a2hs.dismissed", true);
+    document.querySelectorAll(".a2hs, #installCard").forEach((el) => el.remove());
+  });
+
   // Follow the phone's setting until the user picks one.
   const sysDark = window.matchMedia("(prefers-color-scheme: dark)");
   const onSys = () => { if (!store.get("usafl.theme", null)) applyTheme(sysDark.matches ? "dark" : "light", true); };
@@ -338,6 +364,29 @@
   // ======================================================================
   // WELCOME (first launch: pick your name)
   // ======================================================================
+  // Permanent "add to home screen" card on the welcome screen, tailored to the phone.
+  function installCardHTML() {
+    if (isStandalone()) return "";
+    const step = (n, ic, html) => `<li><span class="stp">${n}</span><span class="stx">${html}</span><span class="sti">${icon(ic, "sm")}</span></li>`;
+    let body;
+    if (IS_ANDROID && installPrompt) body = `<button class="btn block" data-install>${icon("download", "sm")}Install app</button>`;
+    else if (IS_ANDROID) body = `<ol class="steps">${step(1, "moreV", "Tap the <b>menu</b> in Chrome")}${step(2, "download", "Choose <b>Install app</b>")}</ol>`;
+    else body = `<ol class="steps">${step(1, "share", "Tap <b>Share</b> in Safari")}${step(2, "plusSq", "Choose <b>Add to Home Screen</b>")}</ol>`;
+    return `<div class="install-card" id="installCard">
+      <div class="ic-top"><img src="icons/icon-192.png" alt="" /><div><b>Add to your home screen</b><span>Opens full screen like an app, and works offline at the fields.</span></div></div>
+      ${body}
+    </div>`;
+  }
+  function wireInstallCard() {
+    const b = document.querySelector("#installCard [data-install]");
+    if (b) b.addEventListener("click", async () => { if (await runInstall()) document.getElementById("installCard")?.remove(); });
+  }
+  // Android may offer the install prompt after the page has rendered — upgrade the card to a button.
+  document.addEventListener("usafl:installable", () => {
+    const c = document.getElementById("installCard");
+    if (c) { c.outerHTML = installCardHTML(); wireInstallCard(); }
+  });
+
   function welcome() {
     render(`
       <div class="welcome">
@@ -350,7 +399,10 @@
         <div class="results list plain" id="wres" hidden></div>
         <button class="skip" id="wskip">Browse without choosing</button>
         <p class="small">No login. This just personalises the app on this phone.</p>
+        <div class="spacer"></div>
+        ${installCardHTML()}
       </div>`);
+    wireInstallCard();
     const $q = document.getElementById("wq"), $r = document.getElementById("wres");
     $q.addEventListener("input", () => {
       const q = $q.value.trim().toLowerCase();
@@ -1040,13 +1092,8 @@
   }
 
   function initA2HS() {
-    const standalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
-    if (standalone || store.get("usafl.a2hs.dismissed", false)) return;
-    const ua = navigator.userAgent || "";
-    const isIOS = /iphone|ipad|ipod/i.test(ua);
-    const isAndroid = /android/i.test(ua);
-    if (!isIOS && !isAndroid && !("onbeforeinstallprompt" in window)) return;
-    let deferred = null;
+    if (isStandalone() || store.get("usafl.a2hs.dismissed", false)) return;
+    if (!IS_IOS && !IS_ANDROID && !("onbeforeinstallprompt" in window)) return;
     const bar = document.createElement("div");
     bar.className = "a2hs";
     const show = (mode) => {
@@ -1056,18 +1103,11 @@
         <button class="x" data-x aria-label="Dismiss">${icon("x", "sm")}</button>`;
       bar.querySelector("[data-x]").addEventListener("click", () => { store.set("usafl.a2hs.dismissed", true); bar.remove(); });
       const g = bar.querySelector("[data-go]");
-      if (g) g.addEventListener("click", async () => {
-        if (!deferred) return;
-        deferred.prompt();
-        const { outcome } = await deferred.userChoice;
-        deferred = null;
-        if (outcome === "accepted") bar.remove();
-      });
+      if (g) g.addEventListener("click", async () => { if (await runInstall()) bar.remove(); });
       if (!bar.isConnected) $phone.appendChild(bar);
     };
-    window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); deferred = e; show("android"); });
-    if (isIOS) show("ios");
-    window.addEventListener("appinstalled", () => { store.set("usafl.a2hs.dismissed", true); bar.remove(); });
+    document.addEventListener("usafl:installable", () => { if (!store.get("usafl.a2hs.dismissed", false)) show("android"); });
+    if (installPrompt) show("android"); else if (IS_IOS) show("ios");
   }
 
   buildTabs();
