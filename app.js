@@ -27,6 +27,7 @@
     search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/>',
     chevR: '<path d="m9.5 6 6 6-6 6"/>',
     chevL: '<path d="m14.5 6-6 6 6 6"/>',
+    chevD: '<path d="m6 9.5 6 6 6-6"/>',
     x: '<path d="M17.5 6.5l-11 11M6.5 6.5l11 11"/>',
     pin: '<path d="M12 21s-6.5-5.8-6.5-11A6.5 6.5 0 0 1 18.5 10c0 5.2-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/>',
     clock: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
@@ -432,6 +433,12 @@
     `);
     const tb = document.getElementById("theme");
     tb.addEventListener("click", () => toggleTheme(tb));
+    const hc = $app.querySelector(".hcrew");
+    if (hc) hc.querySelector(".hcrew-head").addEventListener("click", () => {
+      const open = hc.classList.toggle("open");
+      hc.querySelector(".hcrew-head").setAttribute("aria-expanded", String(open));
+      store.set("usafl.heroCrewOpen", open);
+    });
     tick = setInterval(() => { if (!sheetEls && $app.scrollTop < 40) home(); }, 60000);
   }
 
@@ -492,13 +499,24 @@
       <p>Thanks for a huge weekend. Record any changes on the Big Sheets and thank the Tent Queens.</p>
     </section>`;
   }
+  // Collapsible crew on the home card: a one-line summary that expands to the full list.
   function crewRows(c, me) {
     if (!c.crew) return "";
-    const rows = ["field", "goal", "boundary"].map((r) => {
-      const others = c.crew[r].filter((x) => x.u.id !== me.id);
-      return others.length ? `<div class="cr"><span class="r">${ROLE_SHORT[r]}</span><span>${others.map((x) => `<a href="#/u/${x.u.id}">${esc(x.u.name)}</a>`).join(", ")}</span></div>` : "";
-    }).join("");
-    return rows ? `<div class="hero-rule"></div><div class="hero-crew">${rows}</div>` : "";
+    const others = {};
+    ["field", "goal", "boundary", "ts"].forEach((r) => { others[r] = c.crew[r].filter((x) => x.u.id !== me.id); });
+    const people = [].concat(others.field, others.goal, others.boundary, others.ts);
+    if (!people.length) return "";
+    const open = store.get("usafl.heroCrewOpen", false);
+    const shown = people.slice(0, people.length > 4 ? 3 : 4);
+    return `<div class="hero-rule"></div>
+      <div class="hcrew ${open ? "open" : ""}">
+        <button class="hcrew-head" aria-expanded="${open}">
+          <span class="stack">${shown.map(({ u }) => `<span class="av-xs ${u.isAussie ? "oz" : ""}">${esc(initials(u))}</span>`).join("")}${people.length > shown.length ? `<span class="av-xs more">+${people.length - shown.length}</span>` : ""}</span>
+          <span class="lbl">Your crew · ${people.length} other${people.length === 1 ? "" : "s"}</span>
+          ${icon("chevD", "sm chev")}
+        </button>
+        <div class="acc-body"><div class="acc-inner">${crewHTML(others, me.id)}</div></div>
+      </div>`;
   }
 
   // ======================================================================

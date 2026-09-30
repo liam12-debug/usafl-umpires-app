@@ -285,10 +285,23 @@ svg.i.xs { width: 14px; height: 14px; stroke-width: 2; }
 .hero-where .accent { color: var(--brand); }
 .hero-role { font-size: 15px; color: var(--hero-ink-2); margin-top: 4px; }
 .hero-rule { height: 1px; background: var(--hero-line); margin: 18px 0 14px; }
-.hero-crew { display: grid; gap: 8px; }
-.hero-crew .cr { display: flex; gap: 10px; font-size: 14px; }
-.hero-crew .cr .r { width: 70px; flex-shrink: 0; color: var(--hero-ink-2); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; padding-top: 2px; }
-.hero-crew .cr a { color: var(--hero-ink); font-weight: 600; }
+/* collapsible crew inside the (always dark) scoreboard card */
+.hcrew-head { width: 100%; display: flex; align-items: center; gap: 12px; color: var(--hero-ink); text-align: left; padding: 2px 0; }
+.hcrew-head .lbl { flex: 1; min-width: 0; font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hcrew-head .chev { color: var(--hero-ink-2); transition: transform 0.35s var(--spring); }
+.hcrew.open .hcrew-head .chev { transform: rotate(180deg); }
+.hcrew .stack { display: flex; }
+.hcrew .stack .av-xs { box-shadow: 0 0 0 2px var(--hero); }
+.hcrew .stack .av-xs + .av-xs { margin-left: -4px; }
+.hero .av-xs { background: rgba(255, 255, 255, 0.14); color: #fff; }
+.hero .av-xs.oz { background: rgba(76, 195, 138, 0.28); color: #b8f0d2; }
+.hero .av-xs.more { background: rgba(255, 255, 255, 0.24); }
+.hcrew .acc-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.38s var(--spring); }
+.hcrew.open .acc-body { grid-template-rows: 1fr; }
+.hcrew .acc-inner { overflow: hidden; }
+.hero .crew { border-top: none; margin-top: 0; padding-top: 14px; }
+.hero .crew .grp .rl { color: var(--hero-ink-2); }
+.hero .crew .p .nm { color: var(--hero-ink); }
 .hero-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 18px; gap: 12px; }
 .hero-foot .meta { font-size: 13px; color: var(--hero-ink-2); }
 .hero-cta {
@@ -384,7 +397,7 @@ svg.i.xs { width: 14px; height: 14px; stroke-width: 2; }
 .crew .grp .rl { font-size: 11px; font-weight: 700; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
 .crew .ppl { display: grid; grid-template-columns: repeat(auto-fill, minmax(138px, 1fr)); gap: 6px 12px; }
 .crew .p { display: flex; align-items: center; gap: 8px; min-width: 0; font-size: 14px; font-weight: 600; line-height: 1.2; padding: 2px 0; }
-.crew .p .nm { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.crew .p .nm { min-width: 0; overflow-wrap: anywhere; }
 .crew .p .tbc { font-size: 11px; font-weight: 600; color: var(--ink-3); margin-left: 2px; }
 .crew .p.me .nm { color: var(--brand-ink); }
 .av-xs { width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 10.5px; font-weight: 700; letter-spacing: 0.02em; background: var(--brand-soft); color: var(--brand-ink); }
