@@ -1436,7 +1436,7 @@ window.UMPIRES = [
    "goal": 0,
    "boundary": 0,
    "ts": 0,
-   "coach": 2
+   "coach": 3
   },
   "disciplines": [
    "field"
@@ -1457,6 +1457,13 @@ window.UMPIRES = [
     "tentative": false,
     "day": "sat",
     "time": "12pm"
+   },
+   {
+    "type": "coach",
+    "label": "DEstes",
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
    },
    {
     "type": "field",
@@ -1550,7 +1557,7 @@ window.UMPIRES = [
    "goal": 6,
    "boundary": 1,
    "ts": 0,
-   "coach": 3
+   "coach": 2
   },
   "disciplines": [
    "goal"
@@ -1564,8 +1571,8 @@ window.UMPIRES = [
     "time": "9am"
    },
    {
-    "type": "coach",
-    "label": "Jordan",
+    "type": "off",
+    "label": "OFF",
     "tentative": false,
     "day": "sat",
     "time": "10am"
@@ -7700,5 +7707,5 @@ window.UMPIRES = [
   ]
  }
 ];
-window.SLOT_ORDER = [{"day": "sat", "time": "8am"}, {"day": "sat", "time": "9am"}, {"day": "sat", "time": "10am"}, {"day": "sat", "time": "11am"}, {"day": "sat", "time": "12pm"}, {"day": "sat", "time": "1pm"}, {"day": "sat", "time": "2pm"}, {"day": "sat", "time": "3pm"}, {"day": "sat", "time": "4pm"}, {"day": "sat", "time": "5pm"}, {"day": "sun", "time": "8am"}, {"day": "sun", "time": "9am"}, {"day": "sun", "time": "10am"}, {"day": "sun", "time": "11am"}, {"day": "sun", "time": "12pm"}, {"day": "sun", "time": "1pm"}, {"day": "finals", "time": "1pm"}, {"day": "finals", "time": "2pm"}, {"day": "finals", "time": "3pm"}, {"day": "finals", "time": "4:30pm"}];
-window.SCHEDULE_META = {"title": "2025 USAFL Nationals Umpire Assignments - Version 011 - subject to change", "version": "011", "source": "USAFL Umpire Assignments Prelim Oct 10.xlsx", "publishedAt": "2026-10-02T03:31:36Z", "publishId": "2026-10-02T03:31:36Z", "days": ["sat", "sun", "finals"]};
+window.SLOT_ORDER = [{"day":"sat","time":"8am"},{"day":"sat","time":"9am"},{"day":"sat","time":"10am"},{"day":"sat","time":"11am"},{"day":"sat","time":"12pm"},{"day":"sat","time":"1pm"},{"day":"sat","time":"2pm"},{"day":"sat","time":"3pm"},{"day":"sat","time":"4pm"},{"day":"sat","time":"5pm"},{"day":"sun","time":"8am"},{"day":"sun","time":"9am"},{"day":"sun","time":"10am"},{"day":"sun","time":"11am"},{"day":"sun","time":"12pm"},{"day":"sun","time":"1pm"},{"day":"finals","time":"1pm"},{"day":"finals","time":"2pm"},{"day":"finals","time":"3pm"},{"day":"finals","time":"4:30pm"}];
+window.SCHEDULE_META = {"title":"2025 USAFL Nationals Umpire Assignments - Version 011 - subject to change","version":"011","source":"USAFL Umpire Assignments Prelim Oct 10.xlsx + admin edits","publishedAt":"2026-10-02T03:53:24.515Z","publishId":"2026-10-02T03:53:24Z-bzqc","days":["sat","sun","finals"]};
