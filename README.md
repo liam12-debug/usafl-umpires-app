@@ -30,7 +30,10 @@ app.js               ← views, routing, search, quiz, wall, Ask Jeff, install b
 content.js           ← tournament events, knowledge base, quiz, seed data (EDIT THIS for 2026 details)
 data.js              ← GENERATED umpire roster + schedule (do not hand-edit)
 manifest.webmanifest ← PWA manifest (installable app)
-sw.js                ← service worker (offline cache; bump CACHE to force update)
+sw.js                ← service worker (offline cache; data.js/live.json network-first)
+admin.js             ← hidden admin area (#/admin), loaded on demand
+live.json            ← announcement, event-detail edits, admin PIN hash (published from admin)
+vendor/              ← SheetJS spreadsheet reader (Apache-2.0), used only by admin
 icons/               ← app icons generated from the USAFLUA logo
 tools/
   parse_schedule.py  ← regenerates data.js from the assignment spreadsheet
@@ -39,17 +42,36 @@ fonts/               ← bundled Barlow Condensed (display face)
 vercel.json          ← minimal static hosting config
 ```
 
-## Updating the umpire schedule
+## Admin page (update from a phone)
 
-When a new assignment spreadsheet arrives:
+Open `<site>/#/admin` (not linked anywhere in the app) and enter the PIN
+(default `2026` until changed in Admin → Settings). From there you can:
+
+- **Upload new schedule** — pick Jeff's .xlsx on the phone; it's parsed in the
+  browser, you see exactly who changed, then Publish.
+- **Quick-edit assignments** — change a single slot without a spreadsheet.
+- **Announcement** — a banner at the top of everyone's Home screen.
+- **Event details** — fill in venues/times/notes for the Weekend guide.
+- **Version history** — restore any earlier published schedule.
+
+Publishing commits to this GitHub repo using a fine-grained token stored only on
+the admin's phone (Admin → Settings has setup steps: repo-only access,
+Contents: Read and write). Vercel redeploys and the admin page waits until the
+change is live.
+
+Schedule changes go to `data.js`; announcements, event edits and the PIN go to
+`live.json`, which the app re-checks every few minutes.
+
+## Updating the schedule from the command line
 
 ```bash
 python3 tools/parse_schedule.py "path/to/USAFL Umpire Assignments.xlsx" > data.js
 git commit -am "Update schedule" && git push
 ```
 
-Vercel redeploys automatically on push. Installed users pick up changes on next
-open; to force it, bump `CACHE` in `sw.js`.
+The spreadsheet layout is detected (header row by "F Name", time row above it,
+day blocks where times restart). `admin.js` contains the same parser for the
+in-browser upload — keep the two in step if the sheet format changes.
 
 ## Updating 2026 event details
 

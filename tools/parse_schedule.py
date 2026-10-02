@@ -1,144 +1,228 @@
 #!/usr/bin/env python3
-"""Parse the USAFL Nationals umpire assignment spreadsheet into app JSON.
+"""Parse a USAFL Nationals umpire assignment spreadsheet into data.js.
 
-Usage: python3 tools/parse_schedule.py "<path to xlsx>" > app/data.js
-Re-run whenever a new version of the sheet arrives.
+Usage: python3 tools/parse_schedule.py "<path to xlsx>" [--days sat,sun,finals] > data.js
+
+The layout is detected rather than assumed, so new editions still parse:
+  * header row = the row containing "F Name"; name/club/level columns found by their labels
+  * time slots = the row above the header with the most time labels ("8am", "4:30pm", ...)
+  * days = each run of increasing times is one day block (Sat, Sun, Finals by default)
+  * discipline = first letter of the "Now" accreditation (F field, G goal, B boundary)
+
+This mirrors the in-app admin parser (admin.js); keep the two in step.
 """
 import json
 import re
 import sys
+from datetime import datetime, timezone
+
 from openpyxl import load_workbook
 
-XLSX = sys.argv[1] if len(sys.argv) > 1 else "/Users/alison/Desktop/Claude/USAFL Umpire Assignments Prelim Oct 10.xlsx"
-
-# Slot columns 15..34 (1-indexed). Sat 8am-5pm, Sun 8am-1pm, Finals 1pm-4:30pm.
-SLOTS = [
-    ("sat", "8am"), ("sat", "9am"), ("sat", "10am"), ("sat", "11am"), ("sat", "12pm"),
-    ("sat", "1pm"), ("sat", "2pm"), ("sat", "3pm"), ("sat", "4pm"), ("sat", "5pm"),
-    ("sun", "8am"), ("sun", "9am"), ("sun", "10am"), ("sun", "11am"), ("sun", "12pm"), ("sun", "1pm"),
-    ("finals", "1pm"), ("finals", "2pm"), ("finals", "3pm"), ("finals", "4:30pm"),
-]
-
-SECTIONS = [(10, 51, "field"), (52, 72, "goal"), (74, 74, "boundary")]
+TIME_RE = re.compile(r"^\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm)\s*$", re.I)
+DISC = {"F": "field", "G": "goal", "B": "boundary"}
+DEFAULT_DAYS = {1: ["sat"], 2: ["sat", "sun"], 3: ["sat", "sun", "finals"], 4: ["fri", "sat", "sun", "finals"]}
+RANK = {"field": 5, "goal": 5, "boundary": 5, "ts": 5, "coach": 4, "duty": 4,
+        "playing": 3, "watch": 2, "maybe": 1, "other": 2, "personal": 2, "off": 0}
 
 
-def classify(raw):
-    """Turn a raw cell into a structured slot entry."""
-    if raw is None:
-        return None
-    v = str(raw).strip()
+def s(v):
+    return "" if v is None else str(v).strip()
+
+
+def norm(v):
+    return s(v).lower()
+
+
+def tmins(label):
+    m = TIME_RE.match(label)
+    h = int(m.group(1)) % 12 + (12 if m.group(3).lower() == "pm" else 0)
+    return h * 60 + int(m.group(2) or 0)
+
+
+def classify(raw, warn):
+    """Turn a raw cell into a structured slot entry (or None for empty)."""
+    v = s(raw)
     if not v:
         return None
     tentative = "?" in v
     clean = v.replace("?", "").strip().rstrip("/").strip()
     low = clean.lower()
+    T = lambda **kw: {**kw, "tentative": tentative}
 
     if low in ("off", "no games"):
-        return {"type": "off", "label": "OFF", "tentative": tentative}
+        return T(type="off", label="OFF")
     if low in ("personal", "mvl"):
-        return {"type": "personal", "label": "Personal", "tentative": tentative}
+        return T(type="personal", label="Personal")
     if low == "youth":
-        return {"type": "duty", "label": "Youth game", "tentative": tentative}
+        return T(type="duty", label="Youth game")
     if clean.startswith("."):
-        return {"type": "coach", "label": clean[1:].strip(), "tentative": tentative}
+        return T(type="coach", label=clean[1:].strip())
     if low.startswith("f marshall"):
-        return {"type": "duty", "label": "Field Marshall", "tentative": tentative}
-    m = re.match(r"^field\s*(\d)$", low)
-    if m:
-        return {"type": "field", "label": f"Field {m.group(1)}", "field": int(m.group(1)), "tentative": tentative}
-    m = re.match(r"^goal\s*(\d)$", low)
-    if m:
-        return {"type": "goal", "label": f"Field {m.group(1)}", "field": int(m.group(1)), "tentative": tentative}
-    m = re.match(r"^bound\s*(\d)$", low)
-    if m:
-        return {"type": "boundary", "label": f"Field {m.group(1)}", "field": int(m.group(1)), "tentative": tentative}
-    m = re.match(r"^ts\s*(\d)$", low)
-    if m:
-        return {"type": "ts", "label": f"Field {m.group(1)}", "field": int(m.group(1)), "tentative": tentative}
+        return T(type="duty", label="Field Marshall")
+    for pat, typ in ((r"^field\s*(\d+)$", "field"), (r"^goal\s*(\d+)$", "goal"), (r"^bound\s*(\d+)$", "boundary"), (r"^ts\s*(\d+)$", "ts")):
+        m = re.match(pat, low)
+        if m:
+            n = int(m.group(1))
+            return T(type=typ, label=f"Field {n}", field=n)
     if re.search(r"\b(pre|play|post|loser|play in)\b", low):
-        return {"type": "playing", "label": "With club", "tentative": tentative}
+        return T(type="playing", label="With club")
     if "watch" in low:
-        return {"type": "watch", "label": "Watching", "tentative": tentative}
+        return T(type="watch", label="Watching")
     if "coach" in low:
-        return {"type": "coach", "label": "Coaching", "tentative": tentative}
-    if low.startswith("[") or low in ("tba",):
+        return T(type="coach", label="Coaching")
+    if low.startswith("[") or low == "tba":
         return {"type": "maybe", "label": clean.strip("[]"), "tentative": True}
-    return {"type": "other", "label": clean, "tentative": tentative}
+    warn(f"Unrecognised entry '{v}'")
+    return T(type="other", label=clean)
 
 
-def main():
-    wb = load_workbook(XLSX, data_only=True)
-    ws = wb.active
-    people = {}
-    for start, end, section in SECTIONS:
-        for r in range(start, end + 1):
-            first = ws.cell(r, 3).value
-            last = ws.cell(r, 4).value
-            if not first or not last or str(first).strip() == "TBA":
+def parse(path, day_override=None):
+    warnings = []
+    warn = warnings.append
+    ws = load_workbook(path, data_only=True).active
+    maxr, maxc = ws.max_row, ws.max_column
+    cell = lambda r, c: ws.cell(r, c).value
+
+    # header row + labelled columns
+    hdr = next((r for r in range(1, min(maxr, 60) + 1) for c in range(1, min(maxc, 40) + 1) if norm(cell(r, c)) == "f name"), None)
+    if not hdr:
+        raise SystemExit("Couldn't find the header row (a cell reading 'F Name').")
+
+    def col(*labels, rows=(0,)):
+        for dr in rows:
+            for c in range(1, maxc + 1):
+                if norm(cell(hdr + dr, c)) in labels:
+                    return c
+        return None
+
+    C = {
+        "first": col("f name"),
+        "last": col("fi lname", "l name", "last name", "lname"),
+        "men": col("men"),
+        "women": col("women"),
+        "now": col("now"),
+        "try": col("try"),
+        "commit": col("ft/pt", rows=(0, -1, -2)),
+    }
+    for k in ("first", "last", "now"):
+        if not C[k]:
+            raise SystemExit(f"Couldn't find the '{k}' column next to 'F Name'.")
+
+    # time-slot row: the row above the header with the most time labels
+    best = []
+    for r in range(1, hdr):
+        cols = [(c, s(cell(r, c))) for c in range(1, maxc + 1) if TIME_RE.match(s(cell(r, c)))]
+        if len(cols) > len(best):
+            best = cols
+    if len(best) < 2:
+        raise SystemExit("Couldn't find the row of game times (e.g. 8am, 9am …) above the header.")
+
+    # split into day blocks wherever the time stops increasing
+    blocks, prev = [], None
+    for c, label in best:
+        m = tmins(label)
+        if prev is None or m <= prev:
+            blocks.append([])
+        blocks[-1].append((c, re.sub(r"\s+", "", label.lower())))
+        prev = m
+    days = day_override or DEFAULT_DAYS.get(len(blocks))
+    if not days or len(days) != len(blocks):
+        raise SystemExit(f"Found {len(blocks)} day blocks; pass --days to label them (e.g. --days sat,sun,finals).")
+    slot_cols = [(c, d, t) for d, blk in zip(days, blocks) for c, t in blk]
+    slot_order = [{"day": d, "time": t} for _, d, t in slot_cols]
+    order_idx = {(d, t): i for i, (_, d, t) in enumerate(slot_cols)}
+
+    title = next((s(cell(r, c)) for r in range(1, hdr) for c in range(1, maxc + 1) if re.search(r"version|assignments", s(cell(r, c)), re.I)), "")
+    vm = re.search(r"version\s*0*(\d+)", title, re.I)
+
+    people, last_section = {}, None
+    for r in range(hdr + 1, maxr + 1):
+        first, last = s(cell(r, C["first"])), s(cell(r, C["last"]))
+        if not first or not last or first.upper() == "TBA":
+            continue
+        now = s(cell(r, C["now"]))
+        section = DISC.get(now[:1].upper())
+        if not section:
+            if not last_section:
+                warn(f"Row {r} ({first} {last}): no F/G/B level in 'Now'; skipped")
                 continue
-            first = str(first).strip()
-            # "FI LName" column is like "S Arnott" -> drop leading initial
-            last_name = re.sub(r"^[A-Z] ", "", str(last).strip())
-            key = f"{first.lower()}|{last_name.lower()}"
-            club_m = str(ws.cell(r, 5).value or "").strip()
-            club_w = str(ws.cell(r, 6).value or "").strip()
-            now = str(ws.cell(r, 7).value or "").strip()
-            try_ = str(ws.cell(r, 8).value or "").strip()
-            commit = str(ws.cell(r, 9).value or "").strip()
-            counts = {
-                "field": int(ws.cell(r, 10).value or 0),
-                "goal": int(ws.cell(r, 11).value or 0),
-                "boundary": int(ws.cell(r, 12).value or 0),
-                "ts": int(ws.cell(r, 13).value or 0),
-                "coach": int(ws.cell(r, 14).value or 0),
-            }
-            slots = []
-            for i, (day, time) in enumerate(SLOTS):
-                entry = classify(ws.cell(r, 15 + i).value)
-                if entry:
-                    entry["day"] = day
-                    entry["time"] = time
-                    slots.append(entry)
+            section = last_section
+            warn(f"Row {r} ({first} {last}): no F/G/B level in 'Now'; treated as {section}")
+        last_section = section
+        last_name = re.sub(r"^[A-Z] ", "", last)
+        key = f"{first.lower()}|{last_name.lower()}"
+        club_m = s(cell(r, C["men"])) if C["men"] else ""
+        club_w = s(cell(r, C["women"])) if C["women"] else ""
+        try_ = s(cell(r, C["try"])) if C["try"] else ""
+        commit = s(cell(r, C["commit"])) if C["commit"] else ""
+        slots = []
+        for c, d, t in slot_cols:
+            e = classify(cell(r, c), lambda m: warn(f"{first} {last_name}, {d} {t}: {m[0].lower() + m[1:]}"))
+            if e:
+                e["day"], e["time"] = d, t
+                slots.append(e)
 
-            if key in people:
-                p = people[key]
-                p["accreditation"][section] = now
-                if try_ and try_ != "-":
-                    p["try"][section] = try_
-                # merge counts: rows repeat totals per section; take max per discipline
-                for k in counts:
-                    p["counts"][k] = max(p["counts"][k], counts[k])
-                # merge slots: prefer concrete assignments over placeholders
-                by_key = {(s["day"], s["time"]): s for s in p["slots"]}
-                for s in slots:
-                    k2 = (s["day"], s["time"])
-                    cur = by_key.get(k2)
-                    rank = {"field": 5, "goal": 5, "boundary": 5, "ts": 5, "coach": 4, "duty": 4,
-                            "playing": 3, "watch": 2, "maybe": 1, "other": 2, "personal": 2, "off": 0}
-                    if cur is None or rank.get(s["type"], 0) > rank.get(cur["type"], 0):
-                        by_key[k2] = s
-                p["slots"] = sorted(by_key.values(), key=lambda s: SLOTS.index((s["day"], s["time"])))
-                p["disciplines"].append(section)
-            else:
-                people[key] = {
-                    "id": re.sub(r"[^a-z0-9]+", "-", f"{first} {last_name}".lower()).strip("-"),
-                    "firstName": first,
-                    "lastName": last_name,
-                    "name": f"{first} {last_name}",
-                    "club": club_m if club_m and club_m != "N/A" else (club_w if club_w != "N/A" else ""),
-                    "isAussie": club_m.upper() == "OZ" or club_w.upper() == "OZ",
-                    "accreditation": {section: now},
-                    "try": ({section: try_} if try_ and try_ != "-" else {}),
-                    "commitment": commit,
-                    "counts": counts,
-                    "disciplines": [section],
-                    "slots": slots,
-                }
+        if key in people:
+            p = people[key]
+            p["accreditation"][section] = now
+            if try_ and try_ != "-":
+                p["try"][section] = try_
+            by = {(x["day"], x["time"]): x for x in p["slots"]}
+            for e in slots:
+                k2 = (e["day"], e["time"])
+                if k2 not in by or RANK.get(e["type"], 0) > RANK.get(by[k2]["type"], 0):
+                    by[k2] = e
+            p["slots"] = sorted(by.values(), key=lambda x: order_idx[(x["day"], x["time"])])
+            p["disciplines"].append(section)
+        else:
+            people[key] = {
+                "id": re.sub(r"[^a-z0-9]+", "-", f"{first} {last_name}".lower()).strip("-"),
+                "firstName": first,
+                "lastName": last_name,
+                "name": f"{first} {last_name}",
+                "club": club_m if club_m and club_m != "N/A" else (club_w if club_w != "N/A" else ""),
+                "isAussie": club_m.upper() == "OZ" or club_w.upper() == "OZ",
+                "accreditation": {section: now},
+                "try": ({section: try_} if try_ and try_ != "-" else {}),
+                "commitment": commit,
+                "counts": {},
+                "disciplines": [section],
+                "slots": slots,
+            }
+
+    if not people:
+        raise SystemExit("No umpires found below the header row.")
+    for p in people.values():
+        cnt = {k: 0 for k in ("field", "goal", "boundary", "ts", "coach")}
+        for e in p["slots"]:
+            if e["type"] in cnt:
+                cnt[e["type"]] += 1
+        p["counts"] = cnt
+
     roster = sorted(people.values(), key=lambda p: (p["lastName"].lower(), p["firstName"].lower()))
-    print("// Auto-generated by tools/parse_schedule.py — do not edit by hand.")
-    print("window.UMPIRES = " + json.dumps(roster, indent=1) + ";")
-    print("window.SLOT_ORDER = " + json.dumps([{"day": d, "time": t} for d, t in SLOTS]) + ";")
+    now_iso = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    meta = {"title": title, "version": vm.group(1).zfill(3) if vm else "", "source": path.rsplit("/", 1)[-1],
+            "publishedAt": now_iso, "publishId": now_iso, "days": days}
+    return roster, slot_order, meta, warnings
+
+
+def to_js(roster, slot_order, meta):
+    return ("// Auto-generated schedule — published from the admin page or tools/parse_schedule.py. Do not hand-edit.\n"
+            "window.UMPIRES = " + json.dumps(roster, indent=1) + ";\n"
+            "window.SLOT_ORDER = " + json.dumps(slot_order) + ";\n"
+            "window.SCHEDULE_META = " + json.dumps(meta) + ";\n")
 
 
 if __name__ == "__main__":
-    main()
+    args = sys.argv[1:]
+    days = None
+    if "--days" in args:
+        i = args.index("--days")
+        days = args[i + 1].split(",")
+        del args[i:i + 2]
+    path = args[0] if args else "/Users/alison/Desktop/Claude/USAFL Umpire Assignments Prelim Oct 10.xlsx"
+    roster, slot_order, meta, warnings = parse(path, days)
+    sys.stdout.write(to_js(roster, slot_order, meta))
+    print(f"Parsed {len(roster)} umpires · {len(slot_order)} time slots · days {meta['days']} · version {meta['version'] or '—'}", file=sys.stderr)
+    for w in warnings:
+        print("  warning:", w, file=sys.stderr)

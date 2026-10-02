@@ -1,6 +1,6 @@
 // USAFL Umpires — service worker. Offline support + installability.
 // Bump CACHE when you change app files so clients pick up the new version.
-const CACHE = "usafl-umps-v8";
+const CACHE = "usafl-umps-v9";
 const SHELL = [
   "./fonts/barlow-condensed-600.woff2",
   "./fonts/barlow-condensed-700.woff2",
@@ -31,10 +31,23 @@ self.addEventListener("activate", (e) => {
   );
 });
 
-// Stale-while-revalidate for same-origin GETs: instant load, refresh in background.
+// Schedule + live updates: network first (fresh after a publish), cache as offline fallback.
+// Everything else: stale-while-revalidate for instant loads.
+const FRESH = ["/data.js", "/live.json"];
 self.addEventListener("fetch", (e) => {
   const req = e.request;
-  if (req.method !== "GET" || new URL(req.url).origin !== location.origin) return;
+  const url = new URL(req.url);
+  if (req.method !== "GET" || url.origin !== location.origin) return;
+  if (url.search && req.mode !== "navigate") return; // cache-busted checks go straight to the network
+  if (FRESH.includes(url.pathname)) {
+    e.respondWith(
+      caches.open(CACHE).then((cache) =>
+        fetch(req).then((res) => { if (res && res.status === 200) cache.put(req, res.clone()); return res; })
+          .catch(() => cache.match(req))
+      )
+    );
+    return;
+  }
   e.respondWith(
     caches.open(CACHE).then((cache) =>
       cache.match(req).then((cached) => {

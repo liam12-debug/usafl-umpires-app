@@ -52,6 +52,16 @@
     moon: '<path d="M20 14.2A8.2 8.2 0 0 1 9.8 4 8.2 8.2 0 1 0 20 14.2Z"/>',
     share: '<path d="M12 14.5V3.5M8 7.5l4-4 4 4"/><path d="M8.5 10.5H7a2 2 0 0 0-2 2V19a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6.5a2 2 0 0 0-2-2h-1.5"/>',
     plusSq: '<rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8.5v7M8.5 12h7"/>',
+    megaphone: '<path d="M4 10v4a1 1 0 0 0 1 1h2l5 4V5L7 9H5a1 1 0 0 0-1 1Z"/><path d="M16 9.5a3.5 3.5 0 0 1 0 5M18.5 7a7 7 0 0 1 0 10"/>',
+    alert: '<path d="M12 3.5 21.5 20h-19L12 3.5Z"/><path d="M12 10v4.5M12 17.2v.1"/>',
+    lock: '<rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/>',
+    upload: '<path d="M12 15V4M7.5 8.5 12 4l4.5 4.5M5 19.5h14"/>',
+    edit: '<path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4Z"/><path d="m13.5 6.5 4 4"/>',
+    history: '<path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4l3 2"/>',
+    gear: '<circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M2.5 12h3M18.5 12h3M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1"/>',
+    key: '<circle cx="8" cy="15" r="4"/><path d="m11 12 8.5-8.5M16 7l2.5 2.5M14 9l2 2"/>',
+    trash: '<path d="M4.5 7h15M9.5 7V4.5h5V7M6.5 7l1 13h9l1-13"/>',
+    plus: '<path d="M12 5v14M5 12h14"/>',
     moreV: '<circle cx="12" cy="5.5" r="1.4" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="12" cy="18.5" r="1.4" fill="currentColor" stroke="none"/>',
   };
   const icon = (n, cls = "") => `<svg class="i ${cls}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n] || ""}</svg>`;
@@ -59,9 +69,12 @@
 
   // ---------- time ----------
   // Sarasota is on EDT (UTC-4) during the tournament.
-  const DAY_DATE = { sat: [2026, 9, 17], sun: [2026, 9, 18], finals: [2026, 9, 18] };
-  const DAY_SHORT = { sat: "Sat", sun: "Sun", finals: "Finals" };
-  const DAY_LONG = { sat: "Saturday", sun: "Sunday", finals: "Finals" };
+  const DAY_DATE = { fri: [2026, 9, 16], sat: [2026, 9, 17], sun: [2026, 9, 18], finals: [2026, 9, 18] };
+  const DAY_SHORT = { fri: "Fri", sat: "Sat", sun: "Sun", finals: "Finals" };
+  const DAY_LONG = { fri: "Friday", sat: "Saturday", sun: "Sunday", finals: "Finals" };
+  const SCHED_DAYS = [...new Set(SLOT_ORDER.map((s) => s.day))];
+  const META = window.SCHEDULE_META || {};
+  const SCHED_LABEL = META.version ? `Draft v${META.version}` : "Draft schedule";
   const MONTHS = { jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5, jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11 };
   const GAME_MIN = 55;
 
@@ -185,6 +198,52 @@
       btn.setAttribute("aria-label", next === "dark" ? "Switch to light mode" : "Switch to dark mode");
     }
   }
+  // ---------- live updates (announcement + event edits) published from the admin page ----------
+  // live.json is re-checked every few minutes; the last copy is kept for offline use.
+  const BASE_EVENTS = window.EVENTS;
+  let LIVE = store.get("usafl.live", null) || { announcement: null, events: null, pinHash: null, publishId: null };
+  function applyLive(j, rerender) {
+    const changed = j.publishId !== LIVE.publishId;
+    LIVE = j;
+    store.set("usafl.live", j);
+    window.EVENTS = Array.isArray(j.events) && j.events.length ? j.events : BASE_EVENTS;
+    if (changed && rerender && !sheetEls) {
+      const page = location.hash.replace(/^#\/?/, "").split("/")[0];
+      if (page === "" || page === "home") home();
+      else if (page === "guide") guide();
+    }
+    announceToast();
+  }
+  async function loadLive(rerender) {
+    try {
+      const r = await fetch("live.json?t=" + Date.now(), { cache: "no-store" });
+      if (r.ok) applyLive(await r.json(), rerender);
+    } catch {}
+  }
+  window.EVENTS = Array.isArray(LIVE.events) && LIVE.events.length ? LIVE.events : BASE_EVENTS;
+
+  function announceHTML() {
+    const a = LIVE.announcement;
+    if (!a || !a.text) return "";
+    const when = a.postedAt ? new Date(a.postedAt).toLocaleString(undefined, { weekday: "short", hour: "numeric", minute: "2-digit" }) : "";
+    return `<div class="announce ${a.urgent ? "urgent" : ""}">${icon(a.urgent ? "alert" : "megaphone", "sm")}<div><b>${a.urgent ? "Urgent" : "Announcement"}${when ? ` · ${esc(when)}` : ""}</b><span>${esc(a.text)}</span></div></div>`;
+  }
+  // New announcement while the app is open on another screen: slide a banner down from the top.
+  function announceToast() {
+    const a = LIVE.announcement;
+    if (!a || !a.text || store.get("usafl.annSeen", null) === a.id) return;
+    const page = location.hash.replace(/^#\/?/, "").split("/")[0];
+    if (page === "" || page === "home" || page === "welcome" || page === "admin") { store.set("usafl.annSeen", a.id); return; }
+    document.querySelector(".ann-toast")?.remove();
+    const t = document.createElement("button");
+    t.className = "ann-toast";
+    t.innerHTML = announceHTML();
+    t.addEventListener("click", () => { t.classList.remove("on"); setTimeout(() => t.remove(), 400); });
+    $phone.appendChild(t);
+    requestAnimationFrame(() => t.classList.add("on"));
+    store.set("usafl.annSeen", a.id);
+  }
+
   // ---------- install (PWA) — shared by the welcome card and the floating banner ----------
   const UA = navigator.userAgent || "";
   const IS_IOS = /iphone|ipad|ipod/i.test(UA) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
@@ -225,13 +284,14 @@
   const TAB_OF = { home: 0, "": 0, schedule: 1, umpires: 1, u: 1, fields: 2, jeff: 3, more: 4, guide: 4, quiz: 4 };
 
   function route() {
-    const [page = "", arg] = location.hash.replace(/^#\/?/, "").split("/");
+    const [page = "", ...rest] = location.hash.replace(/^#\/?/, "").split("/");
+    const arg = rest.join("/");
     clearInterval(tick);
     closeSheet(true);
     if ((page === "" || page === "home") && !getMe() && !store.get("usafl.skipWelcome", false)) { location.replace("#/welcome"); return; }
-    const views = { "": home, home, schedule, umpires, u: umpire, fields, jeff, more, guide, quiz, welcome };
-    $phone.classList.toggle("no-tabs", page === "welcome");
-    (views[page] || home)(arg ? decodeURIComponent(arg) : undefined);
+    const views = { "": home, home, schedule, umpires, u: umpire, fields, jeff, more, guide, quiz, welcome, admin };
+    $phone.classList.toggle("no-tabs", page === "welcome" || page === "admin");
+    (views[page] || home)(arg ? (page === "admin" ? arg : decodeURIComponent(arg)) : undefined);
     $app.scrollTop = 0;
     animateIn();
     setTab(TAB_OF[page] ?? 0);
@@ -240,6 +300,21 @@
   window.addEventListener("hashchange", route);
 
   function render(html) { $app.innerHTML = `<div class="view">${html}</div>`; }
+
+  // Hidden admin area (#/admin). Its code lives in admin.js and only loads when opened.
+  let adminScript = null;
+  function admin(sub) {
+    if (window.USAFL_ADMIN) return window.USAFL_ADMIN(sub);
+    render(`<div class="empty"><div class="e-i">${icon("lock")}</div><b>Loading admin…</b></div>`);
+    adminScript = adminScript || new Promise((res, rej) => {
+      const s = document.createElement("script");
+      s.src = "admin.js";
+      s.onload = res; s.onerror = rej;
+      document.body.appendChild(s);
+    });
+    adminScript.then(() => { if (location.hash.startsWith("#/admin")) { window.USAFL_ADMIN(sub); animateIn(); } })
+      .catch(() => { adminScript = null; render(empty("cloudOff", "Couldn't load admin", "Check your connection and try again.")); });
+  }
   // Number the children of every .stagger group so they cascade in (only animates inside .view-in).
   function staggerIn(root) {
     root.querySelectorAll(".stagger").forEach((g) => [...g.children].forEach((c, i) => c.style.setProperty("--i", Math.min(i, 14))));
@@ -461,6 +536,7 @@
         </div>
       </div>
       <div class="greet"><div class="g1">${greet}${me ? `, ${esc(me.firstName)}` : ""}</div></div>
+      ${announceHTML()}
       ${heroHTML(me, up, n)}
       ${hasChanges ? `<a class="notice pressable" href="#/schedule">${icon("info", "sm")}<span class="grow">Your schedule changed since you last checked.</span>${icon("chevR", "sm")}</a>` : ""}
       ${strip}
@@ -585,7 +661,7 @@
     const u = byId[id];
     if (!u) return go("#/umpires");
     const me = getMe(), isMe = me && me.id === u.id, n = now();
-    const days = ["sat", "sun", "finals"];
+    const days = SCHED_DAYS;
     const today = n >= new Date(Date.UTC(2026, 9, 18, 4)) ? "sun" : "sat";
     const day = dayPick[u.id] || today;
     const ch = isMe ? changes(u) : { changed: new Set() };
@@ -598,7 +674,7 @@
 
     render(`
       ${asMine ? `
-        <div class="head"><div><h1 class="page-title">My games</h1><div class="sub">Draft v011 · subject to change</div></div>
+        <div class="head"><div><h1 class="page-title">My games</h1><div class="sub">${esc(SCHED_LABEL)} · subject to change</div></div>
           <div class="head-actions"><a class="icon-btn pressable" href="#/umpires" aria-label="All umpires">${icon("users", "sm")}</a></div></div>`
       : `<button class="back" onclick="history.length > 1 ? history.back() : location.hash='#/umpires'">${icon("chevL", "sm")}Back</button>`}
       <div class="profile">
@@ -750,7 +826,7 @@
     if (!times.includes(fb.time)) fb.time = times[0];
     render(`
       <div class="head"><div><h1 class="page-title">Field board</h1><div class="sub">Who's on every field, each hour</div></div></div>
-      ${seg("fday", ["sat", "sun", "finals"].map((d) => ({ v: d, label: DAY_LONG[d] })), fb.day)}
+      ${seg("fday", SCHED_DAYS.map((d) => ({ v: d, label: DAY_LONG[d] || d })), fb.day)}
       <div class="hours" id="hours">${times.map((t) => {
         const live = isLive({ day: fb.day, time: t }, n);
         return `<button class="hour ${t === fb.time ? "on" : ""}" data-t="${t}"><b>${tShort(t)}</b><span>${live ? '<i class="live-dot"></i>LIVE' : tAp(t)}</span></button>`;
@@ -893,7 +969,7 @@
         ${row("https://aussierulesusa.com", "ext", "USAFL", "aussierulesusa.com", true)}
         ${row("https://usaflua.org.au", "ext", "USAFL Umpires Association", "usaflua.org.au", true)}
       </div>
-      <p class="foot-note">Schedule: preliminary draft v011 · subject to change.<br/>Always confirm at the Big Sheets in Umpire Central.</p>
+      <p class="foot-note">Schedule: ${esc(SCHED_LABEL.toLowerCase())} · subject to change${META.publishedAt ? ` · updated ${esc(new Date(META.publishedAt).toLocaleDateString(undefined, { month: "short", day: "numeric" }))}` : ""}.<br/>Always confirm at the Big Sheets in Umpire Central.</p>
     `);
     const sw = document.getElementById("switch");
     if (sw) sw.addEventListener("click", () => { store.del("usafl.me"); store.del("usafl.skipWelcome"); go("#/welcome"); });
@@ -1110,8 +1186,19 @@
     if (installPrompt) show("android"); else if (IS_IOS) show("ios");
   }
 
+  // Shared helpers for admin.js
+  window.USAFL = {
+    icon, esc, store, render, animateIn, staggerIn, openSheet, closeSheet, go, seg, wireSeg, empty, avatar, initials,
+    UMPIRES, SLOT_ORDER, META, DAY_SHORT, DAY_LONG, ROLE, BASE_EVENTS, tFull,
+    getLive: () => LIVE, applyLive: (j) => applyLive(j, false),
+    $app, $phone,
+  };
+
   buildTabs();
   route();
+  loadLive(true);
+  setInterval(() => { if (!document.hidden) loadLive(true); }, 3 * 60 * 1000);
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) loadLive(true); });
   initOffline();
   initA2HS();
 })();
