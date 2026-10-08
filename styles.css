@@ -722,3 +722,17 @@ svg.i.xs { width: 14px; height: 14px; stroke-width: 2; }
 .pmsg { font-size: 14px; color: var(--ink-2); line-height: 1.5; margin: 8px 0 14px; }
 .pmsg.bad { color: var(--bad); font-weight: 600; }
 @keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------- studio credit (Home + More footer) ---------- */
+.made-by {
+  display: block; margin-top: 18px; padding: 18px 20px 20px; border-radius: 24px;
+  background: var(--hero); color: var(--hero-ink); box-shadow: var(--shadow);
+}
+[data-theme="dark"] .made-by { border: 1px solid var(--line-2); }
+.made-by .mb-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.made-by .eyebrow { color: var(--hero-ink-2); }
+.made-by img { height: 30px; width: auto; display: block; }
+.made-by p { font-size: 15px; line-height: 1.5; color: rgba(255, 255, 255, 0.82); max-width: 34ch; }
+.made-by .mb-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-weight: 650; font-size: 15px; }
+.made-by .mb-link svg { color: var(--brand); transition: transform 0.25s var(--ease); }
+.made-by:active .mb-link svg { transform: translateX(3px); }

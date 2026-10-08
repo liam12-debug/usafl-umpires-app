@@ -434,6 +434,14 @@
     if (s.type === "duty") return `<span class="tag duty">${esc(s.label)}</span>`;
     return `<span class="tag ${s.type === "field" ? "brand" : s.type}">${ROLE[s.type]}</span>`;
   }
+  // Studio credit at the foot of Home and More.
+  function madeBy() {
+    return `<a class="made-by pressable" href="https://outsetdigital.com.au" target="_blank" rel="noopener">
+      <div class="mb-top"><span class="eyebrow">Designed & built by</span><img src="icons/outset-logo-white.png" alt="Outset" width="104" height="32" /></div>
+      <p>Websites, apps and branding for businesses that want to look the part. Like this one.</p>
+      <span class="mb-link">outsetdigital.com.au${icon("chevR", "xs")}</span>
+    </a>`;
+  }
   function empty(ic, title, text) { return `<div class="empty"><div class="e-i">${icon(ic)}</div><b>${esc(title)}</b>${esc(text)}</div>`; }
 
   // ======================================================================
@@ -558,6 +566,7 @@
         </a>
       </div>` : ""}
       <p class="foot-note">Preliminary draft schedule · always confirm at the Big Sheets.<br/>Questions? <a class="link-btn" href="mailto:${esc(T.directorEmail)}">Email Jeff</a></p>
+      ${madeBy()}
     `);
     const tb = document.getElementById("theme");
     tb.addEventListener("click", () => toggleTheme(tb));
@@ -970,6 +979,7 @@
         ${row("https://usaflua.org.au", "ext", "USAFL Umpires Association", "usaflua.org.au", true)}
       </div>
       <p class="foot-note">Schedule: ${esc(SCHED_LABEL.toLowerCase())} · subject to change${META.publishedAt ? ` · updated ${esc(new Date(META.publishedAt).toLocaleDateString(undefined, { month: "short", day: "numeric" }))}` : ""}.<br/>Always confirm at the Big Sheets in Umpire Central.</p>
+      ${madeBy()}
     `);
     const sw = document.getElementById("switch");
     if (sw) sw.addEventListener("click", () => { store.del("usafl.me"); store.del("usafl.skipWelcome"); go("#/welcome"); });
