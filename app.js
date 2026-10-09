@@ -62,6 +62,7 @@
     key: '<circle cx="8" cy="15" r="4"/><path d="m11 12 8.5-8.5M16 7l2.5 2.5M14 9l2 2"/>',
     trash: '<path d="M4.5 7h15M9.5 7V4.5h5V7M6.5 7l1 13h9l1-13"/>',
     plus: '<path d="M12 5v14M5 12h14"/>',
+    link: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 1 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 1 0 5.7 5.7l1-1"/>',
     flag: '<path d="M5.5 21V4M5.5 4h12l-2.5 4.5 2.5 4.5h-12"/>',
     moreV: '<circle cx="12" cy="5.5" r="1.4" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="12" cy="18.5" r="1.4" fill="currentColor" stroke="none"/>',
   };
@@ -250,6 +251,86 @@
   const IS_IOS = /iphone|ipad|ipod/i.test(UA) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
   const IS_ANDROID = /android/i.test(UA);
   const isStandalone = () => window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+
+  // In-app browsers (Instagram link in bio, Facebook, TikTok…) can't add to the home screen.
+  // ?inapp=instagram forces the prompt for previewing.
+  const IN_APP = (() => {
+    let forced = null;
+    try { forced = new URLSearchParams(location.search).get("inapp"); } catch {}
+    if (forced) return forced.charAt(0).toUpperCase() + forced.slice(1);
+    const ua = navigator.userAgent || "";
+    const apps = [
+      ["Instagram", /Instagram/i], ["Messenger", /Messenger|FB_IAB\/MESSENGER/i], ["Facebook", /FBAN|FBAV|FB_IAB|FBIOS/i],
+      ["Threads", /Barcelona/i], ["TikTok", /TikTok|musical_ly|BytedanceWebview/i], ["LinkedIn", /LinkedInApp/i],
+      ["Snapchat", /Snapchat/i], ["X", /Twitter/i],
+    ];
+    const hit = apps.find(([, re]) => re.test(ua));
+    if (hit) return hit[0];
+    if (IS_ANDROID && /; wv\)/.test(ua)) return "this app"; // generic Android webview
+    return null;
+  })();
+  const BROWSER = IS_ANDROID ? "Chrome" : "Safari";
+  const cleanURL = () => location.origin + location.pathname; // drop ?inapp and #route
+  function openInBrowser() {
+    const url = cleanURL();
+    if (IS_ANDROID) {
+      const u = new URL(url);
+      location.href = `intent://${u.host}${u.pathname}#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=${encodeURIComponent(url)};end`;
+    } else {
+      location.href = "x-safari-" + url; // iOS 17+: x-safari-https://… opens Safari
+    }
+  }
+  function inAppSteps() {
+    const step = (n, ic, html) => `<li><span class="stp">${n}</span><span class="stx">${html}</span><span class="sti">${icon(ic, "sm")}</span></li>`;
+    return IS_ANDROID
+      ? `<ol class="steps">${step(1, "moreV", "Tap <b>⋮</b> at the top right")}${step(2, "ext", "Choose <b>Open in Chrome</b>")}</ol>`
+      : `<ol class="steps">${step(1, "more", "Tap <b>•••</b> (usually top right)")}${step(2, "ext", "Choose <b>Open in external browser</b>")}</ol>`;
+  }
+  async function copyLink(btn) {
+    const url = cleanURL();
+    let ok = false;
+    try { await navigator.clipboard.writeText(url); ok = true; } catch {}
+    if (!ok) {
+      const t = document.createElement("textarea");
+      t.value = url; t.setAttribute("readonly", ""); t.style.position = "absolute"; t.style.left = "-9999px";
+      document.body.appendChild(t); t.select();
+      try { ok = document.execCommand("copy"); } catch {}
+      t.remove();
+    }
+    if (btn) { const old = btn.innerHTML; btn.innerHTML = ok ? `${icon("check", "sm")}Copied — paste in ${BROWSER}` : `Copy failed — use the steps above`; setTimeout(() => (btn.innerHTML = old), 2500); }
+  }
+  // Bottom sheet shown once per session inside an in-app browser. Not tied to routing, so it survives navigation.
+  function initInAppPrompt() {
+    if (!IN_APP || isStandalone()) return;
+    try { if (sessionStorage.getItem("usafl.inapp.later")) return; } catch {}
+    const scrim = document.createElement("div");
+    scrim.className = "scrim inapp-scrim";
+    const sh = document.createElement("div");
+    sh.className = "sheet inapp";
+    sh.setAttribute("role", "dialog");
+    sh.setAttribute("aria-label", `Open in ${BROWSER}`);
+    sh.innerHTML = `<div class="grab-hit"><div class="grab"></div></div><div class="sh-body">
+      <img class="inapp-logo" src="icons/icon-192.png" alt="" />
+      <h3 class="inapp-t">Open in ${BROWSER} to get the app</h3>
+      <p class="inapp-p">You're viewing this inside ${esc(IN_APP)}, which can't add apps to your home screen. Open it in ${BROWSER}, then add it from there.</p>
+      <button class="btn block" data-open>${icon("ext", "sm")}Open in ${BROWSER}</button>
+      <div class="eyebrow inapp-or">If nothing happens</div>
+      ${inAppSteps()}
+      <button class="btn ghost block" data-copy style="margin-top:10px">${icon("link", "sm")}Copy link</button>
+      <button class="skip" data-later>Continue in ${esc(IN_APP)}</button>
+    </div>`;
+    $phone.append(scrim, sh);
+    requestAnimationFrame(() => { scrim.classList.add("on"); sh.classList.add("on"); });
+    const close = () => {
+      try { sessionStorage.setItem("usafl.inapp.later", "1"); } catch {}
+      scrim.classList.remove("on"); sh.classList.remove("on");
+      setTimeout(() => { scrim.remove(); sh.remove(); }, 450);
+    };
+    sh.querySelector("[data-open]").addEventListener("click", openInBrowser);
+    sh.querySelector("[data-copy]").addEventListener("click", (e) => copyLink(e.currentTarget));
+    sh.querySelector("[data-later]").addEventListener("click", close);
+    scrim.addEventListener("click", close);
+  }
   let installPrompt = null;
   window.addEventListener("beforeinstallprompt", (e) => {
     e.preventDefault();
@@ -471,6 +552,14 @@
   // Permanent "add to home screen" card on the welcome screen, tailored to the phone.
   function installCardHTML() {
     if (isStandalone()) return "";
+    if (IN_APP) {
+      return `<div class="install-card" id="installCard">
+        <div class="ic-top"><img src="icons/icon-192.png" alt="" /><div><b>Open in ${BROWSER} to get the app</b><span>${esc(IN_APP)} can't add apps to your home screen. Open this page in ${BROWSER} first.</span></div></div>
+        <button class="btn block" data-open>${icon("ext", "sm")}Open in ${BROWSER}</button>
+        <div class="eyebrow inapp-or">If nothing happens</div>
+        ${inAppSteps()}
+      </div>`;
+    }
     const step = (n, ic, html) => `<li><span class="stp">${n}</span><span class="stx">${html}</span><span class="sti">${icon(ic, "sm")}</span></li>`;
     let body;
     if (IS_ANDROID && installPrompt) body = `<button class="btn block" data-install>${icon("download", "sm")}Install app</button>`;
@@ -482,6 +571,8 @@
     </div>`;
   }
   function wireInstallCard() {
+    const o = document.querySelector("#installCard [data-open]");
+    if (o) o.addEventListener("click", openInBrowser);
     const b = document.querySelector("#installCard [data-install]");
     if (b) b.addEventListener("click", async () => { if (await runInstall()) document.getElementById("installCard")?.remove(); });
   }
@@ -1208,7 +1299,7 @@
   }
 
   function initA2HS() {
-    if (isStandalone() || store.get("usafl.a2hs.dismissed", false)) return;
+    if (IN_APP || isStandalone() || store.get("usafl.a2hs.dismissed", false)) return; // in-app browsers get the open-in-browser prompt instead
     if (!IS_IOS && !IS_ANDROID && !("onbeforeinstallprompt" in window)) return;
     const bar = document.createElement("div");
     bar.className = "a2hs";
@@ -1249,4 +1340,5 @@
   document.addEventListener("visibilitychange", () => { if (!document.hidden) loadLive(true); });
   initOffline();
   initA2HS();
+  initInAppPrompt();
 })();

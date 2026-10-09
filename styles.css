@@ -765,3 +765,13 @@ svg.i.xs { width: 14px; height: 14px; stroke-width: 2; }
 .match .tag.comp { font-family: var(--display); font-weight: 800; font-size: 13px; letter-spacing: 0.04em; }
 .match .tag.comp.w { background: var(--brand-soft); color: var(--brand-ink); }
 .hero .match .tag.comp.w { background: rgba(241, 88, 34, 0.28); color: #ffd2bf; }
+
+/* ---------- in-app browser prompt (Instagram link in bio etc.) ---------- */
+.inapp .sh-body { padding: 4px 22px 6px; text-align: center; }
+.inapp-logo { width: 64px; height: 64px; border-radius: 18px; display: block; margin: 6px auto 14px; box-shadow: var(--shadow); }
+.inapp-t { font-family: var(--display); font-weight: 800; font-size: 30px; line-height: 0.95; text-transform: uppercase; text-wrap: balance; }
+.inapp-p { font-size: 15px; color: var(--ink-2); line-height: 1.5; margin: 10px auto 18px; max-width: 32ch; }
+.inapp-or { margin: 18px 2px 8px; text-align: left; }
+.inapp .steps, .install-card .steps { text-align: left; }
+.inapp .skip { display: block; margin: 8px auto 0; font-size: 15px; font-weight: 600; color: var(--ink-2); padding: 12px; }
+.install-card .inapp-or { margin-top: 14px; }
