@@ -270,21 +270,35 @@
     return null;
   })();
   const BROWSER = IS_ANDROID ? "Chrome" : "Safari";
+  // Arrived from the in-app "Open in Safari/Chrome" button: show the add-to-home steps straight away.
+  const CAME_TO_INSTALL = (() => {
+    try {
+      const q = new URLSearchParams(location.search);
+      if (q.get("install") !== "1") return false;
+      q.delete("install");
+      history.replaceState(null, "", location.pathname + (q.toString() ? "?" + q : "") + location.hash);
+      return true;
+    } catch { return false; }
+  })();
   const cleanURL = () => location.origin + location.pathname; // drop ?inapp and #route
-  function openInBrowser() {
-    const url = cleanURL();
-    if (IS_ANDROID) {
-      const u = new URL(url);
-      location.href = `intent://${u.host}${u.pathname}#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=${encodeURIComponent(url)};end`;
-    } else {
-      location.href = "x-safari-" + url; // iOS 17+: x-safari-https://… opens Safari
-    }
-  }
+  // Real <a href> links (in-app browsers only hand off link taps, not script navigations).
+  // ?install=1 makes the add-to-home-screen steps appear as soon as the page lands in the browser.
+  //   Instagram (iOS): its own extbrowser link → "open outside Instagram?" sheet → Safari
+  //     (it ignores x-safari-https:// since mid-2025)
+  //   Other iOS apps: x-safari-https:// opens Safari on iOS 17+
+  //   Android: intent link hands the page to Chrome, falling back to the site
+  const INSTALL_URL = `https://${location.host}/?install=1`;
+  const OPEN_LINK = IS_ANDROID
+    ? `intent://${location.host}/?install=1#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=${encodeURIComponent(INSTALL_URL)};end`
+    : IN_APP === "Instagram"
+      ? `instagram://extbrowser/?url=${encodeURIComponent(INSTALL_URL)}`
+      : `x-safari-${INSTALL_URL}`;
+  const openButton = () => `<a class="btn block" href="${esc(OPEN_LINK)}">${icon("ext", "sm")}Open in ${BROWSER}</a>`;
   function inAppSteps() {
     const step = (n, ic, html) => `<li><span class="stp">${n}</span><span class="stx">${html}</span><span class="sti">${icon(ic, "sm")}</span></li>`;
     return IS_ANDROID
       ? `<ol class="steps">${step(1, "moreV", "Tap <b>⋮</b> at the top right")}${step(2, "ext", "Choose <b>Open in Chrome</b>")}</ol>`
-      : `<ol class="steps">${step(1, "more", "Tap <b>•••</b> (usually top right)")}${step(2, "ext", "Choose <b>Open in external browser</b>")}</ol>`;
+      : `<ol class="steps">${step(1, "more", "Tap <b>•••</b> at the top right")}${step(2, "ext", "Choose <b>Open in external browser</b>")}</ol>`;
   }
   async function copyLink(btn) {
     const url = cleanURL();
@@ -312,11 +326,11 @@
     sh.innerHTML = `<div class="grab-hit"><div class="grab"></div></div><div class="sh-body">
       <img class="inapp-logo" src="icons/icon-192.png" alt="" />
       <h3 class="inapp-t">Open in ${BROWSER} to get the app</h3>
-      <p class="inapp-p">You're viewing this inside ${esc(IN_APP)}, which can't add apps to your home screen. Open it in ${BROWSER}, then add it from there.</p>
-      <button class="btn block" data-open>${icon("ext", "sm")}Open in ${BROWSER}</button>
+      <p class="inapp-p">You're viewing this inside ${esc(IN_APP)}, which can't add apps to your home screen. One tap moves you across to ${BROWSER}.</p>
+      ${openButton()}
       <div class="eyebrow inapp-or">If nothing happens</div>
       ${inAppSteps()}
-      <button class="btn ghost block" data-copy style="margin-top:10px">${icon("link", "sm")}Copy link</button>
+      <button class="btn ghost block" data-copy style="margin-top:10px">${icon("link", "sm")}Copy link to paste in ${BROWSER}</button>
       <button class="skip" data-later>Continue in ${esc(IN_APP)}</button>
     </div>`;
     $phone.append(scrim, sh);
@@ -326,7 +340,6 @@
       scrim.classList.remove("on"); sh.classList.remove("on");
       setTimeout(() => { scrim.remove(); sh.remove(); }, 450);
     };
-    sh.querySelector("[data-open]").addEventListener("click", openInBrowser);
     sh.querySelector("[data-copy]").addEventListener("click", (e) => copyLink(e.currentTarget));
     sh.querySelector("[data-later]").addEventListener("click", close);
     scrim.addEventListener("click", close);
@@ -555,9 +568,10 @@
     if (IN_APP) {
       return `<div class="install-card" id="installCard">
         <div class="ic-top"><img src="icons/icon-192.png" alt="" /><div><b>Open in ${BROWSER} to get the app</b><span>${esc(IN_APP)} can't add apps to your home screen. Open this page in ${BROWSER} first.</span></div></div>
-        <button class="btn block" data-open>${icon("ext", "sm")}Open in ${BROWSER}</button>
+        ${openButton()}
         <div class="eyebrow inapp-or">If nothing happens</div>
         ${inAppSteps()}
+        <button class="btn ghost block" data-copy style="margin-top:10px">${icon("link", "sm")}Copy link to paste in ${BROWSER}</button>
       </div>`;
     }
     const step = (n, ic, html) => `<li><span class="stp">${n}</span><span class="stx">${html}</span><span class="sti">${icon(ic, "sm")}</span></li>`;
@@ -571,8 +585,8 @@
     </div>`;
   }
   function wireInstallCard() {
-    const o = document.querySelector("#installCard [data-open]");
-    if (o) o.addEventListener("click", openInBrowser);
+    const cp = document.querySelector("#installCard [data-copy]");
+    if (cp) cp.addEventListener("click", (e) => copyLink(e.currentTarget));
     const b = document.querySelector("#installCard [data-install]");
     if (b) b.addEventListener("click", async () => { if (await runInstall()) document.getElementById("installCard")?.remove(); });
   }
@@ -1299,7 +1313,8 @@
   }
 
   function initA2HS() {
-    if (IN_APP || isStandalone() || store.get("usafl.a2hs.dismissed", false)) return; // in-app browsers get the open-in-browser prompt instead
+    if (IN_APP || isStandalone()) return; // in-app browsers get the open-in-browser prompt instead
+    if (store.get("usafl.a2hs.dismissed", false) && !CAME_TO_INSTALL) return;
     if (!IS_IOS && !IS_ANDROID && !("onbeforeinstallprompt" in window)) return;
     const bar = document.createElement("div");
     bar.className = "a2hs";
