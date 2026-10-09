@@ -62,6 +62,7 @@
     key: '<circle cx="8" cy="15" r="4"/><path d="m11 12 8.5-8.5M16 7l2.5 2.5M14 9l2 2"/>',
     trash: '<path d="M4.5 7h15M9.5 7V4.5h5V7M6.5 7l1 13h9l1-13"/>',
     plus: '<path d="M12 5v14M5 12h14"/>',
+    flag: '<path d="M5.5 21V4M5.5 4h12l-2.5 4.5 2.5 4.5h-12"/>',
     moreV: '<circle cx="12" cy="5.5" r="1.4" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="12" cy="18.5" r="1.4" fill="currentColor" stroke="none"/>',
   };
   const icon = (n, cls = "") => `<svg class="i ${cls}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n] || ""}</svg>`;
@@ -422,6 +423,26 @@
 
   // ---------- shared bits ----------
   function avatar(u, cls = "") { return `<span class="avatar ${u.isAussie ? "oz" : ""} ${cls}">${esc(initials(u))}</span>`; }
+  // ---------- game draw: teams playing + clubs on Boundary / Timekeeping / Scoring (games.js) ----------
+  const GAMES = (window.GAMES && window.GAMES.games) || {};
+  const gameAt = (day, time, field) => (field ? GAMES[`${day}|${time}|${field}`] || null : null);
+  function matchHTML(g) {
+    if (!g) return "";
+    const div = g.div || (g.comp === "Women's" ? "W" : "");
+    return `<div class="match"><span>${esc(g.home)}</span><span class="v">v</span><span>${esc(g.away)}</span>${div ? `<span class="tag comp ${div[0] === "W" ? "w" : ""}" title="${div[0] === "W" ? "Women's" : "Men's"} division ${esc(div.slice(2))}">${esc(div)}</span>` : ""}</div>`;
+  }
+  function dutyRows(g) {
+    const same = g.boundary === g.timekeeper && g.timekeeper === g.scorer;
+    const rows = same ? [["Boundary, time & score", g.boundary]] : [["Boundary", g.boundary], ["Timekeeping", g.timekeeper], ["Scoring", g.scorer]];
+    return rows.map(([k, v]) => `<div class="dr"><span class="dk">${k}</span><span class="dv">${esc(v)}</span></div>`).join("") +
+      (window.GAMES && window.GAMES.placeholder ? `<div class="dnote">Placeholder draw · real teams once the fixture is released</div>` : "");
+  }
+  // Collapsed by default so cards stay compact; toggled by the delegated [data-duties] handler.
+  function dutiesHTML(g) {
+    if (!g) return "";
+    return `<div class="duties"><button class="duties-head" data-duties aria-expanded="false">${icon("flag", "xs")}<span>Game duties</span>${icon("chevD", "sm chev")}</button><div class="acc-body"><div class="acc-inner">${dutyRows(g)}</div></div></div>`;
+  }
+
   const CREW_LABEL = { field: "Field", goal: "Goal", boundary: "Boundary", ts: "Timer / scorer" };
   function crewHTML(crew, meId) {
     if (!crew) return "";
@@ -604,7 +625,8 @@
         <div class="hero-time">${DAY_SHORT[g.s.day]} ${tShort(g.s.time)}<small>${tAp(g.s.time)}</small></div>
         <div class="hero-where">${c.field ? `Field <span class="accent">${c.field}</span>` : esc(g.s.type === "duty" ? g.s.label : "Umpire Central")}</div>
         <div class="hero-role">${esc(g.s.type === "coach" && c.who ? `Coaching ${c.who.name}` : ROLE[g.s.type] || g.s.label)}${g.s.tentative ? " · TBC" : ""}</div>
-        ${crewRows(c, me)}`;
+        ${matchHTML(gameAt(g.s.day, g.s.time, c.field))}
+        ${crewRows(c, me, gameAt(g.s.day, g.s.time, c.field))}`;
     };
     if (n < startOfFirst) {
       const ms = first - n;
@@ -637,22 +659,26 @@
     </section>`;
   }
   // Collapsible crew on the home card: a one-line summary that expands to the full list.
-  function crewRows(c, me) {
-    if (!c.crew) return "";
-    const others = {};
-    ["field", "goal", "boundary", "ts"].forEach((r) => { others[r] = c.crew[r].filter((x) => x.u.id !== me.id); });
+  function crewRows(c, me, game) {
+    if (!c.crew && !game) return "";
+    const others = { field: [], goal: [], boundary: [], ts: [] };
+    if (c.crew) ["field", "goal", "boundary", "ts"].forEach((r) => { others[r] = c.crew[r].filter((x) => x.u.id !== me.id); });
     const people = [].concat(others.field, others.goal, others.boundary, others.ts);
-    if (!people.length) return "";
+    if (!people.length && !game) return "";
     const open = store.get("usafl.heroCrewOpen", false);
     const shown = people.slice(0, people.length > 4 ? 3 : 4);
+    const label = people.length ? `Your crew · ${people.length} other${people.length === 1 ? "" : "s"}` : "Game duties";
     return `<div class="hero-rule"></div>
       <div class="hcrew ${open ? "open" : ""}">
         <button class="hcrew-head" aria-expanded="${open}">
-          <span class="stack">${shown.map(({ u }) => `<span class="av-xs ${u.isAussie ? "oz" : ""}">${esc(initials(u))}</span>`).join("")}${people.length > shown.length ? `<span class="av-xs more">+${people.length - shown.length}</span>` : ""}</span>
-          <span class="lbl">Your crew · ${people.length} other${people.length === 1 ? "" : "s"}</span>
+          ${people.length ? `<span class="stack">${shown.map(({ u }) => `<span class="av-xs ${u.isAussie ? "oz" : ""}">${esc(initials(u))}</span>`).join("")}${people.length > shown.length ? `<span class="av-xs more">+${people.length - shown.length}</span>` : ""}</span>` : icon("flag", "sm")}
+          <span class="lbl">${label}</span>
           ${icon("chevD", "sm chev")}
         </button>
-        <div class="acc-body"><div class="acc-inner">${crewHTML(others, me.id)}</div></div>
+        <div class="acc-body"><div class="acc-inner">
+          ${people.length ? crewHTML(others, me.id) : ""}
+          ${game ? `<div class="hduties"><div class="rl">Game duties</div>${dutyRows(game)}</div>` : ""}
+        </div></div>
       </div>`;
   }
 
@@ -745,7 +771,9 @@
           <div class="top">${live ? '<span class="tag live">Live</span>' : ""}${roleTag(s)}${s.tentative ? '<span class="tag">TBC</span>' : ""}${changed.has(sig(s)) ? '<span class="tag solid">Updated</span>' : ""}</div>
           <div class="fld">${esc(title)}</div>
           ${sub ? `<div class="sub">${sub}</div>` : ""}
+          ${matchHTML(gameAt(s.day, s.time, c.field))}
           ${crewHTML(c.crew, meId)}
+          ${dutiesHTML(gameAt(s.day, s.time, c.field))}
         </div>
       </div>`;
     }).join("")}</div>`;
@@ -869,7 +897,9 @@
       const has = c.field.length + c.goal.length + c.boundary.length + c.ts.length;
       return `<div class="fcard ${mine ? "mine" : ""}">
         <div class="fh"><span class="fl">Field</span><b>${f}</b>${mine ? '<span class="tag brand">You</span>' : ""}</div>
+        ${matchHTML(gameAt(fb.day, fb.time, f))}
         ${has ? crewHTML(c, meId) : '<div class="none">No crew assigned</div>'}
+        ${dutiesHTML(gameAt(fb.day, fb.time, f))}
       </div>`;
     }).join("")}</div>`;
     staggerIn($b);
@@ -1203,6 +1233,14 @@
     getLive: () => LIVE, applyLive: (j) => applyLive(j, false),
     $app, $phone,
   };
+
+  // "Game duties" toggles (rendered inside many re-rendered cards, so one delegated handler)
+  $app.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-duties]");
+    if (!b) return;
+    const open = b.parentElement.classList.toggle("open");
+    b.setAttribute("aria-expanded", String(open));
+  });
 
   buildTabs();
   route();

@@ -736,3 +736,32 @@ svg.i.xs { width: 14px; height: 14px; stroke-width: 2; }
 .made-by .mb-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-weight: 650; font-size: 15px; }
 .made-by .mb-link svg { color: var(--brand); transition: transform 0.25s var(--ease); }
 .made-by:active .mb-link svg { transform: translateX(3px); }
+
+/* ---------- game draw: teams + duties ---------- */
+.match { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; margin-top: 6px; font-size: 15px; font-weight: 600; line-height: 1.3; }
+.match .v { font-size: 13px; font-weight: 500; color: var(--ink-3); }
+.match .tag.comp { height: 20px; font-size: 11px; margin-left: 2px; align-self: center; background: var(--card-2); color: var(--ink-2); }
+.fcard .match { margin-top: 8px; }
+.hero .match { margin-top: 10px; color: var(--hero-ink); font-size: 16px; }
+.hero .match .v { color: var(--hero-ink-2); }
+.hero .match .tag.comp { background: rgba(255, 255, 255, 0.14); color: #fff; }
+.duties { margin-top: 12px; border-top: 1px solid var(--line); }
+.duties-head { width: 100%; display: flex; align-items: center; gap: 8px; padding: 12px 0 2px; font-size: 13px; font-weight: 600; color: var(--ink-2); text-align: left; }
+.duties-head > svg:first-child { color: var(--ink-3); }
+.duties-head .chev { margin-left: auto; color: var(--ink-3); transition: transform 0.35s var(--spring); }
+.duties.open .duties-head .chev { transform: rotate(180deg); }
+.duties .acc-body, .hduties .acc-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.38s var(--spring); }
+.duties.open .acc-body { grid-template-rows: 1fr; }
+.duties .acc-inner { overflow: hidden; }
+.dr { padding: 8px 0 0; }
+.dk { display: block; font-size: 11px; font-weight: 700; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.06em; }
+.dv { display: block; font-size: 15px; font-weight: 600; margin-top: 2px; }
+.dnote { font-size: 12px; color: var(--ink-3); padding-top: 8px; }
+.hduties { padding-top: 14px; }
+.hduties .rl { font-size: 11px; font-weight: 700; color: var(--hero-ink-2); text-transform: uppercase; letter-spacing: 0.08em; }
+.hero .dk, .hero .dnote { color: var(--hero-ink-2); }
+.hero .dv { color: var(--hero-ink); }
+.hcrew-head > svg:first-child:not(.chev) { color: var(--hero-ink-2); }
+.match .tag.comp { font-family: var(--display); font-weight: 800; font-size: 13px; letter-spacing: 0.04em; }
+.match .tag.comp.w { background: var(--brand-soft); color: var(--brand-ink); }
+.hero .match .tag.comp.w { background: rgba(241, 88, 34, 0.28); color: #ffd2bf; }

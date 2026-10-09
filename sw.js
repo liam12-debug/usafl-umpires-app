@@ -1,6 +1,6 @@
 // USAFL Umpires — service worker. Offline support + installability.
 // Bump CACHE when you change app files so clients pick up the new version.
-const CACHE = "usafl-umps-v10";
+const CACHE = "usafl-umps-v11";
 const SHELL = [
   "./fonts/barlow-condensed-600.woff2",
   "./fonts/barlow-condensed-700.woff2",
@@ -10,6 +10,7 @@ const SHELL = [
   "./index.html",
   "./styles.css",
   "./data.js",
+  "./games.js",
   "./content.js",
   "./app.js",
   "./manifest.webmanifest",
@@ -33,7 +34,7 @@ self.addEventListener("activate", (e) => {
 
 // Schedule + live updates: network first (fresh after a publish), cache as offline fallback.
 // Everything else: stale-while-revalidate for instant loads.
-const FRESH = ["/data.js", "/live.json"];
+const FRESH = ["/data.js", "/games.js", "/live.json"];
 self.addEventListener("fetch", (e) => {
   const req = e.request;
   const url = new URL(req.url);

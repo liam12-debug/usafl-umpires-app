@@ -32,6 +32,8 @@ data.js              ← GENERATED umpire roster + schedule (do not hand-edit)
 manifest.webmanifest ← PWA manifest (installable app)
 sw.js                ← service worker (offline cache; data.js/live.json network-first)
 admin.js             ← hidden admin area (#/admin), loaded on demand
+games.js             ← game draw: teams, division (MD1-5 / WD1), Boundary/Timekeeping/Scoring club per field+hour
+                       (PLACEHOLDER — regenerate with tools/make_placeholder_games.py or replace with the real draw)
 live.json            ← announcement, event-detail edits, admin PIN hash (published from admin)
 vendor/              ← SheetJS spreadsheet reader (Apache-2.0), used only by admin
 icons/               ← app icons generated from the USAFLUA logo
