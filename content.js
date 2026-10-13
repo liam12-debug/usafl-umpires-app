@@ -79,7 +79,7 @@ window.GUIDE_SECTIONS = [
     title: "Boundary umpires",
     icon: "📏",
     body: [
-      "Boundary umpires work Field 1, replacing team boundary volunteers.",
+      "Boundary umpires work Coopers Field, replacing team boundary volunteers.",
       "Accreditation requires at least two games plus an observation.",
       "Work two games and you can be assigned to a Division 1 grand final.",
       "Sunday finals boundary sign-up sheet is at Umpire Central — finals pay too.",
@@ -153,7 +153,7 @@ window.KB = [
   { k: "observation observer accreditation feedback keys coach form", a: "If you're being observed, tell your observer 1–2 keys you want to work on that game. You'll get about 2 minutes of feedback at half time and about 5 after the game (longer if you're off the next hour). All observation forms are PDF'd to you after the tournament. Around 90 observations run across the weekend, most Saturday." },
   { k: "accreditation levels f0 f1 f2 g1 g2 da aa advance level up announced", a: "Levels run Candidate → Introductory (F0/G0/B0) → Development Accreditation (F1/G1/B1) → Advanced Accreditation (F2/G2/B2). Umpire coaches meet 6 pm Saturday to determine who re-accredits or moves up, and results are announced at the Umpire Fete on Saturday night. There's a full breakdown in Resources." },
   { k: "gear shirt whistle flags insoles bag orange green pick up", a: "Gear pickup is Friday night at the Umpire Meeting, ideally 7:00–7:30: UA gear bags, UA insoles (free pair for everyone), Acme Thunderer whistles (DA/AA field & boundary), USAFL goal flags (DA/AA goalies). Need an orange USAFL UA shirt, or owed a green shirt for reaching DA? Email Jeff your size before the tournament." },
-  { k: "boundary finals sign up field 1 grand final two games", a: "Boundary umpires work Field 1 (replacing team volunteers). Boundary accreditation needs at least two games plus an observation. Work two boundary games and — if you want it — you're automatically assigned to a Division 1 grand final. Sunday finals boundary sign-up sheet is at Umpire Central, and finals pay as well." },
+  { k: "boundary finals sign up field 1 coopers grand final two games", a: "Boundary umpires work Coopers Field (replacing team volunteers). Boundary accreditation needs at least two games plus an observation. Work two boundary games and — if you want it — you're automatically assigned to a Division 1 grand final. Sunday finals boundary sign-up sheet is at Umpire Central, and finals pay as well." },
   { k: "pay payment check paid w9 w-9 money reimbursement volunteer", a: "Payment info goes to the league the Tuesday after Nationals; checks and e-checks land within about 2 weeks. If you're due a paycheck and haven't completed your W-9, your pay is held until you do. And record every assignment change on the big sheets — that's what payment is calculated from." },
   { k: "team picture photo saturday morning time", a: "The umpire team picture is 7:45 am Saturday in front of Umpire Central. On site by 7:15 if you're working at 8, otherwise by 7:30 to be in the shot. With your club and can't make it? Understood." },
   { k: "finals assignment sunday medal grand final announced", a: "Finals are assigned after Saturday's games — announced at the Umpire Fete Saturday night if possible, otherwise posted at Umpire Central first thing Sunday. Finals teams gather at Umpire Central for a team photo and go out as a full team. Medals are handed out as you come off; field umpire medals are part of the closing ceremony." },

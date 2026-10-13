@@ -133,6 +133,9 @@
   const ON_FIELD = new Set(["field", "goal", "boundary", "ts"]);
   const ROLE = { field: "Field umpire", goal: "Goal umpire", boundary: "Boundary umpire", ts: "Timer / scorer", coach: "Coaching", duty: "Duty" };
   const ROLE_SHORT = { field: "Field", goal: "Goal", boundary: "Boundary", ts: "T / S" };
+  // Field 1 is named for the sponsor; everything else is "Field N".
+  const fieldName = (n) => (+n === 1 ? "Coopers Field" : `Field ${n}`);
+  const renameFields = (text) => String(text).replace(/\bField 1\b/g, "Coopers Field");
   const PASSIVE = { playing: "With club", watch: "Watching", off: "Break", personal: "Personal time", open: "Open for finals" };
   const edtDay = (d) => new Date(+d - 4 * 3600000); // shift so getUTC* reads Sarasota wall-clock
 
@@ -658,7 +661,7 @@
           const past = +g.at + GAME_MIN * 60000 < n;
           const isNext = up.next && g.s === up.next.s && !up.live;
           const c = context(g.s);
-          const where = c.field ? `Field ${c.field}` : g.s.type === "duty" ? g.s.label : "Umpire Central";
+          const where = c.field ? fieldName(c.field) : g.s.type === "duty" ? g.s.label : "Umpire Central";
           return `<a class="mini pressable ${past ? "past" : ""} ${isNext || (up.live && g.s === up.live.s) ? "next" : ""}" href="#/schedule">
             <div class="d">${DAY_SHORT[g.s.day]}</div>
             <div class="t">${tShort(g.s.time)}<small>${tAp(g.s.time)}</small></div>
@@ -742,7 +745,7 @@
       const c = context(g.s);
       return `<div class="eyebrow">${label}</div>
         <div class="hero-time">${DAY_SHORT[g.s.day]} ${tShort(g.s.time)}<small>${tAp(g.s.time)}</small></div>
-        <div class="hero-where">${c.field ? `Field <span class="accent">${c.field}</span>` : esc(g.s.type === "duty" ? g.s.label : "Umpire Central")}</div>
+        <div class="hero-where">${c.field ? (+c.field === 1 ? `<span class="accent">Coopers</span> Field` : `Field <span class="accent">${c.field}</span>`) : esc(g.s.type === "duty" ? g.s.label : "Umpire Central")}</div>
         <div class="hero-role">${esc(g.s.type === "coach" && c.who ? `Coaching ${c.who.name}` : ROLE[g.s.type] || g.s.label)}${g.s.tentative ? " · TBC" : ""}</div>
         ${matchHTML(gameAt(g.s.day, g.s.time, c.field))}
         ${crewRows(c, me, gameAt(g.s.day, g.s.time, c.field))}`;
@@ -874,7 +877,7 @@
         const role = s.type === "coach" ? (c.who ? `Observing ${c.who.name}` : /^bound/i.test(s.label) ? "Observing boundary umpires" : s.label === "Coaching" ? "Coaching" : `Observing ${s.label}`)
           : s.type === "duty" ? s.label : ROLE[s.type];
         const title = g ? `${g.home} v ${g.away}` : s.type === "duty" ? s.label : role;
-        const meta = [c.field ? `Field ${c.field}` : null, title === role ? null : role, isFinalRound(g) ? g.round : null, s.tentative ? "TBC" : null].filter(Boolean).join(" · ");
+        const meta = [c.field ? fieldName(c.field) : null, title === role ? null : role, isFinalRound(g) ? g.round : null, s.tentative ? "TBC" : null].filter(Boolean).join(" · ");
         return `<button class="row grow" data-goto="${s.day}|${esc(s.time)}">
           <span class="gt"><b>${tShort(s.time)}</b><span>${DAY_SHORT[s.day]} ${tAp(s.time)}</span></span>
           <span class="main"><span class="t1">${esc(title)}</span><span class="t2">${esc(meta)}</span></span>
@@ -894,7 +897,7 @@
     const blocks = [];
     slots.forEach((s) => {
       if (ACTIVE.has(s.type)) { blocks.push({ game: true, s }); return; }
-      const label = s.type === "maybe" ? `Possibly ${s.label}` : PASSIVE[s.type] ?? s.label;
+      const label = s.type === "maybe" ? `Possibly ${renameFields(s.label)}` : PASSIVE[s.type] ?? s.label;
       const last = blocks[blocks.length - 1];
       if (last && !last.game && last.label === label && clockMins(s.time) - clockMins(last.end.time) === 60) last.end = s;
       else blocks.push({ game: false, label, start: s, end: s });
@@ -909,7 +912,7 @@
       const s = b.s, c = context(s);
       const live = isLive(s, n), past = +slotDate(s) + GAME_MIN * 60000 < n;
       const nxt = !up.live && up.next && up.next.s === s;
-      const title = c.field ? `Field ${c.field}` : s.type === "duty" ? s.label : "Umpire Central";
+      const title = c.field ? fieldName(c.field) : s.type === "duty" ? s.label : "Umpire Central";
       const sub = s.type === "coach"
         ? (c.who ? `Observing <a class="link-btn" href="#/u/${c.who.id}">${esc(c.who.name)}</a>` : /^bound/i.test(s.label) ? "Observing the boundary umpires" : s.label === "Coaching" ? "Coaching" : `Observing ${esc(s.label)}`)
         : "";
@@ -1045,7 +1048,7 @@
       const mine = meId && ["field", "goal", "boundary", "ts"].some((r) => c[r].some((x) => x.u.id === meId));
       const has = c.field.length + c.goal.length + c.boundary.length + c.ts.length;
       return `<div class="fcard ${mine ? "mine" : ""}">
-        <div class="fh"><span class="fl">Field</span><b>${f}</b>${mine ? '<span class="tag brand">You</span>' : ""}</div>
+        <div class="fh">${+f === 1 ? `<b>Coopers</b><span class="fl">Field</span>` : `<span class="fl">Field</span><b>${f}</b>`}${mine ? '<span class="tag brand">You</span>' : ""}</div>
         ${matchHTML(gameAt(fb.day, fb.time, f))}
         ${has ? crewHTML(c, meId) : '<div class="none">No crew assigned</div>'}
         ${dutiesHTML(gameAt(fb.day, fb.time, f))}
@@ -1106,7 +1109,7 @@
     const named = UMPIRES.find((u) => ql.includes(u.name.toLowerCase()) || (u.lastName.length > 3 && ql.includes(u.lastName.toLowerCase())));
     if (named && /\b(when|schedule|game|games|umpir|assign|doing|working|on)\b/.test(ql)) {
       const act = games(named);
-      const line = act.slice(0, 6).map((s) => { const c = context(s); return `${DAY_SHORT[s.day]} ${tFull(s.time)} — ${ROLE[s.type] || s.label}${c.field ? `, Field ${c.field}` : ""}`; }).join("; ");
+      const line = act.slice(0, 6).map((s) => { const c = context(s); return `${DAY_SHORT[s.day]} ${tFull(s.time)} — ${ROLE[s.type] || s.label}${c.field ? `, ${fieldName(c.field)}` : ""}`; }).join("; ");
       return act.length
         ? `${named.name} (${clubLabel(named)}, ${levels(named).join("/")}) has ${gameCount(named)} games${named.counts.coach ? ` and ${named.counts.coach} coaching slots` : ""}. ${line}${act.length > 6 ? "; …" : ""}. Their full weekend is on their profile under Schedule.`
         : `${named.name} has no on-field assignments on the current draft.`;
