@@ -1,13 +1,13 @@
 // Tournament content: events, procedures, knowledge base, quiz.
-// 2026 Sarasota details marked TBD — edit here as info is confirmed.
+// Event details from Jeff's 2026 emails; anything still unconfirmed is marked TBC.
 
 window.TOURNAMENT = {
   year: 2026,
   city: "Sarasota, FL",
   dates: "October 16–18, 2026",
   firstDay: "2026-10-17T08:00:00-04:00", // first game day (Saturday)
-  venue: "Venue TBD — Sarasota, FL",
-  hq: "Tournament hotel TBD",
+  venue: "Premier Sports Campus, 5895 Post Blvd, Lakewood Ranch, FL 34211",
+  hq: "Even Hotel Sarasota-Lakewood Ranch, 6231 Lake Osprey Drive, Sarasota, FL 34240 · (941) 782-4400",
   director: "Jeff Persson",
   directorEmail: "usaflua.tournamentdirector@gmail.com",
 };
@@ -16,30 +16,30 @@ window.EVENTS = [
   {
     day: "Thursday, Oct 15",
     items: [
-      { time: "7:00 pm", title: "Welcome Dinner", where: "Location TBD — Sarasota", note: "Official welcome for our visiting Aussies. Anyone in town is welcome — let Jeff know if you'd like to join.", icon: "🍽️" },
+      { time: "Time TBC", title: "Thursday Dinner", where: "Linger Lodge, 7116 85th St Ct E, Bradenton, FL 34202", note: "Dinner for anyone in town on Thursday, including our visiting Aussies. Let Jeff know if you'd like to join.", icon: "🍽️" },
     ],
   },
   {
     day: "Friday, Oct 16",
     items: [
-      { time: "2–5 pm", title: "Umpire Clinic", where: "Tournament grounds TBD", note: "On-field drills in teams of 4–5 led by senior umpires — field, goal, and boundary accreditation stations. Agenda and teams sent about two weeks out.", icon: "🏃" },
-      { time: "7–9 pm", title: "Umpire Meeting & AGM", where: "Tournament hotel TBD", note: "Gather 7:00, start 7:30. Use the first 30 min to socialize and collect your gear (shirts, whistles, flags, insoles). AGM at 8:00, then the meeting resumes. Umpire coaches stay after for observation prep.", icon: "📋" },
+      { time: "2–5 pm", title: "Umpire Clinic", where: "Premier Sports Campus, 5895 Post Blvd, Lakewood Ranch, FL 34211", note: "On-field drills in teams led by senior umpires — field, goal, and boundary accreditation stations.", icon: "🏃" },
+      { time: "7:30 pm", title: "Umpire Meeting", where: "Even Hotel Sarasota-Lakewood Ranch, Osprey Room, 6231 Lake Osprey Drive, Sarasota, FL 34240", note: "You're on your own for dinner after the Clinic; tea, coffee and sodas at the meeting. We'll review the tournament rules in detail and the points of emphasis, and hand out gear to anyone with gear coming to them. Coaches and observers stay back afterwards to go over how observations will run on the weekend.", icon: "📋" },
     ],
   },
   {
     day: "Saturday, Oct 17",
     items: [
-      { time: "7:45 am", title: "Umpire Team Picture", where: "In front of Umpire Central", note: "Working at 8am? Be on site by 7:15. Everyone else on site by 7:30 to be in the picture.", icon: "📸" },
-      { time: "8 am – 6 pm", title: "Game Day 1", where: "Tournament grounds TBD", note: "Games on the hour — make every effort to start on time. Coaches meet at Umpire Central at 6 pm to review observations.", icon: "🏉" },
-      { time: "8–10 pm", title: "Umpire Fete", where: "Tournament hotel TBD", note: "Pizza, salad, and drinks. Accreditation announcements and (hopefully) finals assignments. Be ready to work at 8 am Sunday.", icon: "🎉" },
+      { time: "7:45 am", title: "Umpire Team Picture", where: "In front of Umpire Central", note: "Be on site in time to be in the picture.", icon: "📸" },
+      { time: "9 am – 6 pm", title: "Game Day 1", where: "Premier Sports Campus, 5895 Post Blvd, Lakewood Ranch, FL 34211", note: "Games on the hour — make every effort to start on time. Coaches meet at Umpire Central at 6 pm to review observations.", icon: "🏉" },
+      { time: "7:30 pm", title: "Awards Fete", where: "Even Hotel Sarasota-Lakewood Ranch, Osprey Room, 6231 Lake Osprey Drive, Sarasota, FL 34240", note: "Dinner provided, with non-alcoholic drinks (anything else you'll need to source yourself). Presentations start around 8:30 (maybe sooner): accreditations (boundary, goal, field and coach), two special awards, then Sunday's finals assignments — field and goal, plus boundary for the last final. Boundary and timer/scorekeeper for the other finals will be announced then if ready, otherwise posted in the Umpire Tent Sunday morning.", icon: "🎉" },
     ],
   },
   {
     day: "Sunday, Oct 18",
     items: [
-      { time: "8 am – 12 pm", title: "Game Day 2", where: "Tournament grounds TBD", note: "Same rules as Saturday. Record any assignment changes on the big sheets at the tent.", icon: "🏉" },
-      { time: "1 pm onwards", title: "Finals", where: "Tournament grounds TBD", note: "Finals teams gather at Umpire Central for a team picture and go out as a group. Medals as you come off the field; field umpire medals at the closing ceremony.", icon: "🏆" },
-      { time: "8 pm", title: "Thank You Dinner", where: "Location TBD — Sarasota", note: "For everyone still in town. Aussie guests and Tent Queens are our VIPs. Let Jeff know if you plan to attend.", icon: "🥂" },
+      { time: "9 am – 12 pm", title: "Game Day 2", where: "Premier Sports Campus, 5895 Post Blvd, Lakewood Ranch, FL 34211", note: "Same rules as Saturday. Record any assignment changes on the big sheets at the tent.", icon: "🏉" },
+      { time: "1 pm onwards", title: "Finals", where: "Premier Sports Campus, 5895 Post Blvd, Lakewood Ranch, FL 34211", note: "Finals teams gather at Umpire Central for a team picture and go out as a group. Medals as you come off the field; field umpire medals at the closing ceremony.", icon: "🏆" },
+      { time: "Time TBC", title: "Thank You Dinner", where: "Ford's Garage, 295 N Cattlemen Road Unit 1, Sarasota, FL 34243", note: "For everyone still in town. Aussie guests and Tent Royalty are our VIPs. Let Jeff know if you plan to attend.", icon: "🥂" },
     ],
   },
 ];
@@ -158,11 +158,11 @@ window.KB = [
   { k: "team picture photo saturday morning time", a: "The umpire team picture is 7:45 am Saturday in front of Umpire Central. On site by 7:15 if you're working at 8, otherwise by 7:30 to be in the shot. With your club and can't make it? Understood." },
   { k: "finals assignment sunday medal grand final announced", a: "Finals are assigned after Saturday's games — announced at the Umpire Fete Saturday night if possible, otherwise posted at Umpire Central first thing Sunday. Finals teams gather at Umpire Central for a team photo and go out as a full team. Medals are handed out as you come off; field umpire medals are part of the closing ceremony." },
   { k: "extra time draw drawn game overtime rules", a: "Extra Time applies when a game that affects advancement ends in a draw at the end of regulation. Field and goal umpires each have specific roles — the procedure is covered at the Friday night meeting and copies are kept at the tent. If a draw looks likely late, get to the huddle quickly and confirm the format before restarting." },
-  { k: "welcome dinner thursday aussie", a: "The Welcome Dinner for our visiting Aussies is Thursday, Oct 15 at 7:00 pm (Sarasota location TBD). Anyone in town is welcome — just let Jeff know you're coming." },
-  { k: "clinic friday drills stations agenda", a: "The Umpire Clinic is Friday, Oct 16, 2–5 pm at the grounds. On-field drills in teams of 4–5 led by two senior umpires, rotating through field, goal, and boundary stations. The agenda and teams go out about two weeks before." },
-  { k: "meeting agm friday night vote election", a: "Friday night: gather 7:00 pm, meeting starts 7:30 at the tournament hotel. The AGM runs at 8:00 (reports, bylaw votes, board elections), then the umpire meeting resumes. Umpire coaches stay afterwards for observation prep. Use the first half hour to socialize and collect gear." },
-  { k: "fete saturday night pizza party dinner announcement", a: "The Umpire Fete is Saturday 8–10 pm at the tournament hotel — pizza, salad, and drinks. Accreditations are announced and certificates handed out, and finals assignments are announced if they're ready. Heads up: non-alcoholic beverages until dinner Sunday!" },
-  { k: "hotel stay room where tournament central", a: "Sarasota hotel details are TBD — room block info will be emailed to those in the USAFL/UA block. In past years the tournament hotel doubles as Tournament Central with a dedicated umpire room all weekend." },
+  { k: "welcome dinner thursday aussie linger lodge", a: "Thursday's dinner is at Linger Lodge, 7116 85th St Ct E, Bradenton, FL 34202 (time to be confirmed). Anyone in town is welcome — just let Jeff know you're coming." },
+  { k: "clinic friday drills stations agenda", a: "The Umpire Clinic is Friday, Oct 16, 2–5 pm at Premier Sports Campus (5895 Post Blvd, Lakewood Ranch). On-field drills in teams led by senior umpires, rotating through field, goal, and boundary stations. You're on your own for dinner afterwards, before the 7:30 meeting." },
+  { k: "meeting friday night osprey room gear rules emphasis", a: "The Umpire Meeting is Friday at 7:30 pm in the Osprey Room at the Even Hotel (6231 Lake Osprey Drive, Sarasota). Grab dinner after the Clinic — there's tea, coffee and sodas at the meeting. We review the tournament rules in detail and the points of emphasis, and hand out gear to anyone with gear coming. Coaches and observers stay back afterwards to go over observations." },
+  { k: "fete awards saturday night dinner announcement accreditation finals", a: "The Awards Fete is Saturday at 7:30 pm in the Osprey Room at the Even Hotel. Dinner and non-alcoholic drinks are provided (bring your own anything else). Presentations start around 8:30: accreditations (boundary, goal, field and coach), two special awards, then Sunday's finals assignments — field and goal, plus boundary for the last final. Other finals' boundary and timer/scorekeeper crews are announced then if ready, otherwise posted in the Umpire Tent Sunday morning." },
+  { k: "hotel stay room where even osprey address phone", a: "The umpire events are at the Even Hotel Sarasota-Lakewood Ranch, 6231 Lake Osprey Drive, Sarasota, FL 34240 — (941) 782-4400. The Friday meeting and Saturday Awards Fete are both in the Osprey Room. Games are at Premier Sports Campus, 5895 Post Blvd, Lakewood Ranch." },
   { k: "water food heat cooling hydrate cramp snacks", a: "Umpire Central has water, snacks, and fruit all weekend, there's a dedicated umpire cooling room, and the golf cart helps run water at half time. Florida in October is warm — hydrate early and often so you don't cramp." },
   { k: "holding the ball prior opportunity tackle rule interpretation", a: "Holding the ball: if a player had prior opportunity and is legally tackled without genuinely attempting to dispose of it (kick or handball), it's holding the ball. No prior opportunity? They must make a genuine attempt when tackled — knocked loose in the tackle or a genuine attempt means ball-up, not a free. Reward the tackler, but be certain about prior opportunity first." },
   { k: "mark distance 15 meters metres kick catch rule", a: "A mark is awarded when a player catches (controls) a ball kicked at least 15 metres, untouched in flight. If it's touched off the boot or hasn't travelled 15m, play on." },
@@ -172,6 +172,7 @@ window.KB = [
   { k: "ruck contest ball up bounce nomination third man", a: "At ball-ups and boundary throw-ins, one ruck per team contests; a third player entering the contest gives away a free. Have ruck nominations sorted quickly, keep the throw-up consistent, and protect the ruckmen's run and jump." },
   { k: "goal behind signal score point touched post review", a: "Goal: ball kicked by an attacker completely over the goal line without being touched or hitting a post — two-finger signal, then wave both flags. Behind: touched, hit a post, came off any body part other than a boot, or crossed the behind line — one finger, one flag. Not sure it cleared untouched? Confer with the field umpire before signalling. Wait for the field umpire's all-clear before waving." },
   { k: "who is jeff persson tournament director contact email question", a: "Jeff Persson is the USAFLUA Tournament Director (obo Toby Persson). Anything this app can't answer — travel, gear sizes, assignment concerns — email usaflua.tournamentdirector@gmail.com." },
+  { k: "thank you dinner sunday fords garage", a: "Sunday's Thank You Dinner is at Ford's Garage, 295 N Cattlemen Road Unit 1, Sarasota, FL 34243 (time to be confirmed). Everyone still in town is welcome — Aussie guests and Tent Royalty are our VIPs. Let Jeff know if you plan to attend." },
   { k: "father son game sunday", a: "Keep an eye out Sunday — tradition holds a designated Father–Son game where our father-son umpire combos work together. Team photo mandatory! Send pics to our social media guru for posting." },
   { k: "tent queens who help golf cart merchandise", a: "The Tent Queens run Umpire Central all weekend: BTS check-in, UA merchandise, goal cards in/out, the golf cart to the far fields, plus a floater. They work their butts off — thank them!" },
   { k: "changes swap different work big sheet record volunteer", a: "If you work anything different from your printed assignment, record it on the Big Sheets taped to the tables in the tent — that's the master record for payment. Applies to volunteers too." },

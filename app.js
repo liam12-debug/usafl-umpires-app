@@ -1205,7 +1205,7 @@
     render(`
       <button class="back" onclick="location.hash='#/more'">${icon("chevL", "sm")}More</button>
       <div class="head" style="margin-top:0"><div><h1 class="page-title">Weekend guide</h1><div class="sub">${esc(T.city)} · ${esc(T.dates)}</div></div></div>
-      <div class="tbd">${icon("info", "sm")}<span>Sarasota venues and times are still being confirmed. Anything marked TBD will update here.</span></div>
+      ${window.EVENTS.some((x) => x.items.some((e) => /\bTB[DC]\b/i.test(e.where + " " + e.time))) ? `<div class="tbd">${icon("info", "sm")}<span>A few times are still being confirmed. Anything marked TBC will update here.</span></div>` : ""}
       ${seg("gday", days.map((x) => ({ v: x, label: x.slice(0, 3) })), gday)}
       <div id="evs">${eventsHTML(d)}</div>
       <div class="section">
@@ -1232,13 +1232,13 @@
   }
   function eventsHTML(d) {
     return `<div class="stagger">${d.items.map((e, i) => {
-      const tbd = /tbd/i.test(e.where);
+      const tbd = /\bTB[DC]\b/i.test(e.where) || !/\d/.test(e.where); // only real street addresses get a Maps link
       return `<div class="ev">
         <div class="ev-t">${esc(e.time)}</div>
         <h3>${esc(e.title)}</h3>
         <div class="ev-w">${icon("pin", "xs")}${tbd ? `<span>${esc(e.where)}</span>` : `<a href="https://maps.apple.com/?q=${encodeURIComponent(e.where)}" target="_blank" rel="noopener">${esc(e.where)}</a>`}</div>
         <p>${esc(e.note)}</p>
-        <div class="ev-a"><button class="btn ghost sm" data-ics="${esc(d.day)}|${i}">${icon("calPlus", "sm")}Add to calendar</button></div>
+        ${eventTimes(d.day, e.time) ? `<div class="ev-a"><button class="btn ghost sm" data-ics="${esc(d.day)}|${i}">${icon("calPlus", "sm")}Add to calendar</button></div>` : ""}
       </div>`;
     }).join("")}</div>`;
   }
