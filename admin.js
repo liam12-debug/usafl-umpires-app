@@ -284,7 +284,7 @@
   const TIME_RE = /^\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm)\s*$/i;
   const DISC = { F: "field", G: "goal", B: "boundary" };
   const DEFAULT_DAYS = { 1: ["sat"], 2: ["sat", "sun"], 3: ["sat", "sun", "finals"], 4: ["fri", "sat", "sun", "finals"] };
-  const RANK = { field: 5, goal: 5, boundary: 5, ts: 5, coach: 4, duty: 4, playing: 3, watch: 2, maybe: 1, other: 2, personal: 2, off: 0 };
+  const RANK = { field: 5, goal: 5, boundary: 5, ts: 5, coach: 4, duty: 4, playing: 3, watch: 2, maybe: 1, other: 2, personal: 2, open: 1, off: 0 };
   const sv = (v) => (v == null ? "" : String(v).trim());
   const tmins = (label) => { const m = TIME_RE.exec(label); return ((+m[1] % 12) + (m[3].toLowerCase() === "pm" ? 12 : 0)) * 60 + +(m[2] || 0); };
 
@@ -293,8 +293,10 @@
     if (!v) return null;
     const tentative = v.includes("?");
     const clean = v.replace(/\?/g, "").trim().replace(/\/+$/, "").trim();
-    const low = clean.toLowerCase();
-    if (low === "off" || low === "no games") return { type: "off", label: "OFF", tentative };
+    const low = clean.toLowerCase().replace(/-/g, " ");
+    if (low === "off" || low === "no games" || low === "out") return { type: "off", label: "OFF", tentative };
+    if (low === "open") return { type: "open", label: "Open", tentative }; // finals columns: crews named Saturday night
+    if (low.startsWith("final")) return { type: "maybe", label: "a final", tentative: true };
     if (low === "personal" || low === "mvl") return { type: "personal", label: "Personal", tentative };
     if (low === "youth") return { type: "duty", label: "Youth game", tentative };
     if (clean.startsWith(".")) return { type: "coach", label: clean.slice(1).trim(), tentative };
@@ -306,6 +308,12 @@
     if (/\b(pre|play|post|loser|play in)\b/.test(low)) return { type: "playing", label: "With club", tentative };
     if (low.includes("watch")) return { type: "watch", label: "Watching", tentative };
     if (low.includes("coach")) return { type: "coach", label: "Coaching", tentative };
+    // [GL4] / [FLD3] / [BND1] (and the odd unbracketed GL5): pencilled in for another discipline
+    const pm = /^\[?\s*(gl|gol|goal|fld|field|bnd|bound)\s*(\d*)\s*\]?$/.exec(low);
+    if (pm && (low.startsWith("[") || pm[2])) {
+      const role = { gl: "goal umpire", gol: "goal umpire", goal: "goal umpire", fld: "field umpire", field: "field umpire", bnd: "boundary umpire", bound: "boundary umpire" }[pm[1]];
+      return { type: "maybe", label: role + (pm[2] ? ` on Field ${pm[2]}` : ""), tentative: true };
+    }
     if (low.startsWith("[") || low === "tba") return { type: "maybe", label: clean.replace(/^\[+|\]+$/g, ""), tentative: true };
     warn(`'${v}' isn't a code the app knows — shown as written`);
     return { type: "other", label: clean, tentative };
@@ -361,6 +369,7 @@
     const people = new Map();
     let lastSection = null;
     for (let r = hdr + 1; r <= maxr; r++) {
+      if ([1, 2, 3].some((c) => sv(cell(r, c)).toUpperCase() === "END")) break; // notes and procedures below the grid
       const first = sv(cell(r, C.first)), last = sv(cell(r, C.last));
       if (!first || !last || first.toUpperCase() === "TBA") continue;
       const now = sv(cell(r, C.now));

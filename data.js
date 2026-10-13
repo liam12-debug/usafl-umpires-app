@@ -5,7 +5,7 @@ window.UMPIRES = [
   "firstName": "Jeri",
   "lastName": "Allen",
   "name": "Jeri Allen",
-  "club": "MN",
+  "club": "MIN",
   "isAussie": false,
   "accreditation": {
    "goal": "G1"
@@ -14,7 +14,7 @@ window.UMPIRES = [
   "commitment": "OC",
   "counts": {
    "field": 0,
-   "goal": 2,
+   "goal": 3,
    "boundary": 0,
    "ts": 0,
    "coach": 0
@@ -25,18 +25,225 @@ window.UMPIRES = [
   "slots": [
    {
     "type": "goal",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "goal",
     "label": "Field 4",
     "field": 4,
     "tentative": false,
     "day": "sat",
-    "time": "10am"
+    "time": "11am"
    },
    {
     "type": "playing",
     "label": "With club",
     "tentative": false,
     "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "4pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "stephen-arnott",
+  "firstName": "Stephen",
+  "lastName": "Arnott",
+  "name": "Stephen Arnott",
+  "club": "MIN",
+  "isAussie": false,
+  "accreditation": {
+   "field": "F2"
+  },
+  "try": {
+   "field": "Ex"
+  },
+  "commitment": "FTC",
+  "counts": {
+   "field": 5,
+   "goal": 0,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 1
+  },
+  "disciplines": [
+   "field"
+  ],
+  "slots": [
+   {
+    "type": "coach",
+    "label": "McCormick",
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
+   },
+   {
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sun",
     "time": "11am"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "rob-lloydy-bridges",
+  "firstName": "Rob Lloydy",
+  "lastName": "Bridges",
+  "name": "Rob Lloydy Bridges",
+  "club": "VA",
+  "isAussie": false,
+  "accreditation": {
+   "field": "F0"
+  },
+  "try": {},
+  "commitment": "OC",
+  "counts": {
+   "field": 1,
+   "goal": 0,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 0
+  },
+  "disciplines": [
+   "field"
+  ],
+  "slots": [
+   {
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
    },
    {
     "type": "playing",
@@ -50,34 +257,12 @@ window.UMPIRES = [
     "label": "With club",
     "tentative": false,
     "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sat",
     "time": "3pm"
    },
    {
     "type": "playing",
     "label": "With club",
     "tentative": true,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sat",
-    "time": "5pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 5",
-    "field": 5,
-    "tentative": false,
     "day": "sun",
     "time": "9am"
    },
@@ -99,306 +284,60 @@ window.UMPIRES = [
     "type": "playing",
     "label": "With club",
     "tentative": true,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
-    "time": "4:30pm"
+    "time": "5pm"
    }
   ]
  },
  {
-  "id": "steve-arnott",
-  "firstName": "Steve",
-  "lastName": "Arnott",
-  "name": "Steve Arnott",
-  "club": "MN",
+  "id": "david-bryant",
+  "firstName": "David",
+  "lastName": "Bryant",
+  "name": "David Bryant",
+  "club": "HOU",
   "isAussie": false,
   "accreditation": {
-   "field": "F2"
+   "field": "F1"
   },
-  "try": {
-   "field": "Ex"
-  },
-  "commitment": "FT",
-  "counts": {
-   "field": 6,
-   "goal": 0,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
-    "type": "field",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "field",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "5pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "field",
-    "label": "Field 5",
-    "field": 5,
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "maurice-balding",
-  "firstName": "Maurice",
-  "lastName": "Balding",
-  "name": "Maurice Balding",
-  "club": "OZ",
-  "isAussie": true,
-  "accreditation": {
-   "goal": "G2"
-  },
-  "try": {
-   "goal": "Ex"
-  },
-  "commitment": "FTC",
-  "counts": {
-   "field": 0,
-   "goal": 6,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "goal"
-  ],
-  "slots": [
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 5",
-    "field": 5,
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 5",
-    "field": 5,
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "maybe",
-    "label": "Hnel",
-    "tentative": true,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "duty",
-    "label": "Youth game",
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "ashlee-ball",
-  "firstName": "Ashlee",
-  "lastName": "Ball",
-  "name": "Ashlee Ball",
-  "club": "OZ",
-  "isAussie": true,
-  "accreditation": {
-   "field": "F2",
-   "boundary": "B2"
-  },
-  "try": {
-   "field": "Ex",
-   "boundary": "Ex"
-  },
+  "try": {},
   "commitment": "OC",
   "counts": {
    "field": 1,
-   "goal": 1,
+   "goal": 0,
    "boundary": 0,
    "ts": 0,
    "coach": 4
   },
   "disciplines": [
-   "field",
-   "boundary"
+   "field"
   ],
   "slots": [
    {
@@ -409,132 +348,25 @@ window.UMPIRES = [
     "time": "9am"
    },
    {
-    "type": "coach",
-    "label": "Coaching",
+    "type": "watch",
+    "label": "Watching",
     "tentative": false,
     "day": "sat",
     "time": "10am"
    },
    {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
     "type": "coach",
     "label": "Coaching",
     "tentative": false,
     "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "coach",
-    "label": "Coaching",
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sat",
-    "time": "5pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "field",
-    "label": "Field 5",
-    "field": 5,
-    "tentative": false,
-    "day": "sun",
     "time": "12pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "tbone-barrett",
-  "firstName": "Tbone",
-  "lastName": "Barrett",
-  "name": "Tbone Barrett",
-  "club": "UA",
-  "isAussie": false,
-  "accreditation": {
-   "field": "F1"
-  },
-  "try": {
-   "field": "F1"
-  },
-  "commitment": "FT",
-  "counts": {
-   "field": 6,
-   "goal": 0,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
-    "type": "field",
-    "label": "Field 5",
-    "field": 5,
-    "tentative": false,
+    "type": "watch",
+    "label": "Watching",
+    "tentative": true,
     "day": "sat",
-    "time": "10am"
+    "time": "1pm"
    },
    {
     "type": "field",
@@ -542,234 +374,73 @@ window.UMPIRES = [
     "field": 1,
     "tentative": false,
     "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 5",
-    "field": 5,
-    "tentative": false,
-    "day": "sat",
     "time": "3pm"
    },
    {
-    "type": "field",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "jeff-blankman",
-  "firstName": "Jeff",
-  "lastName": "Blankman",
-  "name": "Jeff Blankman",
-  "club": "SD",
-  "isAussie": false,
-  "accreditation": {
-   "field": "F1"
-  },
-  "try": {
-   "field": "F2"
-  },
-  "commitment": "PT",
-  "counts": {
-   "field": 2,
-   "goal": 0,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
-    "type": "field",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "field",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
+    "type": "watch",
+    "label": "Watching",
+    "tentative": true,
     "day": "sat",
     "time": "4pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "5pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
+    "type": "coach",
+    "label": "Coaching",
     "tentative": false,
     "day": "sun",
     "time": "9am"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
+    "type": "coach",
+    "label": "Coaching",
     "tentative": true,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "3pm"
    },
    {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
-    "time": "4:30pm"
+    "time": "5pm"
    }
   ]
  },
  {
-  "id": "jason-bligh",
-  "firstName": "Jason",
-  "lastName": "Bligh",
-  "name": "Jason Bligh",
-  "club": "OZ",
-  "isAussie": true,
+  "id": "steve-butler",
+  "firstName": "Steve",
+  "lastName": "Butler",
+  "name": "Steve Butler",
+  "club": "SAC",
+  "isAussie": false,
   "accreditation": {
    "field": "F2"
   },
-  "try": {
-   "field": "Ex"
-  },
-  "commitment": "FT",
+  "try": {},
+  "commitment": "FTC",
   "counts": {
-   "field": 6,
+   "field": 5,
    "goal": 0,
    "boundary": 0,
    "ts": 0,
@@ -785,45 +456,6 @@ window.UMPIRES = [
     "field": 1,
     "tentative": false,
     "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "coach",
-    "label": "Barrett",
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "5pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sun",
     "time": "9am"
    },
    {
@@ -831,152 +463,52 @@ window.UMPIRES = [
     "label": "Field 3",
     "field": 3,
     "tentative": false,
-    "day": "sun",
+    "day": "sat",
+    "time": "11am"
+   },
+   {
+    "type": "duty",
+    "label": "Field Marshall",
+    "tentative": false,
+    "day": "sat",
     "time": "12pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "simon-boyce",
-  "firstName": "Simon",
-  "lastName": "Boyce",
-  "name": "Simon Boyce",
-  "club": "Aus",
-  "isAussie": false,
-  "accreditation": {
-   "field": "F1"
-  },
-  "try": {},
-  "commitment": "N/A",
-  "counts": {
-   "field": 0,
-   "goal": 0,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "stephen-butler",
-  "firstName": "Stephen",
-  "lastName": "Butler",
-  "name": "Stephen Butler",
-  "club": "Sac",
-  "isAussie": false,
-  "accreditation": {
-   "field": "F2"
-  },
-  "try": {},
-  "commitment": "FT",
-  "counts": {
-   "field": 6,
-   "goal": 0,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
     "type": "field",
-    "label": "Field 2",
-    "field": 2,
+    "label": "Field 5",
+    "field": 5,
     "tentative": false,
     "day": "sat",
-    "time": "10am"
+    "time": "1pm"
    },
    {
-    "type": "field",
-    "label": "Field 3",
-    "field": 3,
+    "type": "duty",
+    "label": "Field Marshall",
     "tentative": false,
     "day": "sat",
     "time": "2pm"
    },
    {
-    "type": "field",
-    "label": "Field 3",
-    "field": 3,
+    "type": "coach",
+    "label": "Shroeder",
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
     "tentative": false,
     "day": "sat",
     "time": "5pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
    },
    {
     "type": "field",
@@ -984,51 +516,42 @@ window.UMPIRES = [
     "field": 5,
     "tentative": false,
     "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "field",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sun",
     "time": "11am"
    },
    {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
-    "time": "4:30pm"
+    "time": "5pm"
    }
   ]
  },
@@ -1037,18 +560,18 @@ window.UMPIRES = [
   "firstName": "Sid",
   "lastName": "Caesar",
   "name": "Sid Caesar",
-  "club": "UA",
+  "club": "",
   "isAussie": false,
   "accreditation": {
    "goal": "G2"
   },
   "try": {},
-  "commitment": "N/A",
+  "commitment": "FTC",
   "counts": {
    "field": 0,
-   "goal": 2,
+   "goal": 6,
    "boundary": 0,
-   "ts": 0,
+   "ts": 1,
    "coach": 4
   },
   "disciplines": [
@@ -1057,64 +580,59 @@ window.UMPIRES = [
   "slots": [
    {
     "type": "coach",
-    "label": "Ling",
+    "label": "Murray",
     "tentative": false,
     "day": "sat",
     "time": "9am"
    },
    {
-    "type": "duty",
-    "label": "Field Marshall",
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
     "tentative": false,
     "day": "sat",
     "time": "10am"
    },
    {
-    "type": "duty",
-    "label": "Field Marshall",
+    "type": "coach",
+    "label": "Hill",
     "tentative": false,
     "day": "sat",
     "time": "11am"
    },
    {
-    "type": "coach",
-    "label": "Tracy",
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
     "tentative": false,
     "day": "sat",
     "time": "12pm"
    },
    {
     "type": "coach",
-    "label": "Hnelson",
+    "label": "Renouf",
     "tentative": false,
     "day": "sat",
     "time": "1pm"
    },
    {
-    "type": "goal",
-    "label": "Field 5",
-    "field": 5,
+    "type": "coach",
+    "label": "Tyson",
     "tentative": false,
     "day": "sat",
     "time": "2pm"
    },
    {
-    "type": "duty",
-    "label": "Field Marshall",
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
     "tentative": false,
     "day": "sat",
     "time": "3pm"
    },
    {
-    "type": "coach",
-    "label": "Gravelle",
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
+    "type": "duty",
+    "label": "Field Marshall",
     "tentative": false,
     "day": "sat",
     "time": "5pm"
@@ -1127,15 +645,17 @@ window.UMPIRES = [
     "time": "9am"
    },
    {
-    "type": "duty",
-    "label": "Field Marshall",
+    "type": "goal",
+    "label": "Field 4",
+    "field": 4,
     "tentative": false,
     "day": "sun",
     "time": "10am"
    },
    {
-    "type": "duty",
-    "label": "Field Marshall",
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
     "tentative": false,
     "day": "sun",
     "time": "11am"
@@ -1149,47 +669,156 @@ window.UMPIRES = [
     "time": "12pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "ts",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "finals",
     "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
-    "time": "4:30pm"
+    "time": "5pm"
    }
   ]
  },
  {
-  "id": "zachary-charter",
-  "firstName": "Zachary",
-  "lastName": "Charter",
-  "name": "Zachary Charter",
+  "id": "daniel-cereghino",
+  "firstName": "Daniel",
+  "lastName": "Cereghino",
+  "name": "Daniel Cereghino",
+  "club": "",
+  "isAussie": false,
+  "accreditation": {
+   "goal": "G0"
+  },
+  "try": {},
+  "commitment": "PT",
+  "counts": {
+   "field": 0,
+   "goal": 6,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 0
+  },
+  "disciplines": [
+   "goal"
+  ],
+  "slots": [
+   {
+    "type": "goal",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sun",
+    "time": "11am"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "sam-duewel",
+  "firstName": "Sam",
+  "lastName": "Duewel",
+  "name": "Sam Duewel",
   "club": "OZ",
   "isAussie": true,
   "accreditation": {
@@ -1204,41 +833,41 @@ window.UMPIRES = [
    "goal": 0,
    "boundary": 0,
    "ts": 0,
-   "coach": 2
+   "coach": 1
   },
   "disciplines": [
    "field"
   ],
   "slots": [
    {
-    "type": "coach",
-    "label": "Henderson",
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
     "tentative": false,
     "day": "sat",
     "time": "9am"
    },
    {
+    "type": "coach",
+    "label": "Bridges",
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
+   },
+   {
     "type": "field",
-    "label": "Field 3",
-    "field": 3,
+    "label": "Field 4",
+    "field": 4,
     "tentative": false,
     "day": "sat",
     "time": "11am"
    },
    {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
+    "type": "off",
+    "label": "OFF",
     "tentative": false,
     "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "coach",
-    "label": "ANelson",
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
+    "time": "12pm"
    },
    {
     "type": "field",
@@ -1246,58 +875,65 @@ window.UMPIRES = [
     "field": 1,
     "tentative": false,
     "day": "sat",
-    "time": "5pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 5",
-    "field": 5,
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "field",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
     "time": "3pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sun",
+    "time": "11am"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
     "day": "finals",
     "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
    }
   ]
  },
@@ -1316,7 +952,7 @@ window.UMPIRES = [
   },
   "commitment": "FTC",
   "counts": {
-   "field": 5,
+   "field": 4,
    "goal": 0,
    "boundary": 0,
    "ts": 0,
@@ -1327,93 +963,99 @@ window.UMPIRES = [
   ],
   "slots": [
    {
-    "type": "field",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
     "type": "coach",
-    "label": "Vrbicek",
+    "label": "Munn",
     "tentative": false,
     "day": "sat",
-    "time": "12pm"
+    "time": "9am"
    },
    {
-    "type": "field",
-    "label": "Field 4",
-    "field": 4,
+    "type": "off",
+    "label": "OFF",
     "tentative": false,
     "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "coach",
-    "label": "Renouf",
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
+    "time": "11am"
    },
    {
     "type": "field",
     "label": "Field 3",
     "field": 3,
     "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
     "day": "sun",
     "time": "9am"
    },
    {
+    "type": "coach",
+    "label": "O'Keefe",
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
     "type": "field",
-    "label": "Field 2",
-    "field": 2,
+    "label": "Field 4",
+    "field": 4,
     "tentative": false,
     "day": "sun",
     "time": "11am"
    },
    {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
-    "time": "4:30pm"
+    "time": "5pm"
    }
   ]
  },
@@ -1436,7 +1078,841 @@ window.UMPIRES = [
    "goal": 0,
    "boundary": 0,
    "ts": 0,
-   "coach": 3
+   "coach": 1
+  },
+  "disciplines": [
+   "field"
+  ],
+  "slots": [
+   {
+    "type": "coach",
+    "label": "Shand",
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "4pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "field",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sun",
+    "time": "11am"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "paul-enzinger",
+  "firstName": "Paul",
+  "lastName": "Enzinger",
+  "name": "Paul Enzinger",
+  "club": "CHI",
+  "isAussie": false,
+  "accreditation": {
+   "field": "F1",
+   "goal": "G1"
+  },
+  "try": {
+   "field": "F1",
+   "goal": "G1"
+  },
+  "commitment": "OC",
+  "counts": {
+   "field": 1,
+   "goal": 2,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 0
+  },
+  "disciplines": [
+   "field",
+   "goal"
+  ],
+  "slots": [
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sat",
+    "time": "4pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "daniel-estes",
+  "firstName": "Daniel",
+  "lastName": "Estes",
+  "name": "Daniel Estes",
+  "club": "CHI",
+  "isAussie": false,
+  "accreditation": {
+   "goal": "G2"
+  },
+  "try": {},
+  "commitment": "FTC",
+  "counts": {
+   "field": 0,
+   "goal": 6,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 4
+  },
+  "disciplines": [
+   "goal"
+  ],
+  "slots": [
+   {
+    "type": "coach",
+    "label": "Pieters",
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "coach",
+    "label": "Gier",
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "2pm"
+   },
+   {
+    "type": "coach",
+    "label": "Murray",
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "coach",
+    "label": "Gier",
+    "tentative": false,
+    "day": "sat",
+    "time": "4pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sun",
+    "time": "11am"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "leigh-fisher",
+  "firstName": "Leigh",
+  "lastName": "Fisher",
+  "name": "Leigh Fisher",
+  "club": "OZ",
+  "isAussie": true,
+  "accreditation": {
+   "field": "F2"
+  },
+  "try": {
+   "field": "Ex"
+  },
+  "commitment": "N/A",
+  "counts": {
+   "field": 0,
+   "goal": 0,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 9
+  },
+  "disciplines": [
+   "field"
+  ],
+  "slots": [
+   {
+    "type": "coach",
+    "label": "Vanderkaap",
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "coach",
+    "label": "Renouf",
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
+   },
+   {
+    "type": "coach",
+    "label": "Ridenour",
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
+   },
+   {
+    "type": "coach",
+    "label": "Schoennagel",
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "coach",
+    "label": "Kraska",
+    "tentative": false,
+    "day": "sat",
+    "time": "2pm"
+   },
+   {
+    "type": "coach",
+    "label": "Nelson",
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "coach",
+    "label": "Enzinger",
+    "tentative": false,
+    "day": "sat",
+    "time": "4pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "coach",
+    "label": "Shand",
+    "tentative": false,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "coach",
+    "label": "Gier",
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "mark-gall",
+  "firstName": "Mark",
+  "lastName": "Gall",
+  "name": "Mark Gall",
+  "club": "",
+  "isAussie": false,
+  "accreditation": {
+   "goal": "G2"
+  },
+  "try": {},
+  "commitment": "FTC",
+  "counts": {
+   "field": 0,
+   "goal": 6,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 5
+  },
+  "disciplines": [
+   "goal"
+  ],
+  "slots": [
+   {
+    "type": "coach",
+    "label": "Allen",
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "coach",
+    "label": "Hill",
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "coach",
+    "label": "Noble",
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "coach",
+    "label": "Miller",
+    "tentative": false,
+    "day": "sat",
+    "time": "2pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "coach",
+    "label": "Tyson",
+    "tentative": false,
+    "day": "sat",
+    "time": "4pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "kevin-gier",
+  "firstName": "Kevin",
+  "lastName": "Gier",
+  "name": "Kevin Gier",
+  "club": "NC",
+  "isAussie": false,
+  "accreditation": {
+   "field": "FC",
+   "goal": "G1",
+   "boundary": "BC"
+  },
+  "try": {
+   "field": "F0",
+   "goal": "G2",
+   "boundary": "B0"
+  },
+  "commitment": "PT",
+  "counts": {
+   "field": 3,
+   "goal": 6,
+   "boundary": 1,
+   "ts": 0,
+   "coach": 0
+  },
+  "disciplines": [
+   "field",
+   "goal",
+   "boundary"
+  ],
+  "slots": [
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
+   },
+   {
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "boundary",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "2pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "4pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sun",
+    "time": "11am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "ryan-hartwig",
+  "firstName": "Ryan",
+  "lastName": "Hartwig",
+  "name": "Ryan Hartwig",
+  "club": "OZ",
+  "isAussie": true,
+  "accreditation": {
+   "field": "F2"
+  },
+  "try": {
+   "field": "Ex"
+  },
+  "commitment": "FTC",
+  "counts": {
+   "field": 4,
+   "goal": 1,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 1
   },
   "disciplines": [
    "field"
@@ -1451,169 +1927,11 @@ window.UMPIRES = [
     "time": "10am"
    },
    {
-    "type": "field",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "coach",
-    "label": "DEstes",
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 5",
-    "field": 5,
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "coach",
-    "label": "Noble",
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "coach",
-    "label": "Shand",
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
     "type": "off",
     "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "daniel-estes",
-  "firstName": "Daniel",
-  "lastName": "Estes",
-  "name": "Daniel Estes",
-  "club": "Chi",
-  "isAussie": false,
-  "accreditation": {
-   "goal": "G2"
-  },
-  "try": {},
-  "commitment": "FTC",
-  "counts": {
-   "field": 0,
-   "goal": 6,
-   "boundary": 1,
-   "ts": 0,
-   "coach": 2
-  },
-  "disciplines": [
-   "goal"
-  ],
-  "slots": [
-   {
-    "type": "coach",
-    "label": "Stephans",
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "coach",
-    "label": "Tyson",
     "tentative": false,
     "day": "sat",
     "time": "11am"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "boundary",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
    },
    {
     "type": "goal",
@@ -1621,148 +1939,27 @@ window.UMPIRES = [
     "field": 4,
     "tentative": false,
     "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sat",
-    "time": "5pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 5",
-    "field": 5,
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 5",
-    "field": 5,
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sun",
     "time": "12pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "coach",
+    "label": "Henderson",
     "tentative": false,
-    "day": "sun",
+    "day": "sat",
     "time": "1pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "mark-gall",
-  "firstName": "Mark",
-  "lastName": "Gall",
-  "name": "Mark Gall",
-  "club": "UA",
-  "isAussie": false,
-  "accreditation": {
-   "goal": "G2"
-  },
-  "try": {},
-  "commitment": "FTC",
-  "counts": {
-   "field": 0,
-   "goal": 6,
-   "boundary": 1,
-   "ts": 0,
-   "coach": 3
-  },
-  "disciplines": [
-   "goal"
-  ],
-  "slots": [
-   {
-    "type": "boundary",
+    "type": "field",
     "label": "Field 1",
     "field": 1,
     "tentative": false,
     "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 5",
-    "field": 5,
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "coach",
-    "label": "HNelson",
-    "tentative": false,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "coach",
-    "label": "Stanton",
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
     "time": "2pm"
    },
    {
-    "type": "goal",
+    "type": "field",
     "label": "Field 5",
     "field": 5,
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "coach",
-    "label": "Stephans",
     "tentative": false,
     "day": "sat",
     "time": "4pm"
@@ -1775,219 +1972,47 @@ window.UMPIRES = [
     "time": "5pm"
    },
    {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "goal",
+    "type": "field",
     "label": "Field 1",
     "field": 1,
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
     "tentative": false,
     "day": "sun",
     "time": "12pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "3pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "bob-gravelle",
-  "firstName": "Bob",
-  "lastName": "Gravelle",
-  "name": "Bob Gravelle",
-  "club": "StL",
-  "isAussie": false,
-  "accreditation": {
-   "goal": "G1"
-  },
-  "try": {
-   "goal": "G2"
-  },
-  "commitment": "OC",
-  "counts": {
-   "field": 0,
-   "goal": 2,
-   "boundary": 1,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "goal"
-  ],
-  "slots": [
-   {
-    "type": "boundary",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "off",
+    "label": "OFF",
     "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
+    "day": "finals",
     "time": "5pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
    }
   ]
  },
@@ -1996,7 +2021,7 @@ window.UMPIRES = [
   "firstName": "Darren",
   "lastName": "Henderson",
   "name": "Darren Henderson",
-  "club": "AZ",
+  "club": "ARI",
   "isAussie": false,
   "accreditation": {
    "field": "F1"
@@ -2017,7 +2042,114 @@ window.UMPIRES = [
   ],
   "slots": [
    {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
+   },
+   {
     "type": "field",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "maybe",
+    "label": "a final",
+    "tentative": true,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "john-hill",
+  "firstName": "John",
+  "lastName": "Hill",
+  "name": "John Hill",
+  "club": "",
+  "isAussie": false,
+  "accreditation": {
+   "goal": "GC"
+  },
+  "try": {
+   "goal": "G0"
+  },
+  "commitment": "FT",
+  "counts": {
+   "field": 0,
+   "goal": 10,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 0
+  },
+  "disciplines": [
+   "goal"
+  ],
+  "slots": [
+   {
+    "type": "goal",
     "label": "Field 1",
     "field": 1,
     "tentative": false,
@@ -2025,71 +2157,78 @@ window.UMPIRES = [
     "time": "9am"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "sat",
     "time": "10am"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "goal",
+    "label": "Field 4",
+    "field": 4,
     "tentative": false,
     "day": "sat",
     "time": "11am"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "off",
+    "label": "OFF",
     "tentative": false,
     "day": "sat",
     "time": "12pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "sat",
     "time": "1pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "sat",
     "time": "2pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "sat",
     "time": "3pm"
    },
    {
-    "type": "field",
-    "label": "Field 3",
-    "field": 3,
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
     "tentative": false,
     "day": "sat",
-    "time": "4pm"
+    "time": "5pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
     "tentative": false,
     "day": "sun",
     "time": "9am"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
     "tentative": false,
     "day": "sun",
     "time": "10am"
    },
    {
-    "type": "field",
+    "type": "goal",
     "label": "Field 3",
     "field": 3,
     "tentative": false,
@@ -2097,46 +2236,39 @@ window.UMPIRES = [
     "time": "11am"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
-    "time": "4:30pm"
+    "time": "5pm"
    }
   ]
  },
@@ -2159,7 +2291,7 @@ window.UMPIRES = [
    "goal": 0,
    "boundary": 0,
    "ts": 0,
-   "coach": 2
+   "coach": 1
   },
   "disciplines": [
    "field"
@@ -2167,15 +2299,15 @@ window.UMPIRES = [
   "slots": [
    {
     "type": "coach",
-    "label": "Blankman",
+    "label": "Sternberg",
     "tentative": false,
     "day": "sat",
     "time": "9am"
    },
    {
     "type": "field",
-    "label": "Field 2",
-    "field": 2,
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "sat",
     "time": "11am"
@@ -2186,6 +2318,13 @@ window.UMPIRES = [
     "field": 1,
     "tentative": false,
     "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
     "time": "1pm"
    },
    {
@@ -2194,252 +2333,107 @@ window.UMPIRES = [
     "field": 3,
     "tentative": false,
     "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "coach",
-    "label": "O'Dell",
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
     "time": "3pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
     "day": "finals",
     "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
    }
   ]
  },
  {
-  "id": "sam-jordan",
-  "firstName": "Sam",
-  "lastName": "Jordan",
-  "name": "Sam Jordan",
-  "club": "Ari",
+  "id": "wayne-kraska",
+  "firstName": "Wayne",
+  "lastName": "Kraska",
+  "name": "Wayne Kraska",
+  "club": "",
   "isAussie": false,
   "accreditation": {
+   "field": "F0",
    "goal": "GC"
   },
   "try": {
-   "goal": "G0"
+   "field": "F1"
   },
   "commitment": "FT",
   "counts": {
-   "field": 0,
-   "goal": 9,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "goal"
-  ],
-  "slots": [
-   {
-    "type": "personal",
-    "label": "Personal",
-    "tentative": false,
-    "day": "sat",
-    "time": "8am"
-   },
-   {
-    "type": "personal",
-    "label": "Personal",
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 5",
-    "field": 5,
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "5pm"
-   },
-   {
-    "type": "personal",
-    "label": "Personal",
-    "tentative": false,
-    "day": "sun",
-    "time": "8am"
-   },
-   {
-    "type": "personal",
-    "label": "Personal",
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "kaleb-lee",
-  "firstName": "Kaleb",
-  "lastName": "Lee",
-  "name": "Kaleb Lee",
-  "club": "OZ",
-  "isAussie": true,
-  "accreditation": {
-   "field": "F2"
-  },
-  "try": {
-   "field": "Ex"
-  },
-  "commitment": "FTC",
-  "counts": {
-   "field": 5,
+   "field": 6,
    "goal": 0,
    "boundary": 0,
    "ts": 0,
-   "coach": 2
+   "coach": 0
   },
   "disciplines": [
-   "field"
+   "field",
+   "goal"
   ],
   "slots": [
    {
     "type": "field",
-    "label": "Field 5",
-    "field": 5,
+    "label": "Field 4",
+    "field": 4,
     "tentative": false,
     "day": "sat",
     "time": "10am"
    },
    {
-    "type": "coach",
-    "label": "Montanaro",
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
     "tentative": false,
     "day": "sat",
     "time": "12pm"
@@ -2453,223 +2447,75 @@ window.UMPIRES = [
     "time": "2pm"
    },
    {
-    "type": "coach",
-    "label": "Barrett",
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "5pm"
-   },
-   {
     "type": "field",
     "label": "Field 1",
     "field": 1,
-    "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "field",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "evan-ling",
-  "firstName": "Evan",
-  "lastName": "Ling",
-  "name": "Evan Ling",
-  "club": "Nsh",
-  "isAussie": false,
-  "accreditation": {
-   "goal": "G1"
-  },
-  "try": {
-   "goal": "G1"
-  },
-  "commitment": "OC",
-  "counts": {
-   "field": 0,
-   "goal": 2,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "goal"
-  ],
-  "slots": [
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
     "tentative": false,
     "day": "sat",
     "time": "4pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
     "tentative": false,
     "day": "sun",
     "time": "10am"
    },
    {
-    "type": "goal",
-    "label": "Field 4",
-    "field": 4,
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
     "day": "sun",
     "time": "12pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
-    "time": "4:30pm"
+    "time": "5pm"
    }
   ]
  },
  {
-  "id": "rob-liwanag",
-  "firstName": "Rob",
-  "lastName": "Liwanag",
-  "name": "Rob Liwanag",
-  "club": "SD",
+  "id": "paul-lashier",
+  "firstName": "Paul",
+  "lastName": "LaShier",
+  "name": "Paul LaShier",
+  "club": "DC",
   "isAussie": false,
   "accreditation": {
-   "field": "F1"
+   "field": "F2"
   },
   "try": {},
   "commitment": "PT",
@@ -2685,46 +2531,603 @@ window.UMPIRES = [
   ],
   "slots": [
    {
-    "type": "personal",
-    "label": "Personal",
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
+   },
+   {
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "maybe",
+    "label": "a final",
+    "tentative": true,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "bevan-main",
+  "firstName": "Bevan",
+  "lastName": "Main",
+  "name": "Bevan Main",
+  "club": "",
+  "isAussie": false,
+  "accreditation": {
+   "field": "F2"
+  },
+  "try": {
+   "field": "F2"
+  },
+  "commitment": "FTC",
+  "counts": {
+   "field": 5,
+   "goal": 0,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 1
+  },
+  "disciplines": [
+   "field"
+  ],
+  "slots": [
+   {
+    "type": "coach",
+    "label": "Nelson",
     "tentative": false,
     "day": "sat",
     "time": "9am"
    },
    {
     "type": "field",
-    "label": "Field 5",
-    "field": 5,
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "sat",
-    "time": "11am"
+    "time": "12pm"
    },
    {
-    "type": "watch",
-    "label": "Watching",
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
     "tentative": false,
     "day": "sat",
     "time": "1pm"
    },
    {
     "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sun",
+    "time": "11am"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "ian-mccormick",
+  "firstName": "Ian",
+  "lastName": "McCormick",
+  "name": "Ian McCormick",
+  "club": "VA",
+  "isAussie": false,
+  "accreditation": {
+   "field": "F0"
+  },
+  "try": {},
+  "commitment": "OC",
+  "counts": {
+   "field": 1,
+   "goal": 0,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 0
+  },
+  "disciplines": [
+   "field"
+  ],
+  "slots": [
+   {
+    "type": "field",
     "label": "Field 5",
     "field": 5,
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "sun",
+    "time": "11am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "seth-mcelvaney",
+  "firstName": "Seth",
+  "lastName": "McElvaney",
+  "name": "Seth McElvaney",
+  "club": "NC",
+  "isAussie": false,
+  "accreditation": {
+   "field": "F2",
+   "goal": "GC"
+  },
+  "try": {},
+  "commitment": "FT",
+  "counts": {
+   "field": 6,
+   "goal": 2,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 0
+  },
+  "disciplines": [
+   "field",
+   "goal"
+  ],
+  "slots": [
+   {
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
+   },
+   {
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
     "tentative": false,
     "day": "sat",
     "time": "2pm"
    },
    {
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "duty",
+    "label": "Field Marshall",
+    "tentative": false,
+    "day": "sun",
+    "time": "11am"
+   },
+   {
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "ross-mclaren",
+  "firstName": "Ross",
+  "lastName": "McLaren",
+  "name": "Ross McLaren",
+  "club": "",
+  "isAussie": false,
+  "accreditation": {
+   "field": "F2"
+  },
+  "try": {},
+  "commitment": "FTC",
+  "counts": {
+   "field": 5,
+   "goal": 0,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 0
+  },
+  "disciplines": [
+   "field"
+  ],
+  "slots": [
+   {
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "steve-miller",
+  "firstName": "Steve",
+  "lastName": "Miller",
+  "name": "Steve Miller",
+  "club": "NC",
+  "isAussie": false,
+  "accreditation": {
+   "goal": "G2"
+  },
+  "try": {},
+  "commitment": "OC",
+  "counts": {
+   "field": 0,
+   "goal": 3,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 0
+  },
+  "disciplines": [
+   "goal"
+  ],
+  "slots": [
+   {
     "type": "watch",
     "label": "Watching",
     "tentative": false,
     "day": "sat",
-    "time": "4pm"
+    "time": "10am"
    },
    {
-    "type": "personal",
-    "label": "Personal",
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "watch",
+    "label": "Watching",
+    "tentative": true,
+    "day": "sat",
+    "time": "2pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "watch",
+    "label": "Watching",
+    "tentative": true,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "watch",
+    "label": "Watching",
+    "tentative": true,
     "day": "sun",
     "time": "9am"
    },
@@ -2736,56 +3139,916 @@ window.UMPIRES = [
     "time": "10am"
    },
    {
+    "type": "goal",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sun",
+    "time": "11am"
+   },
+   {
     "type": "watch",
     "label": "Watching",
     "tentative": true,
-    "day": "sun",
-    "time": "12pm"
+    "day": "finals",
+    "time": "1pm"
    },
    {
-    "type": "field",
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "tara-miller",
+  "firstName": "Tara",
+  "lastName": "Miller",
+  "name": "Tara Miller",
+  "club": "",
+  "isAussie": false,
+  "accreditation": {
+   "goal": "G1",
+   "boundary": "B1"
+  },
+  "try": {
+   "goal": "G2",
+   "boundary": "B1"
+  },
+  "commitment": "FT",
+  "counts": {
+   "field": 0,
+   "goal": 9,
+   "boundary": 1,
+   "ts": 0,
+   "coach": 0
+  },
+  "disciplines": [
+   "goal",
+   "boundary"
+  ],
+  "slots": [
+   {
+    "type": "goal",
     "label": "Field 4",
     "field": 4,
     "tentative": false,
-    "day": "sun",
-    "time": "1pm"
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
-    "day": "finals",
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "boundary",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
     "time": "1pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
-    "day": "finals",
+    "day": "sat",
     "time": "2pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "4pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
     "day": "finals",
     "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
-    "time": "4:30pm"
+    "time": "5pm"
    }
   ]
  },
  {
-  "id": "milo-lombardi",
-  "firstName": "Milo",
-  "lastName": "Lombardi",
-  "name": "Milo Lombardi",
-  "club": "Hou",
+  "id": "andrew-mueller",
+  "firstName": "Andrew",
+  "lastName": "Mueller",
+  "name": "Andrew Mueller",
+  "club": "HOU",
+  "isAussie": false,
+  "accreditation": {
+   "goal": "G2"
+  },
+  "try": {},
+  "commitment": "PT",
+  "counts": {
+   "field": 0,
+   "goal": 5,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 0
+  },
+  "disciplines": [
+   "goal"
+  ],
+  "slots": [
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "2pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sat",
+    "time": "4pm"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sun",
+    "time": "11am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "rob-munn",
+  "firstName": "Rob",
+  "lastName": "Munn",
+  "name": "Rob Munn",
+  "club": "SAC",
+  "isAussie": false,
+  "accreditation": {
+   "field": "F0"
+  },
+  "try": {},
+  "commitment": "OC",
+  "counts": {
+   "field": 1,
+   "goal": 0,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 0
+  },
+  "disciplines": [
+   "field"
+  ],
+  "slots": [
+   {
+    "type": "field",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "maybe",
+    "label": "a final",
+    "tentative": true,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "kevin-murray",
+  "firstName": "Kevin",
+  "lastName": "Murray",
+  "name": "Kevin Murray",
+  "club": "",
+  "isAussie": false,
+  "accreditation": {
+   "field": "F2",
+   "goal": "GC",
+   "boundary": "BC"
+  },
+  "try": {
+   "goal": "G0",
+   "boundary": "B0"
+  },
+  "commitment": "FTC",
+  "counts": {
+   "field": 5,
+   "goal": 2,
+   "boundary": 1,
+   "ts": 0,
+   "coach": 1
+  },
+  "disciplines": [
+   "field",
+   "goal",
+   "boundary"
+  ],
+  "slots": [
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "coach",
+    "label": "Kraska",
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
+   },
+   {
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "boundary",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "2pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "aaron-nelson",
+  "firstName": "Aaron",
+  "lastName": "Nelson",
+  "name": "Aaron Nelson",
+  "club": "SD",
+  "isAussie": false,
+  "accreditation": {
+   "field": "F1",
+   "goal": "G2"
+  },
+  "try": {},
+  "commitment": "PT",
+  "counts": {
+   "field": 3,
+   "goal": 4,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 1
+  },
+  "disciplines": [
+   "field",
+   "goal"
+  ],
+  "slots": [
+   {
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "coach",
+    "label": "Coaching",
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "2pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sun",
+    "time": "11am"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "steven-noble",
+  "firstName": "Steven",
+  "lastName": "Noble",
+  "name": "Steven Noble",
+  "club": "DEN",
+  "isAussie": false,
+  "accreditation": {
+   "field": "F2",
+   "goal": "GC"
+  },
+  "try": {
+   "goal": "G0"
+  },
+  "commitment": "PT",
+  "counts": {
+   "field": 3,
+   "goal": 2,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 0
+  },
+  "disciplines": [
+   "field",
+   "goal"
+  ],
+  "slots": [
+   {
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "watch",
+    "label": "Watching",
+    "tentative": false,
+    "day": "sat",
+    "time": "2pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "watch",
+    "label": "Watching",
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "watch",
+    "label": "Watching",
+    "tentative": true,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "watch",
+    "label": "Watching",
+    "tentative": true,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sun",
+    "time": "11am"
+   },
+   {
+    "type": "watch",
+    "label": "Watching",
+    "tentative": true,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "paul-o-keeffe",
+  "firstName": "Paul",
+  "lastName": "O'Keeffe",
+  "name": "Paul O'Keeffe",
+  "club": "WIS",
+  "isAussie": false,
+  "accreditation": {
+   "field": "F0"
+  },
+  "try": {},
+  "commitment": "OC",
+  "counts": {
+   "field": 1,
+   "goal": 0,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 0
+  },
+  "disciplines": [
+   "field"
+  ],
+  "slots": [
+   {
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "matt-o-leary",
+  "firstName": "Matt",
+  "lastName": "O'Leary",
+  "name": "Matt O'Leary",
+  "club": "SAC",
   "isAussie": false,
   "accreditation": {
    "field": "F2"
@@ -2797,27 +4060,12 @@ window.UMPIRES = [
    "goal": 0,
    "boundary": 0,
    "ts": 0,
-   "coach": 5
+   "coach": 0
   },
   "disciplines": [
    "field"
   ],
   "slots": [
-   {
-    "type": "field",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
    {
     "type": "playing",
     "label": "With club",
@@ -2826,44 +4074,113 @@ window.UMPIRES = [
     "time": "11am"
    },
    {
-    "type": "coach",
-    "label": "Coaching",
+    "type": "playing",
+    "label": "With club",
     "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "maybe",
+    "label": "a final",
+    "tentative": true,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "jack-odell",
+  "firstName": "Jack",
+  "lastName": "Odell",
+  "name": "Jack Odell",
+  "club": "OKC",
+  "isAussie": false,
+  "accreditation": {
+   "field": "F1"
+  },
+  "try": {},
+  "commitment": "PT",
+  "counts": {
+   "field": 1,
+   "goal": 0,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 0
+  },
+  "disciplines": [
+   "field"
+  ],
+  "slots": [
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
     "day": "sat",
     "time": "12pm"
    },
    {
     "type": "playing",
     "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "coach",
-    "label": "Coaching",
     "tentative": true,
     "day": "sat",
     "time": "3pm"
    },
    {
-    "type": "coach",
-    "label": "Coaching",
-    "tentative": true,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
     "day": "sat",
     "time": "5pm"
    },
@@ -2875,6 +4192,110 @@ window.UMPIRES = [
     "time": "9am"
    },
    {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "sun",
+    "time": "11am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "nic-parker",
+  "firstName": "Nic",
+  "lastName": "Parker",
+  "name": "Nic Parker",
+  "club": "WIL",
+  "isAussie": false,
+  "accreditation": {
+   "field": "FC"
+  },
+  "try": {
+   "field": "F0"
+  },
+  "commitment": "OC",
+  "counts": {
+   "field": 0,
+   "goal": 0,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 7
+  },
+  "disciplines": [
+   "field"
+  ],
+  "slots": [
+   {
+    "type": "coach",
+    "label": "Coaching",
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
+   },
+   {
+    "type": "coach",
+    "label": "Coaching",
+    "tentative": true,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "coach",
+    "label": "Coaching",
+    "tentative": true,
+    "day": "sat",
+    "time": "4pm"
+   },
+   {
+    "type": "coach",
+    "label": "Coaching",
+    "tentative": true,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
     "type": "coach",
     "label": "Coaching",
     "tentative": true,
@@ -2882,8 +4303,8 @@ window.UMPIRES = [
     "time": "10am"
    },
    {
-    "type": "watch",
-    "label": "Watching",
+    "type": "coach",
+    "label": "Coaching",
     "tentative": true,
     "day": "sun",
     "time": "11am"
@@ -2892,6 +4313,288 @@ window.UMPIRES = [
     "type": "coach",
     "label": "Coaching",
     "tentative": true,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "peter-pearce",
+  "firstName": "Peter",
+  "lastName": "Pearce",
+  "name": "Peter Pearce",
+  "club": "OZ",
+  "isAussie": true,
+  "accreditation": {
+   "field": "F2"
+  },
+  "try": {
+   "field": "Ex"
+  },
+  "commitment": "FTC",
+  "counts": {
+   "field": 6,
+   "goal": 0,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 1
+  },
+  "disciplines": [
+   "field"
+  ],
+  "slots": [
+   {
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
+   },
+   {
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "coach",
+    "label": "O'Dell",
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sun",
+    "time": "11am"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "jeff-persson",
+  "firstName": "Jeff",
+  "lastName": "Persson",
+  "name": "Jeff Persson",
+  "club": "NSH",
+  "isAussie": false,
+  "accreditation": {
+   "field": "F2",
+   "goal": "G2"
+  },
+  "try": {
+   "field": "Ex"
+  },
+  "commitment": "N/A",
+  "counts": {
+   "field": 0,
+   "goal": 3,
+   "boundary": 0,
+   "ts": 1,
+   "coach": 0
+  },
+  "disciplines": [
+   "field",
+   "goal"
+  ],
+  "slots": [
+   {
+    "type": "duty",
+    "label": "Field Marshall",
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "duty",
+    "label": "Field Marshall",
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
+   },
+   {
+    "type": "duty",
+    "label": "Field Marshall",
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "duty",
+    "label": "Field Marshall",
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "2pm"
+   },
+   {
+    "type": "duty",
+    "label": "Field Marshall",
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "4pm"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "duty",
+    "label": "Field Marshall",
+    "tentative": false,
+    "day": "sun",
+    "time": "8am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sun",
+    "time": "11am"
+   },
+   {
+    "type": "duty",
+    "label": "Field Marshall",
+    "tentative": false,
     "day": "sun",
     "time": "12pm"
    },
@@ -2899,53 +4602,332 @@ window.UMPIRES = [
     "type": "playing",
     "label": "With club",
     "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "ts",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "eric-pieters",
+  "firstName": "Eric",
+  "lastName": "Pieters",
+  "name": "Eric Pieters",
+  "club": "",
+  "isAussie": false,
+  "accreditation": {
+   "goal": "GC"
+  },
+  "try": {
+   "goal": "G0"
+  },
+  "commitment": "FT",
+  "counts": {
+   "field": 0,
+   "goal": 10,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 0
+  },
+  "disciplines": [
+   "goal"
+  ],
+  "slots": [
+   {
+    "type": "goal",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sun",
+    "time": "11am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "william-pittard",
+  "firstName": "William",
+  "lastName": "Pittard",
+  "name": "William Pittard",
+  "club": "",
+  "isAussie": false,
+  "accreditation": {
+   "goal": "G2"
+  },
+  "try": {},
+  "commitment": "FTC",
+  "counts": {
+   "field": 0,
+   "goal": 6,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 2
+  },
+  "disciplines": [
+   "goal"
+  ],
+  "slots": [
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "coach",
+    "label": "Wang",
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
+   },
+   {
+    "type": "coach",
+    "label": "Enzinger",
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "2pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sat",
     "time": "3pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
     "day": "finals",
     "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
    }
   ]
  },
  {
-  "id": "rich-mann",
-  "firstName": "Rich",
-  "lastName": "Mann",
-  "name": "Rich Mann",
-  "club": "Den",
-  "isAussie": false,
+  "id": "harvey-poulton",
+  "firstName": "Harvey",
+  "lastName": "Poulton",
+  "name": "Harvey Poulton",
+  "club": "OZ",
+  "isAussie": true,
   "accreditation": {
-   "field": "F2"
+   "boundary": "B1"
   },
   "try": {
-   "field": "Ex"
+   "boundary": "Ex"
   },
-  "commitment": "N/A",
+  "commitment": "FT",
   "counts": {
    "field": 0,
    "goal": 0,
@@ -2954,204 +4936,59 @@ window.UMPIRES = [
    "coach": 0
   },
   "disciplines": [
-   "field"
+   "boundary"
   ],
   "slots": [
    {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "3pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "david-martin",
-  "firstName": "David",
-  "lastName": "Martin",
-  "name": "David Martin",
-  "club": "Col",
-  "isAussie": false,
-  "accreditation": {
-   "field": "F0"
-  },
-  "try": {},
-  "commitment": "PT",
-  "counts": {
-   "field": 3,
-   "goal": 0,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "off",
+    "label": "OFF",
     "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
+    "day": "finals",
     "time": "5pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "field",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
    }
   ]
  },
  {
-  "id": "ross-mclaren",
-  "firstName": "Ross",
-  "lastName": "McLaren",
-  "name": "Ross McLaren",
-  "club": "UA",
-  "isAussie": false,
+  "id": "tarwin-poulton",
+  "firstName": "Tarwin",
+  "lastName": "Poulton",
+  "name": "Tarwin Poulton",
+  "club": "OZ",
+  "isAussie": true,
   "accreditation": {
    "field": "F2"
   },
-  "try": {},
+  "try": {
+   "field": "Ex"
+  },
   "commitment": "FT",
   "counts": {
    "field": 6,
@@ -3170,7 +5007,22 @@ window.UMPIRES = [
     "field": 1,
     "tentative": false,
     "day": "sat",
-    "time": "9am"
+    "time": "10am"
+   },
+   {
+    "type": "field",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
    },
    {
     "type": "field",
@@ -3178,182 +5030,174 @@ window.UMPIRES = [
     "field": 2,
     "tentative": false,
     "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "5pm"
+    "time": "3pm"
    },
    {
     "type": "field",
     "label": "Field 1",
     "field": 1,
     "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
     "day": "sun",
     "time": "10am"
    },
    {
     "type": "field",
-    "label": "Field 4",
-    "field": 4,
+    "label": "Field 3",
+    "field": 3,
     "tentative": false,
     "day": "sun",
     "time": "12pm"
    },
    {
-    "type": "field",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
-    "time": "4:30pm"
+    "time": "5pm"
    }
   ]
  },
  {
-  "id": "steven-miller",
-  "firstName": "Steven",
-  "lastName": "Miller",
-  "name": "Steven Miller",
-  "club": "NC",
+  "id": "paul-renouf",
+  "firstName": "Paul",
+  "lastName": "Renouf",
+  "name": "Paul Renouf",
+  "club": "DEN",
   "isAussie": false,
   "accreditation": {
-   "goal": "G2"
+   "field": "F1",
+   "goal": "G0"
   },
   "try": {
-   "goal": "G2"
+   "field": "F2",
+   "goal": "G1"
   },
-  "commitment": "FT",
+  "commitment": "PT",
   "counts": {
-   "field": 0,
-   "goal": 9,
+   "field": 3,
+   "goal": 2,
    "boundary": 0,
    "ts": 0,
-   "coach": 0
+   "coach": 4
   },
   "disciplines": [
+   "field",
    "goal"
   ],
   "slots": [
    {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
     "tentative": false,
     "day": "sat",
     "time": "9am"
    },
    {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
     "tentative": false,
     "day": "sat",
     "time": "10am"
    },
    {
-    "type": "watch",
-    "label": "Watching",
+    "type": "off",
+    "label": "OFF",
     "tentative": false,
     "day": "sat",
     "time": "11am"
    },
    {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
+    "type": "watch",
+    "label": "Watching",
     "tentative": false,
     "day": "sat",
     "time": "12pm"
    },
    {
     "type": "goal",
-    "label": "Field 2",
-    "field": 2,
+    "label": "Field 5",
+    "field": 5,
     "tentative": false,
     "day": "sat",
     "time": "1pm"
    },
    {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
+    "type": "coach",
+    "label": "Coaching",
+    "tentative": false,
     "day": "sat",
     "time": "2pm"
    },
    {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
     "day": "sat",
     "time": "3pm"
    },
    {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
+    "type": "watch",
+    "label": "Watching",
     "tentative": false,
     "day": "sat",
     "time": "5pm"
    },
    {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
+    "type": "coach",
+    "label": "Coaching",
+    "tentative": true,
     "day": "sun",
     "time": "9am"
    },
    {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
+    "type": "coach",
+    "label": "Coaching",
+    "tentative": true,
     "day": "sun",
     "time": "10am"
    },
    {
-    "type": "goal",
-    "label": "Field 4",
-    "field": 4,
+    "type": "watch",
+    "label": "Watching",
     "tentative": false,
     "day": "sun",
     "time": "11am"
@@ -3367,184 +5211,51 @@ window.UMPIRES = [
     "time": "12pm"
    },
    {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
+    "type": "coach",
+    "label": "Coaching",
     "tentative": true,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "3pm"
+   },
+   {
+    "type": "watch",
+    "label": "Watching",
+    "tentative": true,
+    "day": "finals",
+    "time": "4:30pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
-    "time": "4:30pm"
+    "time": "5pm"
    }
   ]
  },
  {
-  "id": "tara-miller",
-  "firstName": "Tara",
-  "lastName": "Miller",
-  "name": "Tara Miller",
-  "club": "UA",
+  "id": "chet-ridenour",
+  "firstName": "Chet",
+  "lastName": "Ridenour",
+  "name": "Chet Ridenour",
+  "club": "COL",
   "isAussie": false,
   "accreditation": {
-   "goal": "G1"
-  },
-  "try": {},
-  "commitment": "FT",
-  "counts": {
-   "field": 0,
-   "goal": 9,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "goal"
-  ],
-  "slots": [
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "rob-montanaro",
-  "firstName": "Rob",
-  "lastName": "Montanaro",
-  "name": "Rob Montanaro",
-  "club": "BTR",
-  "isAussie": false,
-  "accreditation": {
-   "field": "FC"
+   "field": "F1"
   },
   "try": {},
   "commitment": "OC",
@@ -3567,15 +5278,98 @@ window.UMPIRES = [
     "time": "9am"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
     "tentative": false,
     "day": "sat",
-    "time": "10am"
+    "time": "11am"
    },
    {
     "type": "playing",
     "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "watch",
+    "label": "Watching",
+    "tentative": false,
+    "day": "sat",
+    "time": "4pm"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "maybe",
+    "label": "a final",
+    "tentative": true,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "shaun-rothe",
+  "firstName": "Shaun",
+  "lastName": "Rothe",
+  "name": "Shaun Rothe",
+  "club": "",
+  "isAussie": false,
+  "accreditation": {
+   "field": "F2"
+  },
+  "try": {},
+  "commitment": "FTC",
+  "counts": {
+   "field": 5,
+   "goal": 0,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 2
+  },
+  "disciplines": [
+   "field"
+  ],
+  "slots": [
+   {
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
     "tentative": false,
     "day": "sat",
     "time": "11am"
@@ -3589,179 +5383,36 @@ window.UMPIRES = [
     "time": "12pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "coach",
+    "label": "Bound",
     "tentative": false,
     "day": "sat",
     "time": "1pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
     "day": "sat",
     "time": "2pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
+    "type": "coach",
+    "label": "Wang",
     "tentative": false,
     "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
     "time": "3pm"
    },
    {
     "type": "off",
     "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "andrew-mueller",
-  "firstName": "Andrew",
-  "lastName": "Mueller",
-  "name": "Andrew Mueller",
-  "club": "Hou",
-  "isAussie": false,
-  "accreditation": {
-   "goal": "G2"
-  },
-  "try": {},
-  "commitment": "FT",
-  "counts": {
-   "field": 0,
-   "goal": 9,
-   "boundary": 2,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "goal"
-  ],
-  "slots": [
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "boundary",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "boundary",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
     "tentative": false,
     "day": "sat",
     "time": "5pm"
    },
    {
-    "type": "goal",
+    "type": "field",
     "label": "Field 1",
     "field": 1,
     "tentative": false,
@@ -3769,80 +5420,76 @@ window.UMPIRES = [
     "time": "9am"
    },
    {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
+    "type": "duty",
+    "label": "Field Marshall",
     "tentative": false,
     "day": "sun",
     "time": "10am"
    },
    {
-    "type": "goal",
-    "label": "Field 4",
-    "field": 4,
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
     "tentative": false,
     "day": "sun",
-    "time": "12pm"
+    "time": "11am"
    },
    {
-    "type": "goal",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
-    "time": "4:30pm"
+    "time": "5pm"
    }
   ]
  },
  {
-  "id": "aaron-nelson",
-  "firstName": "Aaron",
-  "lastName": "Nelson",
-  "name": "Aaron Nelson",
-  "club": "SD",
+  "id": "laurie-rupe",
+  "firstName": "Laurie",
+  "lastName": "Rupe",
+  "name": "Laurie Rupe",
+  "club": "MIN",
   "isAussie": false,
   "accreditation": {
-   "field": "F0",
-   "goal": "G2"
+   "field": "F2",
+   "goal": "G1"
   },
-  "try": {
-   "field": "F1"
-  },
-  "commitment": "PT",
+  "try": {},
+  "commitment": "FT",
   "counts": {
-   "field": 3,
+   "field": 4,
    "goal": 2,
-   "boundary": 2,
+   "boundary": 0,
    "ts": 0,
-   "coach": 1
+   "coach": 0
   },
   "disciplines": [
    "field",
@@ -3850,12 +5497,27 @@ window.UMPIRES = [
   ],
   "slots": [
    {
-    "type": "boundary",
+    "type": "field",
     "label": "Field 1",
     "field": 1,
     "tentative": false,
     "day": "sat",
-    "time": "9am"
+    "time": "10am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
    },
    {
     "type": "field",
@@ -3863,40 +5525,18 @@ window.UMPIRES = [
     "field": 4,
     "tentative": false,
     "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "coach",
-    "label": "Wolff",
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "boundary",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
+    "time": "1pm"
    },
    {
     "type": "field",
-    "label": "Field 1",
-    "field": 1,
+    "label": "Field 2",
+    "field": 2,
     "tentative": false,
     "day": "sat",
     "time": "4pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sat",
-    "time": "5pm"
-   },
-   {
-    "type": "field",
+    "type": "goal",
     "label": "Field 5",
     "field": 5,
     "tentative": false,
@@ -3904,219 +5544,64 @@ window.UMPIRES = [
     "time": "9am"
    },
    {
-    "type": "goal",
+    "type": "field",
     "label": "Field 2",
     "field": 2,
     "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "henry-nelson",
-  "firstName": "Henry",
-  "lastName": "Nelson",
-  "name": "Henry Nelson",
-  "club": "BR",
-  "isAussie": false,
-  "accreditation": {
-   "goal": "GC"
-  },
-  "try": {
-   "goal": "G0"
-  },
-  "commitment": "PT",
-  "counts": {
-   "field": 0,
-   "goal": 5,
-   "boundary": 1,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "goal"
-  ],
-  "slots": [
-   {
-    "type": "boundary",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
     "day": "sun",
     "time": "12pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "3pm"
    },
    {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
-    "time": "4:30pm"
+    "time": "5pm"
    }
   ]
  },
  {
-  "id": "steve-noble",
-  "firstName": "Steve",
-  "lastName": "Noble",
-  "name": "Steve Noble",
-  "club": "Den",
+  "id": "vicky-schoennagel",
+  "firstName": "Vicky",
+  "lastName": "Schoennagel",
+  "name": "Vicky Schoennagel",
+  "club": "SAC",
   "isAussie": false,
   "accreditation": {
    "field": "F2"
   },
-  "try": {
-   "field": "F2"
-  },
-  "commitment": "PT",
+  "try": {},
+  "commitment": "FT",
   "counts": {
-   "field": 3,
+   "field": 6,
    "goal": 0,
    "boundary": 0,
    "ts": 0,
@@ -4127,31 +5612,39 @@ window.UMPIRES = [
   ],
   "slots": [
    {
-    "type": "field",
-    "label": "Field 1",
-    "field": 1,
+    "type": "watch",
+    "label": "Watching",
     "tentative": false,
     "day": "sat",
-    "time": "11am"
+    "time": "9am"
+   },
+   {
+    "type": "field",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
+   },
+   {
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
    },
    {
     "type": "watch",
     "label": "Watching",
-    "tentative": false,
+    "tentative": true,
     "day": "sat",
     "time": "1pm"
    },
    {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
     "type": "field",
-    "label": "Field 3",
-    "field": 3,
+    "label": "Field 5",
+    "field": 5,
     "tentative": false,
     "day": "sat",
     "time": "3pm"
@@ -4159,29 +5652,31 @@ window.UMPIRES = [
    {
     "type": "watch",
     "label": "Watching",
-    "tentative": false,
+    "tentative": true,
     "day": "sat",
     "time": "4pm"
    },
    {
-    "type": "watch",
-    "label": "Watching",
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
     "tentative": false,
     "day": "sat",
     "time": "5pm"
    },
    {
     "type": "field",
-    "label": "Field 1",
-    "field": 1,
+    "label": "Field 2",
+    "field": 2,
     "tentative": false,
     "day": "sun",
     "time": "9am"
    },
    {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
     "day": "sun",
     "time": "11am"
    },
@@ -4193,47 +5688,47 @@ window.UMPIRES = [
     "time": "12pm"
    },
    {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "watch",
-    "label": "Watching",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "watch",
-    "label": "Watching",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "3pm"
+   },
+   {
+    "type": "watch",
+    "label": "Watching",
+    "tentative": true,
+    "day": "finals",
+    "time": "4:30pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
-    "time": "4:30pm"
+    "time": "5pm"
    }
   ]
  },
  {
-  "id": "jack-o-dell",
-  "firstName": "Jack",
-  "lastName": "O'Dell",
-  "name": "Jack O'Dell",
+  "id": "scott-schroeder",
+  "firstName": "Scott",
+  "lastName": "Schroeder",
+  "name": "Scott Schroeder",
   "club": "",
   "isAussie": false,
   "accreditation": {
@@ -4254,838 +5749,19 @@ window.UMPIRES = [
   "slots": [
    {
     "type": "field",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "field",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "field",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "paul-o-keefe",
-  "firstName": "Paul",
-  "lastName": "O'Keefe",
-  "name": "Paul O'Keefe",
-  "club": "Wis",
-  "isAussie": false,
-  "accreditation": {
-   "field": "F0"
-  },
-  "try": {},
-  "commitment": "N/A",
-  "counts": {
-   "field": 0,
-   "goal": 0,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "matt-o-leary",
-  "firstName": "Matt",
-  "lastName": "O'Leary",
-  "name": "Matt O'Leary",
-  "club": "Sac",
-  "isAussie": false,
-  "accreditation": {
-   "field": "F1"
-  },
-  "try": {},
-  "commitment": "OC",
-  "counts": {
-   "field": 1,
-   "goal": 0,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sat",
-    "time": "5pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "oliver-pearce",
-  "firstName": "Oliver",
-  "lastName": "Pearce",
-  "name": "Oliver Pearce",
-  "club": "OZ",
-  "isAussie": true,
-  "accreditation": {
-   "field": "F2"
-  },
-  "try": {
-   "field": "Ex"
-  },
-  "commitment": "FTC",
-  "counts": {
-   "field": 5,
-   "goal": 0,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 2
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
-    "type": "coach",
-    "label": "Thompson",
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "field",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "coach",
-    "label": "Stauffer",
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "field",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "peter-pearce",
-  "firstName": "Peter",
-  "lastName": "Pearce",
-  "name": "Peter Pearce",
-  "club": "OZ",
-  "isAussie": true,
-  "accreditation": {
-   "field": "F2"
-  },
-  "try": {
-   "field": "Ex"
-  },
-  "commitment": "FTC",
-  "counts": {
-   "field": 5,
-   "goal": 0,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 2
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
-    "type": "coach",
-    "label": "Sternberg",
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "coach",
-    "label": "Vanderkaap",
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "5pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "field",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "jeff-persson",
-  "firstName": "Jeff",
-  "lastName": "Persson",
-  "name": "Jeff Persson",
-  "club": "Nsh",
-  "isAussie": false,
-  "accreditation": {
-   "field": "F2"
-  },
-  "try": {
-   "field": "Ex"
-  },
-  "commitment": "N/A",
-  "counts": {
-   "field": 1,
-   "goal": 1,
-   "boundary": 1,
-   "ts": 1,
-   "coach": 0
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
-    "type": "duty",
-    "label": "Field Marshall",
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "boundary",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "duty",
-    "label": "Field Marshall",
-    "tentative": false,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "duty",
-    "label": "Field Marshall",
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "duty",
-    "label": "Field Marshall",
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "duty",
-    "label": "Field Marshall",
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "duty",
-    "label": "Field Marshall",
-    "tentative": false,
-    "day": "sat",
-    "time": "5pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "field",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "duty",
-    "label": "Field Marshall",
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "ts",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "william-pittard",
-  "firstName": "William",
-  "lastName": "Pittard",
-  "name": "William Pittard",
-  "club": "UA",
-  "isAussie": false,
-  "accreditation": {
-   "goal": "G2"
-  },
-  "try": {
-   "goal": "G2"
-  },
-  "commitment": "PT",
-  "counts": {
-   "field": 0,
-   "goal": 5,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 2
-  },
-  "disciplines": [
-   "goal"
-  ],
-  "slots": [
-   {
-    "type": "coach",
-    "label": "Wang",
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "goal",
     "label": "Field 5",
     "field": 5,
     "tentative": false,
     "day": "sat",
-    "time": "10am"
+    "time": "9am"
    },
    {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 5",
-    "field": 5,
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "coach",
-    "label": "Jordan",
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "goal",
+    "type": "field",
     "label": "Field 2",
     "field": 2,
     "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 5",
-    "field": 5,
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "paul-ren-renouf",
-  "firstName": "Paul(Ren)",
-  "lastName": "Renouf",
-  "name": "Paul(Ren) Renouf",
-  "club": "Den",
-  "isAussie": false,
-  "accreditation": {
-   "field": "F0"
-  },
-  "try": {
-   "field": "F1"
-  },
-  "commitment": "PT",
-  "counts": {
-   "field": 3,
-   "goal": 0,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
-    "type": "field",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
     "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
+    "time": "11am"
    },
    {
     "type": "field",
@@ -5093,21 +5769,15 @@ window.UMPIRES = [
     "field": 5,
     "tentative": false,
     "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sat",
     "time": "3pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "sat",
-    "time": "5pm"
    },
    {
     "type": "field",
@@ -5115,181 +5785,7 @@ window.UMPIRES = [
     "field": 3,
     "tentative": false,
     "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "chet-ridenour",
-  "firstName": "Chet",
-  "lastName": "Ridenour",
-  "name": "Chet Ridenour",
-  "club": "Col",
-  "isAussie": false,
-  "accreditation": {
-   "field": "F1"
-  },
-  "try": {},
-  "commitment": "N/A",
-  "counts": {
-   "field": 0,
-   "goal": 0,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "personal",
-    "label": "Personal",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "sean-rothe",
-  "firstName": "Sean",
-  "lastName": "Rothe",
-  "name": "Sean Rothe",
-  "club": "UA",
-  "isAussie": false,
-  "accreditation": {
-   "field": "F2"
-  },
-  "try": {},
-  "commitment": "FT",
-  "counts": {
-   "field": 6,
-   "goal": 0,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "field",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sun",
-    "time": "11am"
+    "time": "9am"
    },
    {
     "type": "field",
@@ -5297,282 +5793,42 @@ window.UMPIRES = [
     "field": 4,
     "tentative": false,
     "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "laurie-rupe",
-  "firstName": "Laurie",
-  "lastName": "Rupe",
-  "name": "Laurie Rupe",
-  "club": "MN",
-  "isAussie": false,
-  "accreditation": {
-   "field": "F2"
-  },
-  "try": {
-   "field": "F2"
-  },
-  "commitment": "PT",
-  "counts": {
-   "field": 3,
-   "goal": 0,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "vicki-schoennagel",
-  "firstName": "Vicki",
-  "lastName": "Schoennagel",
-  "name": "Vicki Schoennagel",
-  "club": "Sac",
-  "isAussie": false,
-  "accreditation": {
-   "field": "F1"
-  },
-  "try": {
-   "field": "F2"
-  },
-  "commitment": "OC",
-  "counts": {
-   "field": 1,
-   "goal": 0,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 10
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
     "time": "11am"
    },
    {
-    "type": "coach",
-    "label": "Coaching",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
+    "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
-    "day": "sat",
+    "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "coach",
-    "label": "Coaching",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
-    "day": "sat",
+    "day": "finals",
     "time": "3pm"
    },
    {
-    "type": "coach",
-    "label": "Coaching",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
-    "day": "sat",
-    "time": "4pm"
+    "day": "finals",
+    "time": "4:30pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "off",
+    "label": "OFF",
     "tentative": false,
-    "day": "sat",
+    "day": "finals",
     "time": "5pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "coach",
-    "label": "Coaching",
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "coach",
-    "label": "Coaching",
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "coach",
-    "label": "Coaching",
-    "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "coach",
-    "label": "Coaching",
-    "tentative": true,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "coach",
-    "label": "Coaching",
-    "tentative": true,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "coach",
-    "label": "Coaching",
-    "tentative": true,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "coach",
-    "label": "Coaching",
-    "tentative": true,
-    "day": "finals",
-    "time": "4:30pm"
    }
   ]
  },
@@ -5584,14 +5840,14 @@ window.UMPIRES = [
   "club": "KC",
   "isAussie": false,
   "accreditation": {
-   "field": "FC"
-  },
-  "try": {
    "field": "F0"
   },
-  "commitment": "PT",
+  "try": {
+   "field": "F1"
+  },
+  "commitment": "FT",
   "counts": {
-   "field": 3,
+   "field": 4,
    "goal": 0,
    "boundary": 0,
    "ts": 0,
@@ -5602,18 +5858,12 @@ window.UMPIRES = [
   ],
   "slots": [
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "sat",
     "time": "9am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
    },
    {
     "type": "playing",
@@ -5628,21 +5878,7 @@ window.UMPIRES = [
     "field": 3,
     "tentative": false,
     "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
     "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
    },
    {
     "type": "playing",
@@ -5653,283 +5889,16 @@ window.UMPIRES = [
    },
    {
     "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "david-stanton",
-  "firstName": "David",
-  "lastName": "Stanton",
-  "name": "David Stanton",
-  "club": "OZ",
-  "isAussie": true,
-  "accreditation": {
-   "goal": "G1"
-  },
-  "try": {
-   "goal": "Ex"
-  },
-  "commitment": "FT",
-  "counts": {
-   "field": 0,
-   "goal": 9,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "goal"
-  ],
-  "slots": [
-   {
-    "type": "goal",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "goal",
     "label": "Field 3",
     "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
     "tentative": false,
     "day": "sat",
     "time": "5pm"
    },
    {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "mark-stauffer",
-  "firstName": "Mark",
-  "lastName": "Stauffer",
-  "name": "Mark Stauffer",
-  "club": "Por",
-  "isAussie": false,
-  "accreditation": {
-   "field": "FC"
-  },
-  "try": {
-   "field": "F0"
-  },
-  "commitment": "OC",
-  "counts": {
-   "field": 2,
-   "goal": 0,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
     "type": "field",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
+    "label": "Field 5",
+    "field": 5,
     "tentative": false,
     "day": "sun",
     "time": "9am"
@@ -5939,200 +5908,42 @@ window.UMPIRES = [
     "label": "With club",
     "tentative": false,
     "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
     "time": "12pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "field",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
+    "type": "maybe",
+    "label": "a final",
+    "tentative": true,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "3pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "matt-stephans",
-  "firstName": "Matt",
-  "lastName": "Stephans",
-  "name": "Matt Stephans",
-  "club": "Aus",
-  "isAussie": false,
-  "accreditation": {
-   "goal": "GC"
-  },
-  "try": {
-   "goal": "G0"
-  },
-  "commitment": "FT",
-  "counts": {
-   "field": 0,
-   "goal": 9,
-   "boundary": 2,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "goal"
-  ],
-  "slots": [
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "boundary",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "boundary",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
+    "time": "5pm"
    }
   ]
  },
@@ -6160,37 +5971,30 @@ window.UMPIRES = [
   ],
   "slots": [
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
     "tentative": false,
     "day": "sat",
     "time": "9am"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "watch",
+    "label": "Watching",
     "tentative": false,
     "day": "sat",
     "time": "10am"
    },
    {
-    "type": "field",
-    "label": "Field 4",
-    "field": 4,
+    "type": "playing",
+    "label": "With club",
     "tentative": false,
     "day": "sat",
     "time": "11am"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
+    "type": "watch",
+    "label": "Watching",
     "tentative": true,
     "day": "sat",
     "time": "1pm"
@@ -6198,20 +6002,13 @@ window.UMPIRES = [
    {
     "type": "playing",
     "label": "With club",
-    "tentative": true,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
+    "tentative": false,
     "day": "sat",
     "time": "3pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "watch",
+    "label": "Watching",
     "tentative": true,
     "day": "sat",
     "time": "4pm"
@@ -6219,107 +6016,353 @@ window.UMPIRES = [
    {
     "type": "playing",
     "label": "With club",
-    "tentative": true,
-    "day": "sat",
-    "time": "5pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
+    "tentative": false,
     "day": "sun",
     "time": "10am"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
+    "type": "watch",
+    "label": "Watching",
     "tentative": true,
     "day": "sun",
     "time": "12pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
     "day": "finals",
     "time": "1pm"
    },
    {
+    "type": "maybe",
+    "label": "a final",
+    "tentative": true,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
     "type": "off",
     "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "nathan-toner",
+  "firstName": "Nathan",
+  "lastName": "Toner",
+  "name": "Nathan Toner",
+  "club": "OZ",
+  "isAussie": true,
+  "accreditation": {
+   "field": "F2"
+  },
+  "try": {
+   "field": "Ex"
+  },
+  "commitment": "N/A",
+  "counts": {
+   "field": 0,
+   "goal": 0,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 9
+  },
+  "disciplines": [
+   "field"
+  ],
+  "slots": [
+   {
+    "type": "coach",
+    "label": "Schroeder",
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "coach",
+    "label": "Verbicek",
+    "tentative": false,
+    "day": "sat",
+    "time": "10am"
+   },
+   {
+    "type": "coach",
+    "label": "Waddell",
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
+   },
+   {
+    "type": "coach",
+    "label": "Wang",
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "coach",
+    "label": "Murray",
+    "tentative": false,
+    "day": "sat",
+    "time": "2pm"
+   },
+   {
+    "type": "coach",
+    "label": "Gier",
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "coach",
+    "label": "Wolff",
+    "tentative": false,
+    "day": "sat",
+    "time": "4pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "coach",
+    "label": "Henderson",
+    "tentative": false,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "coach",
+    "label": "O'Leary",
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "daniel-turner",
+  "firstName": "Daniel",
+  "lastName": "Turner",
+  "name": "Daniel Turner",
+  "club": "OZ",
+  "isAussie": true,
+  "accreditation": {
+   "field": "F2"
+  },
+  "try": {
+   "field": "Ex"
+  },
+  "commitment": "FTC",
+  "counts": {
+   "field": 5,
+   "goal": 0,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 1
+  },
+  "disciplines": [
+   "field"
+  ],
+  "slots": [
+   {
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "2pm"
+   },
+   {
+    "type": "coach",
+    "label": "Bryant",
+    "tentative": false,
+    "day": "sat",
     "time": "3pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sun",
+    "time": "11am"
+   },
+   {
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
     "day": "finals",
     "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
    }
   ]
  },
  {
-  "id": "aidan-thomas",
-  "firstName": "Aidan",
-  "lastName": "Thomas",
-  "name": "Aidan Thomas",
-  "club": "OZ",
-  "isAussie": true,
+  "id": "drew-tyson",
+  "firstName": "Drew",
+  "lastName": "Tyson",
+  "name": "Drew Tyson",
+  "club": "VA",
+  "isAussie": false,
   "accreditation": {
-   "field": "F2",
    "goal": "G1"
   },
   "try": {
-   "field": "Ex",
-   "goal": "Ex"
+   "goal": "G2"
   },
-  "commitment": "OC",
+  "commitment": "FT",
   "counts": {
-   "field": 2,
-   "goal": 5,
+   "field": 0,
+   "goal": 7,
    "boundary": 0,
    "ts": 0,
    "coach": 0
   },
   "disciplines": [
-   "field",
    "goal"
   ],
   "slots": [
    {
     "type": "goal",
-    "label": "Field 1",
-    "field": 1,
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 5",
+    "field": 5,
     "tentative": false,
     "day": "sat",
     "time": "10am"
@@ -6333,63 +6376,69 @@ window.UMPIRES = [
     "time": "11am"
    },
    {
+    "type": "watch",
+    "label": "Watching",
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
     "type": "goal",
-    "label": "Field 1",
-    "field": 1,
+    "label": "Field 2",
+    "field": 2,
     "tentative": false,
     "day": "sat",
     "time": "1pm"
    },
    {
     "type": "goal",
-    "label": "Field 4",
-    "field": 4,
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "2pm"
+   },
+   {
+    "type": "watch",
+    "label": "Watching",
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
     "tentative": false,
     "day": "sat",
     "time": "4pm"
    },
    {
-    "type": "goal",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "field",
-    "label": "Field 5",
-    "field": 5,
-    "tentative": false,
+    "type": "watch",
+    "label": "Watching",
+    "tentative": true,
     "day": "sun",
     "time": "10am"
    },
    {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
+    "type": "watch",
+    "label": "Watching",
+    "tentative": true,
     "day": "sun",
     "time": "11am"
    },
    {
-    "type": "duty",
-    "label": "Youth game",
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "sun",
     "time": "12pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
+    "type": "watch",
+    "label": "Watching",
+    "tentative": true,
     "day": "finals",
     "time": "1pm"
    },
@@ -6413,15 +6462,22 @@ window.UMPIRES = [
     "tentative": false,
     "day": "finals",
     "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
    }
   ]
  },
  {
-  "id": "brad-thompson",
-  "firstName": "Brad",
-  "lastName": "Thompson",
-  "name": "Brad Thompson",
-  "club": "Chi",
+  "id": "shaun-vanderkaap",
+  "firstName": "Shaun",
+  "lastName": "Vanderkaap",
+  "name": "Shaun Vanderkaap",
+  "club": "AUS",
   "isAussie": false,
   "accreditation": {
    "field": "F0"
@@ -6441,15 +6497,15 @@ window.UMPIRES = [
   "slots": [
    {
     "type": "field",
-    "label": "Field 2",
-    "field": 2,
+    "label": "Field 3",
+    "field": 3,
     "tentative": false,
     "day": "sat",
     "time": "9am"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "watch",
+    "label": "Watching",
     "tentative": false,
     "day": "sat",
     "time": "10am"
@@ -6459,107 +6515,91 @@ window.UMPIRES = [
     "label": "With club",
     "tentative": false,
     "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "watch",
+    "label": "Watching",
+    "tentative": true,
+    "day": "sat",
+    "time": "1pm"
+   },
+   {
+    "type": "watch",
+    "label": "Watching",
+    "tentative": true,
+    "day": "sat",
+    "time": "4pm"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sun",
     "time": "11am"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
+    "type": "watch",
+    "label": "Watching",
     "tentative": true,
     "day": "sun",
     "time": "12pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "3pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
+    "type": "maybe",
+    "label": "a final",
+    "tentative": true,
     "day": "finals",
     "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
    }
   ]
  },
  {
-  "id": "jakob-tracy",
-  "firstName": "Jakob",
-  "lastName": "Tracy",
-  "name": "Jakob Tracy",
-  "club": "Sac",
+  "id": "jennifer-vandeveer",
+  "firstName": "Jennifer",
+  "lastName": "Vandeveer",
+  "name": "Jennifer Vandeveer",
+  "club": "VA",
   "isAussie": false,
   "accreditation": {
-   "goal": "GC"
-  },
-  "try": {
    "goal": "G0"
   },
+  "try": {},
   "commitment": "OC",
   "counts": {
    "field": 0,
@@ -6573,432 +6613,55 @@ window.UMPIRES = [
   ],
   "slots": [
    {
-    "type": "personal",
-    "label": "Personal",
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
     "tentative": false,
     "day": "sat",
-    "time": "8am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
+    "time": "1pm"
    },
    {
     "type": "goal",
     "label": "Field 2",
     "field": 2,
     "tentative": false,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "personal",
-    "label": "Personal",
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sat",
-    "time": "5pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
     "day": "sun",
     "time": "9am"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
     "day": "finals",
     "time": "3pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "an-drew-tyson",
-  "firstName": "(An)Drew",
-  "lastName": "Tyson",
-  "name": "(An)Drew Tyson",
-  "club": "Vir",
-  "isAussie": false,
-  "accreditation": {
-   "goal": "G1"
-  },
-  "try": {},
-  "commitment": "PT",
-  "counts": {
-   "field": 0,
-   "goal": 5,
-   "boundary": 2,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "goal"
-  ],
-  "slots": [
+   },
    {
-    "type": "boundary",
-    "label": "Field 1",
-    "field": 1,
+    "type": "off",
+    "label": "OFF",
     "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "boundary",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
+    "day": "finals",
     "time": "5pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "shaun-vanderkaap",
-  "firstName": "Shaun",
-  "lastName": "Vanderkaap",
-  "name": "Shaun Vanderkaap",
-  "club": "Aus",
-  "isAussie": false,
-  "accreditation": {
-   "field": "FC"
-  },
-  "try": {
-   "field": "F0"
-  },
-  "commitment": "PT",
-  "counts": {
-   "field": 3,
-   "goal": 0,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
-    "type": "field",
-    "label": "Field 5",
-    "field": 5,
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
-    "day": "sat",
-    "time": "5pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
    }
   ]
  },
@@ -7007,15 +6670,17 @@ window.UMPIRES = [
   "firstName": "Brian",
   "lastName": "Vrbicek",
   "name": "Brian Vrbicek",
-  "club": "Vir",
+  "club": "VA",
   "isAussie": false,
   "accreditation": {
    "field": "F0"
   },
-  "try": {},
+  "try": {
+   "field": "F1"
+  },
   "commitment": "OC",
   "counts": {
-   "field": 2,
+   "field": 1,
    "goal": 0,
    "boundary": 0,
    "ts": 0,
@@ -7026,15 +6691,9 @@ window.UMPIRES = [
   ],
   "slots": [
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
     "tentative": false,
     "day": "sat",
     "time": "10am"
@@ -7044,107 +6703,182 @@ window.UMPIRES = [
     "label": "With club",
     "tentative": false,
     "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "sun",
     "time": "11am"
    },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
+  "id": "james-waddell",
+  "firstName": "James",
+  "lastName": "Waddell",
+  "name": "James Waddell",
+  "club": "DEN",
+  "isAussie": false,
+  "accreditation": {
+   "field": "F1"
+  },
+  "try": {
+   "field": "F1"
+  },
+  "commitment": "OC",
+  "counts": {
+   "field": 1,
+   "goal": 0,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 4
+  },
+  "disciplines": [
+   "field"
+  ],
+  "slots": [
    {
     "type": "field",
     "label": "Field 1",
     "field": 1,
     "tentative": false,
     "day": "sat",
+    "time": "11am"
+   },
+   {
+    "type": "watch",
+    "label": "Watching",
+    "tentative": false,
+    "day": "sat",
     "time": "12pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
+    "type": "coach",
+    "label": "Coaching",
+    "tentative": false,
     "day": "sat",
     "time": "2pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
+    "type": "watch",
+    "label": "Watching",
+    "tentative": false,
     "day": "sat",
-    "time": "3pm"
+    "time": "5pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
+    "type": "coach",
+    "label": "Coaching",
     "tentative": true,
     "day": "sun",
     "time": "9am"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "coach",
+    "label": "Coaching",
     "tentative": true,
     "day": "sun",
     "time": "10am"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "watch",
+    "label": "Watching",
     "tentative": true,
     "day": "sun",
     "time": "11am"
    },
    {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
+    "type": "coach",
+    "label": "Coaching",
     "tentative": true,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "field",
-    "label": "Field 3",
-    "field": 3,
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "3pm"
+   },
+   {
+    "type": "watch",
+    "label": "Watching",
+    "tentative": true,
+    "day": "finals",
+    "time": "4:30pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
-    "time": "4:30pm"
+    "time": "5pm"
    }
   ]
  },
@@ -7153,51 +6887,65 @@ window.UMPIRES = [
   "firstName": "Andrew",
   "lastName": "Wang",
   "name": "Andrew Wang",
-  "club": "Cle",
+  "club": "CLE",
   "isAussie": false,
   "accreditation": {
-   "goal": "GC"
+   "field": "F0",
+   "goal": "G0",
+   "boundary": "B0"
   },
   "try": {
-   "goal": "G0"
+   "field": "F1",
+   "goal": "G1",
+   "boundary": "B1"
   },
   "commitment": "PT",
   "counts": {
-   "field": 0,
-   "goal": 4,
-   "boundary": 2,
+   "field": 3,
+   "goal": 6,
+   "boundary": 1,
    "ts": 0,
    "coach": 0
   },
   "disciplines": [
-   "goal"
+   "field",
+   "goal",
+   "boundary"
   ],
   "slots": [
    {
     "type": "goal",
-    "label": "Field 2",
-    "field": 2,
+    "label": "Field 3",
+    "field": 3,
     "tentative": false,
     "day": "sat",
     "time": "9am"
    },
    {
-    "type": "boundary",
-    "label": "Field 1",
-    "field": 1,
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
     "tentative": false,
     "day": "sat",
     "time": "10am"
    },
    {
-    "type": "watch",
-    "label": "Watching",
+    "type": "off",
+    "label": "OFF",
     "tentative": false,
     "day": "sat",
     "time": "11am"
    },
    {
-    "type": "goal",
+    "type": "field",
+    "label": "Field 5",
+    "field": 5,
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "boundary",
     "label": "Field 1",
     "field": 1,
     "tentative": false,
@@ -7205,12 +6953,19 @@ window.UMPIRES = [
     "time": "1pm"
    },
    {
-    "type": "boundary",
-    "label": "Field 1",
-    "field": 1,
+    "type": "off",
+    "label": "OFF",
     "tentative": false,
     "day": "sat",
     "time": "2pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
    },
    {
     "type": "goal",
@@ -7218,93 +6973,82 @@ window.UMPIRES = [
     "field": 5,
     "tentative": false,
     "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": false,
-    "day": "sat",
     "time": "4pm"
    },
    {
     "type": "goal",
-    "label": "Field 1",
-    "field": 1,
+    "label": "Field 4",
+    "field": 4,
     "tentative": false,
     "day": "sat",
     "time": "5pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
+    "type": "field",
+    "label": "Field 5",
+    "field": 5,
     "tentative": false,
     "day": "sun",
     "time": "10am"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "goal",
+    "label": "Field 4",
+    "field": 4,
     "tentative": false,
     "day": "sun",
     "time": "11am"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
     "tentative": false,
     "day": "sun",
     "time": "12pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
-    "time": "4:30pm"
+    "time": "5pm"
    }
   ]
  },
  {
-  "id": "jackson-whittle",
-  "firstName": "Jackson",
-  "lastName": "Whittle",
-  "name": "Jackson Whittle",
+  "id": "riley-white",
+  "firstName": "Riley",
+  "lastName": "White",
+  "name": "Riley White",
   "club": "OZ",
   "isAussie": true,
   "accreditation": {
@@ -7319,100 +7063,107 @@ window.UMPIRES = [
    "goal": 0,
    "boundary": 0,
    "ts": 0,
-   "coach": 2
+   "coach": 1
   },
   "disciplines": [
    "field"
   ],
   "slots": [
    {
-    "type": "coach",
-    "label": "Renouf",
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
     "tentative": false,
     "day": "sat",
-    "time": "10am"
+    "time": "9am"
    },
    {
     "type": "coach",
-    "label": "Shand",
+    "label": "Wolff",
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
+   },
+   {
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "sat",
     "time": "12pm"
    },
    {
     "type": "field",
-    "label": "Field 2",
-    "field": 2,
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "sat",
     "time": "1pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "2pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sun",
+    "time": "9am"
    },
    {
     "type": "field",
     "label": "Field 3",
     "field": 3,
     "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
     "day": "sun",
-    "time": "10am"
+    "time": "11am"
    },
    {
-    "type": "field",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "3pm"
    },
    {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
-    "time": "4:30pm"
+    "time": "5pm"
    }
   ]
  },
@@ -7421,291 +7172,141 @@ window.UMPIRES = [
   "firstName": "Aaron",
   "lastName": "Wolff",
   "name": "Aaron Wolff",
-  "club": "Bal",
+  "club": "BAL",
   "isAussie": false,
   "accreditation": {
-   "goal": "G1"
+   "field": "FC",
+   "goal": "G2"
   },
   "try": {
-   "goal": "G2"
+   "field": "F0"
   },
   "commitment": "PT",
   "counts": {
-   "field": 0,
-   "goal": 5,
+   "field": 3,
+   "goal": 3,
    "boundary": 0,
    "ts": 0,
-   "coach": 0
+   "coach": 4
   },
   "disciplines": [
+   "field",
    "goal"
   ],
   "slots": [
    {
-    "type": "watch",
-    "label": "Watching",
+    "type": "coach",
+    "label": "Coaching",
     "tentative": false,
     "day": "sat",
     "time": "9am"
    },
    {
     "type": "goal",
-    "label": "Field 2",
-    "field": 2,
+    "label": "Field 4",
+    "field": 4,
     "tentative": false,
     "day": "sat",
     "time": "10am"
    },
    {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
+    "type": "field",
+    "label": "Field 3",
+    "field": 3,
     "tentative": false,
     "day": "sat",
     "time": "11am"
    },
    {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "coach",
+    "label": "Coaching",
+    "tentative": false,
     "day": "sat",
     "time": "1pm"
    },
    {
     "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
+    "label": "Field 4",
+    "field": 4,
     "tentative": false,
     "day": "sat",
     "time": "3pm"
    },
    {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
     "day": "sat",
-    "time": "5pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
-    "day": "sun",
-    "time": "10am"
+    "time": "4pm"
    },
    {
     "type": "goal",
     "label": "Field 1",
     "field": 1,
     "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "watch",
-    "label": "Watching",
-    "tentative": true,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   }
-  ]
- },
- {
-  "id": "matt-young",
-  "firstName": "Matt",
-  "lastName": "Young",
-  "name": "Matt Young",
-  "club": "OZ",
-  "isAussie": true,
-  "accreditation": {
-   "field": "F2"
-  },
-  "try": {
-   "field": "Ex"
-  },
-  "commitment": "N/A",
-  "counts": {
-   "field": 0,
-   "goal": 0,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 10
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
-    "type": "coach",
-    "label": "Schoennagel",
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "coach",
-    "label": "ANelson",
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "coach",
-    "label": "Blankman",
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "coach",
-    "label": "Martin",
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "coach",
-    "label": "Liwanag",
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "coach",
-    "label": "O'Dell",
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "coach",
-    "label": "Henderson",
-    "tentative": false,
-    "day": "sat",
-    "time": "4pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
     "day": "sat",
     "time": "5pm"
    },
    {
-    "type": "coach",
-    "label": "O'Leary",
+    "type": "field",
+    "label": "Field 4",
+    "field": 4,
     "tentative": false,
     "day": "sun",
     "time": "9am"
    },
    {
     "type": "coach",
-    "label": "Renouf",
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
+    "label": "Coaching",
     "tentative": false,
     "day": "sun",
     "time": "11am"
    },
    {
     "type": "coach",
-    "label": "Rupe",
-    "tentative": false,
-    "day": "sun",
-    "time": "12pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sun",
-    "time": "1pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
+    "label": "Coaching",
+    "tentative": true,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
    {
-    "type": "off",
-    "label": "OFF",
+    "type": "open",
+    "label": "Open",
     "tentative": false,
     "day": "finals",
     "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
    },
    {
     "type": "off",
     "label": "OFF",
     "tentative": false,
     "day": "finals",
-    "time": "4:30pm"
+    "time": "5pm"
    }
   ]
  }
 ];
-window.SLOT_ORDER = [{"day":"sat","time":"8am"},{"day":"sat","time":"9am"},{"day":"sat","time":"10am"},{"day":"sat","time":"11am"},{"day":"sat","time":"12pm"},{"day":"sat","time":"1pm"},{"day":"sat","time":"2pm"},{"day":"sat","time":"3pm"},{"day":"sat","time":"4pm"},{"day":"sat","time":"5pm"},{"day":"sun","time":"8am"},{"day":"sun","time":"9am"},{"day":"sun","time":"10am"},{"day":"sun","time":"11am"},{"day":"sun","time":"12pm"},{"day":"sun","time":"1pm"},{"day":"finals","time":"1pm"},{"day":"finals","time":"2pm"},{"day":"finals","time":"3pm"},{"day":"finals","time":"4:30pm"}];
-window.SCHEDULE_META = {"title":"2025 USAFL Nationals Umpire Assignments - Version 011 - subject to change","version":"011","source":"USAFL Umpire Assignments Prelim Oct 10.xlsx + admin edits","publishedAt":"2026-10-02T03:53:24.515Z","publishId":"2026-10-02T03:53:24Z-bzqc","days":["sat","sun","finals"]};
+window.SLOT_ORDER = [{"day": "sat", "time": "8am"}, {"day": "sat", "time": "9am"}, {"day": "sat", "time": "10am"}, {"day": "sat", "time": "11am"}, {"day": "sat", "time": "12pm"}, {"day": "sat", "time": "1pm"}, {"day": "sat", "time": "2pm"}, {"day": "sat", "time": "3pm"}, {"day": "sat", "time": "4pm"}, {"day": "sat", "time": "5pm"}, {"day": "sun", "time": "8am"}, {"day": "sun", "time": "9am"}, {"day": "sun", "time": "10am"}, {"day": "sun", "time": "11am"}, {"day": "sun", "time": "12pm"}, {"day": "sun", "time": "1pm"}, {"day": "finals", "time": "1pm"}, {"day": "finals", "time": "2pm"}, {"day": "finals", "time": "3pm"}, {"day": "finals", "time": "4:30pm"}, {"day": "finals", "time": "5pm"}];
+window.SCHEDULE_META = {"title": "2026 USAFL Nationals Umpire Assignments - Version 004 - subject to change", "version": "004", "source": "41d640db-2026-10-12_Nationals_Assignments_Distribution_1.xlsx", "publishedAt": "2026-10-13T21:26:07Z", "publishId": "2026-10-13T21:26:07Z", "days": ["sat", "sun", "finals"]};

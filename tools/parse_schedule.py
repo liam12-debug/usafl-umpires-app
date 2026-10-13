@@ -22,7 +22,7 @@ TIME_RE = re.compile(r"^\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm)\s*$", re.I)
 DISC = {"F": "field", "G": "goal", "B": "boundary"}
 DEFAULT_DAYS = {1: ["sat"], 2: ["sat", "sun"], 3: ["sat", "sun", "finals"], 4: ["fri", "sat", "sun", "finals"]}
 RANK = {"field": 5, "goal": 5, "boundary": 5, "ts": 5, "coach": 4, "duty": 4,
-        "playing": 3, "watch": 2, "maybe": 1, "other": 2, "personal": 2, "off": 0}
+        "playing": 3, "watch": 2, "maybe": 1, "other": 2, "personal": 2, "open": 1, "off": 0}
 
 
 def s(v):
@@ -46,11 +46,15 @@ def classify(raw, warn):
         return None
     tentative = "?" in v
     clean = v.replace("?", "").strip().rstrip("/").strip()
-    low = clean.lower()
+    low = clean.lower().replace("-", " ")
     T = lambda **kw: {**kw, "tentative": tentative}
 
-    if low in ("off", "no games"):
+    if low in ("off", "no games", "out"):
         return T(type="off", label="OFF")
+    if low == "open":  # finals columns: available, finals crews named Saturday night
+        return T(type="open", label="Open")
+    if low.startswith("final"):
+        return {"type": "maybe", "label": "a final", "tentative": True}
     if low in ("personal", "mvl"):
         return T(type="personal", label="Personal")
     if low == "youth":
@@ -70,6 +74,11 @@ def classify(raw, warn):
         return T(type="watch", label="Watching")
     if "coach" in low:
         return T(type="coach", label="Coaching")
+    # [GL4] / [FLD3] / [BND1] (and the odd unbracketed GL5): pencilled in for another discipline
+    m = re.match(r"^\[?\s*(gl|gol|goal|fld|field|bnd|bound)\s*(\d*)\s*\]?$", low)
+    if m and (low.startswith("[") or m.group(2)):
+        role = {"gl": "goal umpire", "gol": "goal umpire", "goal": "goal umpire", "fld": "field umpire", "field": "field umpire", "bnd": "boundary umpire", "bound": "boundary umpire"}[m.group(1)]
+        return {"type": "maybe", "label": role + (f" on Field {m.group(2)}" if m.group(2) else ""), "tentative": True}
     if low.startswith("[") or low == "tba":
         return {"type": "maybe", "label": clean.strip("[]"), "tentative": True}
     warn(f"Unrecognised entry '{v}'")
@@ -137,6 +146,8 @@ def parse(path, day_override=None):
 
     people, last_section = {}, None
     for r in range(hdr + 1, maxr + 1):
+        if any(s(cell(r, c)).upper() == "END" for c in (1, 2, 3)):
+            break  # notes and procedures below the grid
         first, last = s(cell(r, C["first"])), s(cell(r, C["last"]))
         if not first or not last or first.upper() == "TBA":
             continue

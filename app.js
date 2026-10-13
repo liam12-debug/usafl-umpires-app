@@ -133,7 +133,7 @@
   const ON_FIELD = new Set(["field", "goal", "boundary", "ts"]);
   const ROLE = { field: "Field umpire", goal: "Goal umpire", boundary: "Boundary umpire", ts: "Timer / scorer", coach: "Coaching", duty: "Duty" };
   const ROLE_SHORT = { field: "Field", goal: "Goal", boundary: "Boundary", ts: "T / S" };
-  const PASSIVE = { playing: "With club", watch: "Watching", off: "Break", personal: "Personal time" };
+  const PASSIVE = { playing: "With club", watch: "Watching", off: "Break", personal: "Personal time", open: "Open for finals" };
   const edtDay = (d) => new Date(+d - 4 * 3600000); // shift so getUTC* reads Sarasota wall-clock
 
   const games = (u) => u.slots.filter((s) => ACTIVE.has(s.type));
@@ -143,10 +143,21 @@
   const going = (u) => Object.values(u.try).filter((t) => t && t !== "Ex" && t !== "-" && !levels(u).includes(t));
   const clubLabel = (u) => (u.isAussie ? "Australia" : u.club || "—");
 
+  function editDistance(a, b) {
+    const d = Array.from({ length: a.length + 1 }, (_, i) => [i]);
+    for (let j = 1; j <= b.length; j++) d[0][j] = j;
+    for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++)
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    return d[a.length][b.length];
+  }
+  // Observation targets are written as ".LastName" in the sheet (sometimes misspelt).
   function findByRef(ref) {
     const r = (ref || "").toLowerCase().replace(/[\s.]/g, "");
-    return UMPIRES.find((u) => u.lastName.toLowerCase().replace(/\s/g, "") === r)
-      || UMPIRES.find((u) => (u.firstName[0] + u.lastName).toLowerCase().replace(/\s/g, "") === r) || null;
+    const ln = (u) => u.lastName.toLowerCase().replace(/\s/g, "");
+    const exact = UMPIRES.find((u) => ln(u) === r) || UMPIRES.find((u) => (u.firstName[0] + u.lastName).toLowerCase().replace(/\s/g, "") === r);
+    if (exact || r.length < 5) return exact || null;
+    const close = UMPIRES.map((u) => [u, editDistance(ln(u), r)]).filter(([, d]) => d <= 2).sort((a, b) => a[1] - b[1]);
+    return close.length && (close.length === 1 || close[0][1] < close[1][1]) ? close[0][0] : null;
   }
   function crewAt(day, time, field) {
     const c = { field: [], goal: [], boundary: [], ts: [] };
@@ -519,16 +530,18 @@
   function avatar(u, cls = "") { return `<span class="avatar ${u.isAussie ? "oz" : ""} ${cls}">${esc(initials(u))}</span>`; }
   // ---------- game draw: teams playing + clubs on Boundary / Timekeeping / Scoring (games.js) ----------
   const GAMES = (window.GAMES && window.GAMES.games) || {};
-  const gameAt = (day, time, field) => (field ? GAMES[`${day}|${time}|${field}`] || null : null);
+  const gameAt = (day, time, field) => (field ? GAMES[`${day === "finals" ? "sun" : day}|${time}|${field}`] || null : null);
+  const isFinalRound = (g) => g && g.round && !/^Round\b/i.test(g.round);
   function matchHTML(g) {
     if (!g) return "";
     const div = g.div || (g.comp === "Women's" ? "W" : "");
-    return `<div class="match"><span>${esc(g.home)}</span><span class="v">v</span><span>${esc(g.away)}</span>${div ? `<span class="tag comp ${div[0] === "W" ? "w" : ""}" title="${div[0] === "W" ? "Women's" : "Men's"} division ${esc(div.slice(2))}">${esc(div)}</span>` : ""}</div>`;
+    const fin = isFinalRound(g) ? `<span class="tag fin">${esc(g.round)}</span>` : "";
+    return `<div class="match"><span>${esc(g.home)}</span><span class="v">v</span><span>${esc(g.away)}</span>${div ? `<span class="tag comp ${div[0] === "W" ? "w" : ""}" title="${div[0] === "W" ? "Women's" : "Men's"} division ${esc(div.slice(2))}">${esc(div)}</span>` : ""}${fin}</div>`;
   }
   function dutyRows(g) {
-    const same = g.boundary === g.timekeeper && g.timekeeper === g.scorer;
-    const rows = same ? [["Boundary, time & score", g.boundary]] : [["Boundary", g.boundary], ["Timekeeping", g.timekeeper], ["Scoring", g.scorer]];
-    return rows.map(([k, v]) => `<div class="dr"><span class="dk">${k}</span><span class="dv">${esc(v)}</span></div>`).join("") +
+    const rows = [["Boundary", g.boundary], ["Timekeeper", g.timekeeper], ["Scorekeeper", g.scorer]];
+    return (g.no ? `<div class="dmeta">Game ${g.no}${g.round ? ` · ${esc(g.round)}` : ""}</div>` : "") +
+      rows.map(([k, v]) => `<div class="dr"><span class="dk">${k}</span><span class="dv">${esc(v || "—")}</span></div>`).join("") +
       (window.GAMES && window.GAMES.placeholder ? `<div class="dnote">Placeholder draw · real teams once the fixture is released</div>` : "");
   }
   // Collapsed by default so cards stay compact; toggled by the delegated [data-duties] handler.
@@ -651,6 +664,7 @@
             <div class="t">${tShort(g.s.time)}<small>${tAp(g.s.time)}</small></div>
             <div class="f">${esc(where)}</div>
             <div class="r">${esc(g.s.type === "coach" && c.who ? "Coaching " + c.who.firstName : ROLE[g.s.type] || g.s.label)}</div>
+            ${(() => { const gm = gameAt(g.s.day, g.s.time, c.field); return gm ? `<div class="mt"><span class="tag comp ${gm.div[0] === "W" ? "w" : ""}">${esc(gm.div)}</span>${esc(gm.homeCode)} v ${esc(gm.awayCode)}</div>` : ""; })()}
           </a>`;
         }).join("")}</div>
       </div>` : "";
@@ -825,6 +839,8 @@
         ${[["field", "Field"], ["goal", "Goal"], ["boundary", "Bound."], ["coach", "Coach"]].map(([k, l]) => `<div><b class="${u.counts[k] ? "" : "zero"}">${u.counts[k]}</b><span>${l}</span></div>`).join("")}
       </div>
       ${!isMe ? `<div class="claim"><button class="btn ghost sm" id="claim">${icon("user", "sm")}This is me</button></div>` : ""}
+      ${gamesList(u)}
+      <div class="section-head" style="margin-top:26px"><h2>Hour by hour</h2></div>
       ${seg("day", days.map((d) => ({ v: d, label: DAY_SHORT[d], count: u.slots.filter((s) => s.day === d && ACTIVE.has(s.type)).length || null })), day)}
       <div id="tl">${timeline(u, day, n, up, ch.changed, me)}</div>
     `);
@@ -836,7 +852,35 @@
     });
     const claim = document.getElementById("claim");
     if (claim) claim.addEventListener("click", () => { store.set("usafl.me", u.id); store.del("usafl.skipWelcome"); go("#/schedule"); });
+    // tapping a game jumps to it in the hour-by-hour view
+    $app.querySelectorAll("[data-goto]").forEach((b) => b.addEventListener("click", () => {
+      const [d, t] = b.dataset.goto.split("|");
+      dayPick[u.id] = d;
+      umpire(id, asMine);
+      const card = $app.querySelector(`.tl.game[data-time="${t}"]`);
+      if (card) { card.scrollIntoView({ behavior: "smooth", block: "center" }); card.classList.add("flash"); }
+    }));
     if (isMe) ackChanges(u);
+  }
+
+  // Every assignment in one compact list: when, the two teams, field, role, division.
+  function gamesList(u) {
+    const list = games(u).map((s) => ({ s, at: slotDate(s) })).sort((a, b) => a.at - b.at);
+    if (!list.length) return "";
+    return `<div class="section-head" style="margin-top:22px"><h2>Games</h2><span class="muted" style="font-size:14px">${list.length}</span></div>
+      <div class="list plain games-list">${list.map(({ s }) => {
+        const c = context(s);
+        const g = gameAt(s.day, s.time, c.field);
+        const role = s.type === "coach" ? (c.who ? `Observing ${c.who.name}` : /^bound/i.test(s.label) ? "Observing boundary umpires" : s.label === "Coaching" ? "Coaching" : `Observing ${s.label}`)
+          : s.type === "duty" ? s.label : ROLE[s.type];
+        const title = g ? `${g.home} v ${g.away}` : s.type === "duty" ? s.label : role;
+        const meta = [c.field ? `Field ${c.field}` : null, title === role ? null : role, isFinalRound(g) ? g.round : null, s.tentative ? "TBC" : null].filter(Boolean).join(" · ");
+        return `<button class="row grow" data-goto="${s.day}|${esc(s.time)}">
+          <span class="gt"><b>${tShort(s.time)}</b><span>${DAY_SHORT[s.day]} ${tAp(s.time)}</span></span>
+          <span class="main"><span class="t1">${esc(title)}</span><span class="t2">${esc(meta)}</span></span>
+          ${g && g.div ? `<span class="tag comp ${g.div[0] === "W" ? "w" : ""}">${esc(g.div)}</span>` : ""}
+        </button>`;
+      }).join("")}</div>`;
   }
 
   function timeline(u, day, n, up, changed, me) {
@@ -867,9 +911,9 @@
       const nxt = !up.live && up.next && up.next.s === s;
       const title = c.field ? `Field ${c.field}` : s.type === "duty" ? s.label : "Umpire Central";
       const sub = s.type === "coach"
-        ? (c.who ? `Observing <a class="link-btn" href="#/u/${c.who.id}">${esc(c.who.name)}</a>` : "Observation")
+        ? (c.who ? `Observing <a class="link-btn" href="#/u/${c.who.id}">${esc(c.who.name)}</a>` : /^bound/i.test(s.label) ? "Observing the boundary umpires" : s.label === "Coaching" ? "Coaching" : `Observing ${esc(s.label)}`)
         : "";
-      return `<div class="tl game ${live ? "live" : ""} ${past ? "past" : ""} ${nxt ? "next" : ""}">
+      return `<div class="tl game ${live ? "live" : ""} ${past ? "past" : ""} ${nxt ? "next" : ""}" data-time="${esc(s.time)}">
         <div class="tl-time"><b>${tShort(s.time)}</b><span>${tAp(s.time)}</span></div>
         <div class="tl-rail"><i></i></div>
         <div class="tl-card">
