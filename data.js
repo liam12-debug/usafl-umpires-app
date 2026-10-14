@@ -178,6 +178,13 @@ window.UMPIRES = [
     "time": "11am"
    },
    {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
     "type": "open",
     "label": "Open",
     "tentative": false,
@@ -519,6 +526,13 @@ window.UMPIRES = [
     "time": "11am"
    },
    {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
     "type": "open",
     "label": "Open",
     "tentative": false,
@@ -569,10 +583,10 @@ window.UMPIRES = [
   "commitment": "FTC",
   "counts": {
    "field": 0,
-   "goal": 6,
+   "goal": 7,
    "boundary": 0,
    "ts": 1,
-   "coach": 4
+   "coach": 3
   },
   "disciplines": [
    "goal"
@@ -594,8 +608,9 @@ window.UMPIRES = [
     "time": "10am"
    },
    {
-    "type": "coach",
-    "label": "Hill",
+    "type": "goal",
+    "label": "Field 4",
+    "field": 4,
     "tentative": false,
     "day": "sat",
     "time": "11am"
@@ -720,7 +735,7 @@ window.UMPIRES = [
   "commitment": "PT",
   "counts": {
    "field": 0,
-   "goal": 6,
+   "goal": 7,
    "boundary": 0,
    "ts": 0,
    "coach": 0
@@ -752,6 +767,14 @@ window.UMPIRES = [
     "tentative": false,
     "day": "sat",
     "time": "12pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "2pm"
    },
    {
     "type": "goal",
@@ -841,8 +864,8 @@ window.UMPIRES = [
   "slots": [
    {
     "type": "field",
-    "label": "Field 4",
-    "field": 4,
+    "label": "Field 3",
+    "field": 3,
     "tentative": false,
     "day": "sat",
     "time": "9am"
@@ -899,6 +922,13 @@ window.UMPIRES = [
     "tentative": false,
     "day": "sun",
     "time": "11am"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
    },
    {
     "type": "open",
@@ -1021,6 +1051,13 @@ window.UMPIRES = [
     "tentative": false,
     "day": "sun",
     "time": "11am"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
    },
    {
     "type": "open",
@@ -1146,6 +1183,13 @@ window.UMPIRES = [
     "time": "11am"
    },
    {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
     "type": "open",
     "label": "Open",
     "tentative": false,
@@ -1249,8 +1293,8 @@ window.UMPIRES = [
     "time": "5pm"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "duty",
+    "label": "Field Marshall",
     "tentative": false,
     "day": "sun",
     "time": "9am"
@@ -1406,6 +1450,13 @@ window.UMPIRES = [
     "time": "11am"
    },
    {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
     "type": "open",
     "label": "Open",
     "tentative": false,
@@ -1545,6 +1596,13 @@ window.UMPIRES = [
     "time": "10am"
    },
    {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
     "type": "open",
     "label": "Open",
     "tentative": false,
@@ -1595,10 +1653,10 @@ window.UMPIRES = [
   "commitment": "FTC",
   "counts": {
    "field": 0,
-   "goal": 6,
+   "goal": 7,
    "boundary": 0,
    "ts": 0,
-   "coach": 5
+   "coach": 4
   },
   "disciplines": [
    "goal"
@@ -1612,8 +1670,9 @@ window.UMPIRES = [
     "time": "9am"
    },
    {
-    "type": "coach",
-    "label": "Hill",
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "sat",
     "time": "10am"
@@ -2124,155 +2183,6 @@ window.UMPIRES = [
   ]
  },
  {
-  "id": "john-hill",
-  "firstName": "John",
-  "lastName": "Hill",
-  "name": "John Hill",
-  "club": "",
-  "isAussie": false,
-  "accreditation": {
-   "goal": "GC"
-  },
-  "try": {
-   "goal": "G0"
-  },
-  "commitment": "FT",
-  "counts": {
-   "field": 0,
-   "goal": 10,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "goal"
-  ],
-  "slots": [
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "10am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 4",
-    "field": 4,
-    "tentative": false,
-    "day": "sat",
-    "time": "11am"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "1pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "2pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 1",
-    "field": 1,
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "5pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "goal",
-    "label": "Field 3",
-    "field": 3,
-    "tentative": false,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "open",
-    "label": "Open",
-    "tentative": false,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "open",
-    "label": "Open",
-    "tentative": false,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "open",
-    "label": "Open",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "open",
-    "label": "Open",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "5pm"
-   }
-  ]
- },
- {
   "id": "tom-janke",
   "firstName": "Tom",
   "lastName": "Janke",
@@ -2299,7 +2209,7 @@ window.UMPIRES = [
   "slots": [
    {
     "type": "coach",
-    "label": "Sternberg",
+    "label": "Waddell",
     "tentative": false,
     "day": "sat",
     "time": "9am"
@@ -2403,8 +2313,7 @@ window.UMPIRES = [
   "club": "",
   "isAussie": false,
   "accreditation": {
-   "field": "F0",
-   "goal": "GC"
+   "field": "F0"
   },
   "try": {
    "field": "F1"
@@ -2418,8 +2327,7 @@ window.UMPIRES = [
    "coach": 0
   },
   "disciplines": [
-   "field",
-   "goal"
+   "field"
   ],
   "slots": [
    {
@@ -2685,6 +2593,13 @@ window.UMPIRES = [
     "time": "11am"
    },
    {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
     "type": "open",
     "label": "Open",
     "tentative": false,
@@ -2858,6 +2773,13 @@ window.UMPIRES = [
     "time": "10am"
    },
    {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
+   },
+   {
     "type": "field",
     "label": "Field 4",
     "field": 4,
@@ -2989,8 +2911,8 @@ window.UMPIRES = [
   "slots": [
    {
     "type": "field",
-    "label": "Field 3",
-    "field": 3,
+    "label": "Field 4",
+    "field": 4,
     "tentative": false,
     "day": "sat",
     "time": "9am"
@@ -3075,10 +2997,10 @@ window.UMPIRES = [
    "goal": "G2"
   },
   "try": {},
-  "commitment": "OC",
+  "commitment": "PT",
   "counts": {
    "field": 0,
-   "goal": 3,
+   "goal": 5,
    "boundary": 0,
    "ts": 0,
    "coach": 0
@@ -3088,11 +3010,26 @@ window.UMPIRES = [
   ],
   "slots": [
    {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
     "type": "watch",
     "label": "Watching",
     "tentative": false,
     "day": "sat",
     "time": "10am"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "11am"
    },
    {
     "type": "goal",
@@ -3101,6 +3038,14 @@ window.UMPIRES = [
     "tentative": false,
     "day": "sat",
     "time": "12pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sat",
+    "time": "1pm"
    },
    {
     "type": "watch",
@@ -3116,6 +3061,13 @@ window.UMPIRES = [
     "tentative": false,
     "day": "sat",
     "time": "3pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "4pm"
    },
    {
     "type": "watch",
@@ -3201,7 +3153,7 @@ window.UMPIRES = [
   "commitment": "FT",
   "counts": {
    "field": 0,
-   "goal": 9,
+   "goal": 10,
    "boundary": 1,
    "ts": 0,
    "coach": 0
@@ -3296,6 +3248,14 @@ window.UMPIRES = [
     "tentative": false,
     "day": "sun",
     "time": "10am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sun",
+    "time": "11am"
    },
    {
     "type": "goal",
@@ -3668,6 +3628,13 @@ window.UMPIRES = [
     "time": "10am"
    },
    {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
     "type": "open",
     "label": "Open",
     "tentative": false,
@@ -3731,8 +3698,8 @@ window.UMPIRES = [
   "slots": [
    {
     "type": "field",
-    "label": "Field 4",
-    "field": 4,
+    "label": "Field 3",
+    "field": 3,
     "tentative": false,
     "day": "sat",
     "time": "9am"
@@ -3798,6 +3765,13 @@ window.UMPIRES = [
     "tentative": false,
     "day": "sun",
     "time": "11am"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
    },
    {
     "type": "open",
@@ -3976,6 +3950,116 @@ window.UMPIRES = [
   ]
  },
  {
+  "id": "jack-o-dell",
+  "firstName": "Jack",
+  "lastName": "O'Dell",
+  "name": "Jack O'Dell",
+  "club": "OKC",
+  "isAussie": false,
+  "accreditation": {
+   "field": "F1"
+  },
+  "try": {},
+  "commitment": "PT",
+  "counts": {
+   "field": 1,
+   "goal": 0,
+   "boundary": 0,
+   "ts": 0,
+   "coach": 0
+  },
+  "disciplines": [
+   "field"
+  ],
+  "slots": [
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": false,
+    "day": "sat",
+    "time": "9am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "sat",
+    "time": "12pm"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "sun",
+    "time": "9am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "sun",
+    "time": "10am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "sun",
+    "time": "11am"
+   },
+   {
+    "type": "playing",
+    "label": "With club",
+    "tentative": true,
+    "day": "finals",
+    "time": "1pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "2pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "3pm"
+   },
+   {
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
+    "day": "finals",
+    "time": "4:30pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "finals",
+    "time": "5pm"
+   }
+  ]
+ },
+ {
   "id": "paul-o-keeffe",
   "firstName": "Paul",
   "lastName": "O'Keeffe",
@@ -4106,116 +4190,6 @@ window.UMPIRES = [
     "type": "maybe",
     "label": "a final",
     "tentative": true,
-    "day": "finals",
-    "time": "2pm"
-   },
-   {
-    "type": "open",
-    "label": "Open",
-    "tentative": false,
-    "day": "finals",
-    "time": "3pm"
-   },
-   {
-    "type": "open",
-    "label": "Open",
-    "tentative": false,
-    "day": "finals",
-    "time": "4:30pm"
-   },
-   {
-    "type": "off",
-    "label": "OFF",
-    "tentative": false,
-    "day": "finals",
-    "time": "5pm"
-   }
-  ]
- },
- {
-  "id": "jack-odell",
-  "firstName": "Jack",
-  "lastName": "Odell",
-  "name": "Jack Odell",
-  "club": "OKC",
-  "isAussie": false,
-  "accreditation": {
-   "field": "F1"
-  },
-  "try": {},
-  "commitment": "PT",
-  "counts": {
-   "field": 1,
-   "goal": 0,
-   "boundary": 0,
-   "ts": 0,
-   "coach": 0
-  },
-  "disciplines": [
-   "field"
-  ],
-  "slots": [
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "9am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sat",
-    "time": "12pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sat",
-    "time": "3pm"
-   },
-   {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sat",
-    "time": "5pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "9am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "10am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "sun",
-    "time": "11am"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": true,
-    "day": "finals",
-    "time": "1pm"
-   },
-   {
-    "type": "open",
-    "label": "Open",
-    "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
@@ -4434,6 +4408,13 @@ window.UMPIRES = [
     "time": "11am"
    },
    {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
     "type": "open",
     "label": "Open",
     "tentative": false,
@@ -4487,7 +4468,7 @@ window.UMPIRES = [
   "commitment": "N/A",
   "counts": {
    "field": 0,
-   "goal": 3,
+   "goal": 4,
    "boundary": 0,
    "ts": 1,
    "coach": 0
@@ -4541,8 +4522,9 @@ window.UMPIRES = [
     "time": "2pm"
    },
    {
-    "type": "duty",
-    "label": "Field Marshall",
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "sat",
     "time": "3pm"
@@ -4878,6 +4860,13 @@ window.UMPIRES = [
     "time": "10am"
    },
    {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
+   },
+   {
     "type": "open",
     "label": "Open",
     "tentative": false,
@@ -5123,8 +5112,8 @@ window.UMPIRES = [
   "slots": [
    {
     "type": "field",
-    "label": "Field 4",
-    "field": 4,
+    "label": "Field 3",
+    "field": 3,
     "tentative": false,
     "day": "sat",
     "time": "9am"
@@ -5405,6 +5394,13 @@ window.UMPIRES = [
     "time": "3pm"
    },
    {
+    "type": "duty",
+    "label": "Field Marshall",
+    "tentative": false,
+    "day": "sat",
+    "time": "4pm"
+   },
+   {
     "type": "off",
     "label": "OFF",
     "tentative": false,
@@ -5433,6 +5429,13 @@ window.UMPIRES = [
     "tentative": false,
     "day": "sun",
     "time": "11am"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
    },
    {
     "type": "open",
@@ -5486,7 +5489,7 @@ window.UMPIRES = [
   "commitment": "FT",
   "counts": {
    "field": 4,
-   "goal": 2,
+   "goal": 3,
    "boundary": 0,
    "ts": 0,
    "coach": 0
@@ -5528,6 +5531,20 @@ window.UMPIRES = [
     "time": "1pm"
    },
    {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "2pm"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sat",
+    "time": "3pm"
+   },
+   {
     "type": "field",
     "label": "Field 2",
     "field": 2,
@@ -5542,6 +5559,14 @@ window.UMPIRES = [
     "tentative": false,
     "day": "sun",
     "time": "9am"
+   },
+   {
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sun",
+    "time": "10am"
    },
    {
     "type": "field",
@@ -5757,8 +5782,8 @@ window.UMPIRES = [
    },
    {
     "type": "field",
-    "label": "Field 2",
-    "field": 2,
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "sat",
     "time": "11am"
@@ -5952,7 +5977,7 @@ window.UMPIRES = [
   "firstName": "Seth",
   "lastName": "Sternberg",
   "name": "Seth Sternberg",
-  "club": "DC",
+  "club": "DC R",
   "isAussie": false,
   "accreditation": {
    "field": "F0"
@@ -5971,9 +5996,8 @@ window.UMPIRES = [
   ],
   "slots": [
    {
-    "type": "field",
-    "label": "Field 2",
-    "field": 2,
+    "type": "playing",
+    "label": "With club",
     "tentative": false,
     "day": "sat",
     "time": "9am"
@@ -5986,25 +6010,19 @@ window.UMPIRES = [
     "time": "10am"
    },
    {
-    "type": "playing",
-    "label": "With club",
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
     "tentative": false,
     "day": "sat",
     "time": "11am"
    },
    {
-    "type": "watch",
-    "label": "Watching",
+    "type": "playing",
+    "label": "With club",
     "tentative": true,
     "day": "sat",
     "time": "1pm"
-   },
-   {
-    "type": "playing",
-    "label": "With club",
-    "tentative": false,
-    "day": "sat",
-    "time": "3pm"
    },
    {
     "type": "watch",
@@ -6018,7 +6036,7 @@ window.UMPIRES = [
     "label": "With club",
     "tentative": false,
     "day": "sun",
-    "time": "10am"
+    "time": "11am"
    },
    {
     "type": "watch",
@@ -6028,16 +6046,16 @@ window.UMPIRES = [
     "time": "12pm"
    },
    {
-    "type": "open",
-    "label": "Open",
-    "tentative": false,
+    "type": "maybe",
+    "label": "a final",
+    "tentative": true,
     "day": "finals",
     "time": "1pm"
    },
    {
-    "type": "maybe",
-    "label": "a final",
-    "tentative": true,
+    "type": "open",
+    "label": "Open",
+    "tentative": false,
     "day": "finals",
     "time": "2pm"
    },
@@ -6105,7 +6123,7 @@ window.UMPIRES = [
    },
    {
     "type": "coach",
-    "label": "Waddell",
+    "label": "Sternberg",
     "tentative": false,
     "day": "sat",
     "time": "11am"
@@ -6165,6 +6183,13 @@ window.UMPIRES = [
     "tentative": false,
     "day": "sun",
     "time": "10am"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
    },
    {
     "type": "open",
@@ -6342,7 +6367,7 @@ window.UMPIRES = [
   "commitment": "FT",
   "counts": {
    "field": 0,
-   "goal": 7,
+   "goal": 9,
    "boundary": 0,
    "ts": 0,
    "coach": 0
@@ -6412,6 +6437,22 @@ window.UMPIRES = [
     "tentative": false,
     "day": "sat",
     "time": "4pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sat",
+    "time": "5pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 3",
+    "field": 3,
+    "tentative": false,
+    "day": "sun",
+    "time": "9am"
    },
    {
     "type": "watch",
@@ -6497,8 +6538,8 @@ window.UMPIRES = [
   "slots": [
    {
     "type": "field",
-    "label": "Field 3",
-    "field": 3,
+    "label": "Field 4",
+    "field": 4,
     "tentative": false,
     "day": "sat",
     "time": "9am"
@@ -6797,11 +6838,11 @@ window.UMPIRES = [
   "slots": [
    {
     "type": "field",
-    "label": "Field 1",
-    "field": 1,
+    "label": "Field 2",
+    "field": 2,
     "tentative": false,
     "day": "sat",
-    "time": "11am"
+    "time": "9am"
    },
    {
     "type": "watch",
@@ -7071,8 +7112,8 @@ window.UMPIRES = [
   "slots": [
    {
     "type": "field",
-    "label": "Field 3",
-    "field": 3,
+    "label": "Field 4",
+    "field": 4,
     "tentative": false,
     "day": "sat",
     "time": "9am"
@@ -7129,6 +7170,13 @@ window.UMPIRES = [
     "tentative": false,
     "day": "sun",
     "time": "11am"
+   },
+   {
+    "type": "off",
+    "label": "OFF",
+    "tentative": false,
+    "day": "sun",
+    "time": "12pm"
    },
    {
     "type": "open",
@@ -7308,5 +7356,5 @@ window.UMPIRES = [
   ]
  }
 ];
-window.SLOT_ORDER = [{"day": "sat", "time": "8am"}, {"day": "sat", "time": "9am"}, {"day": "sat", "time": "10am"}, {"day": "sat", "time": "11am"}, {"day": "sat", "time": "12pm"}, {"day": "sat", "time": "1pm"}, {"day": "sat", "time": "2pm"}, {"day": "sat", "time": "3pm"}, {"day": "sat", "time": "4pm"}, {"day": "sat", "time": "5pm"}, {"day": "sun", "time": "8am"}, {"day": "sun", "time": "9am"}, {"day": "sun", "time": "10am"}, {"day": "sun", "time": "11am"}, {"day": "sun", "time": "12pm"}, {"day": "sun", "time": "1pm"}, {"day": "finals", "time": "1pm"}, {"day": "finals", "time": "2pm"}, {"day": "finals", "time": "3pm"}, {"day": "finals", "time": "4:30pm"}, {"day": "finals", "time": "5pm"}];
-window.SCHEDULE_META = {"title": "2026 USAFL Nationals Umpire Assignments - Version 004 - subject to change", "version": "004", "source": "41d640db-2026-10-12_Nationals_Assignments_Distribution_1.xlsx", "publishedAt": "2026-10-13T21:26:07Z", "publishId": "2026-10-13T21:26:07Z", "days": ["sat", "sun", "finals"]};
+window.SLOT_ORDER = [{"day":"sat","time":"8am"},{"day":"sat","time":"9am"},{"day":"sat","time":"10am"},{"day":"sat","time":"11am"},{"day":"sat","time":"12pm"},{"day":"sat","time":"1pm"},{"day":"sat","time":"2pm"},{"day":"sat","time":"3pm"},{"day":"sat","time":"4pm"},{"day":"sat","time":"5pm"},{"day":"sun","time":"8am"},{"day":"sun","time":"9am"},{"day":"sun","time":"10am"},{"day":"sun","time":"11am"},{"day":"sun","time":"12pm"},{"day":"sun","time":"1pm"},{"day":"finals","time":"1pm"},{"day":"finals","time":"2pm"},{"day":"finals","time":"3pm"},{"day":"finals","time":"4:30pm"},{"day":"finals","time":"5pm"}];
+window.SCHEDULE_META = {"title":"2026 USAFL Nationals Umpire Assignments - Version 005 - subject to change","version":"005","source":"2026-10-14 Nationals Assignments Distribution 2.xlsx","publishedAt":"2026-10-14T19:28:58.612Z","publishId":"2026-10-14T19:28:58Z-ovgh","days":["sat","sun","finals"]};
