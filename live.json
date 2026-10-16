@@ -1,6 +1,90 @@
 {
   "announcement": null,
-  "events": null,
+  "events": [
+    {
+      "day": "Thursday, Oct 15",
+      "items": [
+        {
+          "time": "Time TBC",
+          "title": "Thursday Dinner",
+          "where": "Linger Lodge, 7116 85th St Ct E, Bradenton, FL 34202",
+          "note": "Dinner for anyone in town on Thursday, including our visiting Aussies. Let Jeff know if you'd like to join.",
+          "icon": "🍽️"
+        }
+      ]
+    },
+    {
+      "day": "Friday, Oct 16",
+      "items": [
+        {
+          "time": "2–5 pm",
+          "title": "Umpire Clinic",
+          "where": "Premier Sports Campus, 5895 Post Blvd, Lakewood Ranch, FL 34211",
+          "note": "On-field drills in teams led by senior umpires — field, goal, and boundary accreditation stations.",
+          "icon": "🏃"
+        },
+        {
+          "time": "7:30 pm",
+          "title": "Umpire Meeting",
+          "where": "Even Hotel Sarasota-Lakewood Ranch, Osprey Room, 6231 Lake Osprey Drive, Sarasota, FL 34240",
+          "note": "You're on your own for dinner after the Clinic; tea, coffee and sodas at the meeting. We'll review the tournament rules in detail and the points of emphasis, and hand out gear to anyone with gear coming to them. Coaches and observers stay back afterwards to go over how observations will run on the weekend.",
+          "icon": "📋"
+        }
+      ]
+    },
+    {
+      "day": "Saturday, Oct 17",
+      "items": [
+        {
+          "time": "8:45am",
+          "title": "Umpire Team Picture",
+          "where": "In front of Umpire Central",
+          "note": "Be on site in time to be in the picture.",
+          "icon": "📸"
+        },
+        {
+          "time": "9 am – 6 pm",
+          "title": "Game Day 1",
+          "where": "Premier Sports Campus, 5895 Post Blvd, Lakewood Ranch, FL 34211",
+          "note": "Games on the hour — make every effort to start on time. Coaches meet at Umpire Central at 6 pm to review observations.",
+          "icon": "🏉"
+        },
+        {
+          "time": "7:30 pm",
+          "title": "Awards Fete",
+          "where": "Even Hotel Sarasota-Lakewood Ranch, Osprey Room, 6231 Lake Osprey Drive, Sarasota, FL 34240",
+          "note": "Dinner provided, with non-alcoholic drinks (anything else you'll need to source yourself). Presentations start around 8:30 (maybe sooner): accreditations (boundary, goal, field and coach), two special awards, then Sunday's finals assignments — field and goal, plus boundary for the last final. Boundary and timer/scorekeeper for the other finals will be announced then if ready, otherwise posted in the Umpire Tent Sunday morning.",
+          "icon": "🎉"
+        }
+      ]
+    },
+    {
+      "day": "Sunday, Oct 18",
+      "items": [
+        {
+          "time": "9 am – 12 pm",
+          "title": "Game Day 2",
+          "where": "Premier Sports Campus, 5895 Post Blvd, Lakewood Ranch, FL 34211",
+          "note": "Same rules as Saturday. Record any assignment changes on the big sheets at the tent.",
+          "icon": "🏉"
+        },
+        {
+          "time": "1 pm onwards",
+          "title": "Finals",
+          "where": "Premier Sports Campus, 5895 Post Blvd, Lakewood Ranch, FL 34211",
+          "note": "Finals teams gather at Umpire Central for a team picture and go out as a group. Medals as you come off the field; field umpire medals at the closing ceremony.",
+          "icon": "🏆"
+        },
+        {
+          "time": "Time TBC",
+          "title": "Thank You Dinner",
+          "where": "Ford's Garage, 295 N Cattlemen Road Unit 1, Sarasota, FL 34243",
+          "note": "For everyone still in town. Aussie guests and Tent Royalty are our VIPs. Let Jeff know if you plan to attend.",
+          "icon": "🥂"
+        }
+      ]
+    }
+  ],
   "pinHash": null,
-  "publishId": "2026-10-08T09:48:49Z-rm"
+  "publishId": "2026-10-16T22:55:57Z-9snv"
 }
