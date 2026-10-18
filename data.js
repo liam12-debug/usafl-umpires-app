@@ -1566,7 +1566,7 @@ window.UMPIRES = [
   "commitment": "FTC",
   "counts": {
    "field": 0,
-   "goal": 7,
+   "goal": 8,
    "boundary": 0,
    "ts": 0,
    "coach": 4
@@ -1665,6 +1665,14 @@ window.UMPIRES = [
     "tentative": false,
     "day": "sun",
     "time": "12pm"
+   },
+   {
+    "type": "goal",
+    "label": "Field 1",
+    "field": 1,
+    "tentative": false,
+    "day": "sun",
+    "time": "1pm"
    },
    {
     "type": "open",
@@ -6979,4 +6987,4 @@ window.UMPIRES = [
  }
 ];
 window.SLOT_ORDER = [{"day":"sat","time":"8am"},{"day":"sat","time":"9am"},{"day":"sat","time":"10am"},{"day":"sat","time":"11am"},{"day":"sat","time":"12pm"},{"day":"sat","time":"1pm"},{"day":"sat","time":"2pm"},{"day":"sat","time":"3pm"},{"day":"sat","time":"4pm"},{"day":"sat","time":"5pm"},{"day":"sun","time":"8am"},{"day":"sun","time":"9am"},{"day":"sun","time":"10am"},{"day":"sun","time":"11am"},{"day":"sun","time":"12pm"},{"day":"sun","time":"1pm"},{"day":"finals","time":"1pm"},{"day":"finals","time":"2pm"},{"day":"finals","time":"3pm"},{"day":"finals","time":"4:30pm"}];
-window.SCHEDULE_META = {"title":"2026 USAFL Nationals Umpire Assignments - Version 006 - subject to change","version":"006","source":"Newww.xlsx + admin edits","publishedAt":"2026-10-18T13:22:02.173Z","publishId":"2026-10-18T13:22:02Z-95sh","days":["sat","sun","finals"]};
+window.SCHEDULE_META = {"title":"2026 USAFL Nationals Umpire Assignments - Version 006 - subject to change","version":"006","source":"Newww.xlsx + admin edits","publishedAt":"2026-10-18T13:22:32.674Z","publishId":"2026-10-18T13:22:32Z-u4zy","days":["sat","sun","finals"]};
