@@ -113,7 +113,7 @@ window.UMPIRES = [
   },
   "commitment": "FTC",
   "counts": {
-   "field": 5,
+   "field": 6,
    "goal": 0,
    "boundary": 0,
    "ts": 0,
@@ -185,8 +185,9 @@ window.UMPIRES = [
     "time": "1pm"
    },
    {
-    "type": "open",
-    "label": "Open",
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "finals",
     "time": "2pm"
@@ -419,7 +420,7 @@ window.UMPIRES = [
   "try": {},
   "commitment": "FTC",
   "counts": {
-   "field": 5,
+   "field": 6,
    "goal": 0,
    "boundary": 0,
    "ts": 0,
@@ -512,8 +513,9 @@ window.UMPIRES = [
     "time": "1pm"
    },
    {
-    "type": "open",
-    "label": "Open",
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "finals",
     "time": "2pm"
@@ -803,7 +805,7 @@ window.UMPIRES = [
   },
   "commitment": "FTC",
   "counts": {
-   "field": 5,
+   "field": 6,
    "goal": 0,
    "boundary": 0,
    "ts": 0,
@@ -889,8 +891,9 @@ window.UMPIRES = [
     "time": "1pm"
    },
    {
-    "type": "open",
-    "label": "Open",
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "finals",
     "time": "2pm"
@@ -2078,7 +2081,7 @@ window.UMPIRES = [
   },
   "commitment": "FTC",
   "counts": {
-   "field": 5,
+   "field": 6,
    "goal": 0,
    "boundary": 0,
    "ts": 0,
@@ -2164,8 +2167,9 @@ window.UMPIRES = [
     "time": "2pm"
    },
    {
-    "type": "open",
-    "label": "Open",
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "finals",
     "time": "3pm"
@@ -2395,7 +2399,7 @@ window.UMPIRES = [
   },
   "commitment": "FTC",
   "counts": {
-   "field": 5,
+   "field": 6,
    "goal": 0,
    "boundary": 0,
    "ts": 0,
@@ -2474,8 +2478,9 @@ window.UMPIRES = [
     "time": "2pm"
    },
    {
-    "type": "open",
-    "label": "Open",
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "finals",
     "time": "3pm"
@@ -2738,7 +2743,7 @@ window.UMPIRES = [
   "try": {},
   "commitment": "FTC",
   "counts": {
-   "field": 5,
+   "field": 6,
    "goal": 0,
    "boundary": 0,
    "ts": 0,
@@ -2803,8 +2808,9 @@ window.UMPIRES = [
     "time": "2pm"
    },
    {
-    "type": "open",
-    "label": "Open",
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "finals",
     "time": "3pm"
@@ -3342,7 +3348,7 @@ window.UMPIRES = [
   },
   "commitment": "FTC",
   "counts": {
-   "field": 5,
+   "field": 6,
    "goal": 2,
    "boundary": 1,
    "ts": 0,
@@ -3440,8 +3446,9 @@ window.UMPIRES = [
     "time": "12pm"
    },
    {
-    "type": "open",
-    "label": "Open",
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
     "tentative": false,
     "day": "finals",
     "time": "1pm"
@@ -4107,7 +4114,7 @@ window.UMPIRES = [
   },
   "commitment": "FTC",
   "counts": {
-   "field": 6,
+   "field": 7,
    "goal": 0,
    "boundary": 0,
    "ts": 0,
@@ -4187,8 +4194,9 @@ window.UMPIRES = [
     "time": "12pm"
    },
    {
-    "type": "open",
-    "label": "Open",
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "finals",
     "time": "1pm"
@@ -5053,7 +5061,7 @@ window.UMPIRES = [
   "try": {},
   "commitment": "FTC",
   "counts": {
-   "field": 5,
+   "field": 6,
    "goal": 0,
    "boundary": 0,
    "ts": 0,
@@ -5146,8 +5154,9 @@ window.UMPIRES = [
     "time": "12pm"
    },
    {
-    "type": "open",
-    "label": "Open",
+    "type": "field",
+    "label": "Field 1",
+    "field": 1,
     "tentative": false,
     "day": "finals",
     "time": "1pm"
@@ -5902,7 +5911,7 @@ window.UMPIRES = [
   },
   "commitment": "FTC",
   "counts": {
-   "field": 5,
+   "field": 6,
    "goal": 0,
    "boundary": 0,
    "ts": 0,
@@ -5974,8 +5983,9 @@ window.UMPIRES = [
     "time": "12pm"
    },
    {
-    "type": "open",
-    "label": "Open",
+    "type": "field",
+    "label": "Field 2",
+    "field": 2,
     "tentative": false,
     "day": "finals",
     "time": "1pm"
@@ -6282,7 +6292,7 @@ window.UMPIRES = [
   "commitment": "OC",
   "counts": {
    "field": 0,
-   "goal": 0,
+   "goal": 1,
    "boundary": 0,
    "ts": 0,
    "coach": 0
@@ -6291,6 +6301,14 @@ window.UMPIRES = [
    "goal"
   ],
   "slots": [
+   {
+    "type": "goal",
+    "label": "Field 2",
+    "field": 2,
+    "tentative": false,
+    "day": "sun",
+    "time": "9am"
+   },
    {
     "type": "open",
     "label": "Open",
@@ -6544,7 +6562,7 @@ window.UMPIRES = [
   "commitment": "PT",
   "counts": {
    "field": 3,
-   "goal": 7,
+   "goal": 6,
    "boundary": 1,
    "ts": 0,
    "coach": 0
@@ -6624,14 +6642,6 @@ window.UMPIRES = [
     "tentative": false,
     "day": "sat",
     "time": "5pm"
-   },
-   {
-    "type": "goal",
-    "label": "Field 2",
-    "field": 2,
-    "tentative": false,
-    "day": "sun",
-    "time": "9am"
    },
    {
     "type": "field",
@@ -6952,4 +6962,4 @@ window.UMPIRES = [
  }
 ];
 window.SLOT_ORDER = [{"day":"sat","time":"8am"},{"day":"sat","time":"9am"},{"day":"sat","time":"10am"},{"day":"sat","time":"11am"},{"day":"sat","time":"12pm"},{"day":"sat","time":"1pm"},{"day":"sat","time":"2pm"},{"day":"sat","time":"3pm"},{"day":"sat","time":"4pm"},{"day":"sat","time":"5pm"},{"day":"sun","time":"8am"},{"day":"sun","time":"9am"},{"day":"sun","time":"10am"},{"day":"sun","time":"11am"},{"day":"sun","time":"12pm"},{"day":"sun","time":"1pm"},{"day":"finals","time":"1pm"},{"day":"finals","time":"2pm"},{"day":"finals","time":"3pm"},{"day":"finals","time":"4:30pm"}];
-window.SCHEDULE_META = {"title":"2026 USAFL Nationals Umpire Assignments - Version 006 - subject to change","version":"006","source":"Newww.xlsx + admin edits","publishedAt":"2026-10-17T15:33:54.952Z","publishId":"2026-10-17T15:33:54Z-e6cc","days":["sat","sun","finals"]};
+window.SCHEDULE_META = {"title":"2026 USAFL Nationals Umpire Assignments - Version 006 - subject to change","version":"006","source":"Newww.xlsx + admin edits","publishedAt":"2026-10-18T11:46:33.180Z","publishId":"2026-10-18T11:46:33Z-mskk","days":["sat","sun","finals"]};
